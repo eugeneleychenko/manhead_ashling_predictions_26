@@ -456,8 +456,11 @@ def status():
 
 # ── Retrain ──
 
-_retrain_state = {
-    "status": "idle",      # idle | started | running | validating | completed | failed
+RETRAIN_STATE_FILE = os.path.join(os.path.dirname(os.path.abspath(config_path)), ".retrain_state.json")
+RETRAIN_SIGNAL = os.path.join(artifact_dir, ".retrain_complete")
+
+_RETRAIN_STATE_DEFAULT = {
+    "status": "idle",
     "job_id": None,
     "started_at": None,
     "finished_at": None,
@@ -466,8 +469,22 @@ _retrain_state = {
     "error": None,
     "pid": None,
 }
-_retrain_lock_path = os.path.join(os.path.dirname(os.path.abspath(config_path)), ".retrain.lock")
-RETRAIN_SIGNAL = os.path.join(artifact_dir, ".retrain_complete")
+
+def _read_retrain_state():
+    try:
+        if os.path.exists(RETRAIN_STATE_FILE):
+            with open(RETRAIN_STATE_FILE) as f:
+                return json.load(f)
+    except Exception:
+        pass
+    return dict(_RETRAIN_STATE_DEFAULT)
+
+def _write_retrain_state(state):
+    try:
+        with open(RETRAIN_STATE_FILE, "w") as f:
+            json.dump(state, f, indent=2)
+    except Exception as e:
+        app.logger.error(f"Failed to write retrain state: {e}")
 
 def _reload_artifacts():
     """Hot-reload model, scaler, encoder from disk."""
@@ -491,14 +508,15 @@ def _watch_retrain_signal():
                 app.logger.info("Retrain signal detected — reloading artifacts")
                 _reload_artifacts()
                 os.remove(RETRAIN_SIGNAL)
-                _retrain_state["status"] = "completed"
-                _retrain_state["finished_at"] = dt.datetime.now().isoformat(timespec="seconds")
-                # Load new metrics
+                state = _read_retrain_state()
+                state["status"] = "completed"
+                state["finished_at"] = dt.datetime.now().isoformat(timespec="seconds")
                 metrics_path = paths.get("last_train_metrics_json",
                                          os.path.join(artifact_dir, "last_train_metrics.json"))
                 if os.path.exists(metrics_path):
                     with open(metrics_path) as f:
-                        _retrain_state["metrics_new"] = json.load(f)
+                        state["metrics_new"] = json.load(f)
+                _write_retrain_state(state)
         except Exception as e:
             app.logger.error(f"Retrain watcher error: {e}")
         time.sleep(5)
@@ -511,11 +529,12 @@ _watcher.start()
 @app.route("/api/retrain", methods=["POST"])
 def api_retrain():
     # Check if retrain is already running
-    if _retrain_state["status"] in ("started", "running", "validating"):
+    current_state = _read_retrain_state()
+    if current_state["status"] in ("started", "running", "validating"):
         return jsonify({
             "error": "Retrain already in progress",
-            "job_id": _retrain_state["job_id"],
-            "status": _retrain_state["status"],
+            "job_id": current_state["job_id"],
+            "status": current_state["status"],
         }), 409
 
     repo_root = os.path.dirname(os.path.abspath(config_path))
@@ -568,7 +587,7 @@ def api_retrain():
     if not os.path.exists(venv_python):
         venv_python = sys.executable  # fallback to current python
 
-    _retrain_state.update({
+    new_state = {
         "status": "started",
         "job_id": job_id,
         "started_at": dt.datetime.now().isoformat(timespec="seconds"),
@@ -577,11 +596,15 @@ def api_retrain():
         "metrics_new": None,
         "error": None,
         "pid": None,
-    })
+    }
+    _write_retrain_state(new_state)
 
     def _run_retrain():
         try:
-            _retrain_state["status"] = "running"
+            state = _read_retrain_state()
+            state["status"] = "running"
+            _write_retrain_state(state)
+
             proc = subprocess.Popen(
                 [venv_python, worker_script, config_path],
                 cwd=repo_root,
@@ -589,7 +612,8 @@ def api_retrain():
                 stderr=subprocess.STDOUT,
                 text=True,
             )
-            _retrain_state["pid"] = proc.pid
+            state["pid"] = proc.pid
+            _write_retrain_state(state)
 
             # Stream output to log
             output_lines = []
@@ -600,15 +624,19 @@ def api_retrain():
             proc.wait()
 
             if proc.returncode != 0:
-                _retrain_state["status"] = "failed"
-                _retrain_state["error"] = "\n".join(output_lines[-20:])
-                _retrain_state["finished_at"] = dt.datetime.now().isoformat(timespec="seconds")
+                state = _read_retrain_state()
+                state["status"] = "failed"
+                state["error"] = "\n".join(output_lines[-20:])
+                state["finished_at"] = dt.datetime.now().isoformat(timespec="seconds")
+                _write_retrain_state(state)
             # If return code 0, the watcher thread will pick up .retrain_complete
 
         except Exception as e:
-            _retrain_state["status"] = "failed"
-            _retrain_state["error"] = str(e)
-            _retrain_state["finished_at"] = dt.datetime.now().isoformat(timespec="seconds")
+            state = _read_retrain_state()
+            state["status"] = "failed"
+            state["error"] = str(e)
+            state["finished_at"] = dt.datetime.now().isoformat(timespec="seconds")
+            _write_retrain_state(state)
 
     thread = threading.Thread(target=_run_retrain, daemon=True)
     thread.start()
@@ -629,14 +657,15 @@ def api_retrain():
 
 @app.route("/api/retrain/status", methods=["GET"])
 def api_retrain_status():
+    state = _read_retrain_state()
     return jsonify({
-        "job_id": _retrain_state["job_id"],
-        "status": _retrain_state["status"],
-        "started_at": _retrain_state["started_at"],
-        "finished_at": _retrain_state["finished_at"],
-        "metrics_old": _retrain_state["metrics_old"],
-        "metrics_new": _retrain_state["metrics_new"],
-        "error": _retrain_state["error"],
+        "job_id": state.get("job_id"),
+        "status": state.get("status", "idle"),
+        "started_at": state.get("started_at"),
+        "finished_at": state.get("finished_at"),
+        "metrics_old": state.get("metrics_old"),
+        "metrics_new": state.get("metrics_new"),
+        "error": state.get("error"),
     }), 200
 
 

@@ -1,0 +1,69 @@
+APPAREL
+SKU,Name,Type,Sex,Size,Sold,Unit % of Total,Comp,Avg. Price,Gross Rev,% of Total
+JELROL-T10079-S,BEAUTIFULLY BROKEN SINGING TEE,T-Shirt,U,S,107,7%,0,$48.76,"$5,217.32",7%
+JELROL-T10079-M,BEAUTIFULLY BROKEN SINGING TEE,T-Shirt,U,M,366,24%,0,$48.76,"$17,846.16",24%
+JELROL-T10079-L,BEAUTIFULLY BROKEN SINGING TEE,T-Shirt,U,L,363,23%,1,$48.76,"$17,699.88",23%
+JELROL-T10079-XL,BEAUTIFULLY BROKEN SINGING TEE,T-Shirt,U,XL,315,20%,0,$48.76,"$15,359.40",20%
+JELROL-T10079-XXL,BEAUTIFULLY BROKEN SINGING TEE,T-Shirt,U,2XL,258,17%,0,$48.76,"$12,580.08",17%
+JELROL-T10079-3XL,BEAUTIFULLY BROKEN SINGING TEE,T-Shirt,U,3XL,139,9%,0,$48.76,"$6,777.64",9%
+SUBTOTAL,BEAUTIFULLY BROKEN SINGING TEE,T-Shirt,U,"",1548,26%,1,$48.76,"$75,480.48",28%
+
+JELROL-T10080-S,Beautifully Broken Face Tee,T-Shirt,U,S,139,10%,0,$48.76,"$6,777.64",10%
+JELROL-T10080-M,Beautifully Broken Face Tee,T-Shirt,U,M,237,18%,0,$48.76,"$11,556.12",18%
+JELROL-T10080-L,Beautifully Broken Face Tee,T-Shirt,U,L,362,27%,0,$48.76,"$17,651.12",27%
+JELROL-T10080-XL,Beautifully Broken Face Tee,T-Shirt,U,XL,342,25%,1,$48.76,"$16,675.92",25%
+JELROL-T10080-XXL,Beautifully Broken Face Tee,T-Shirt,U,2XL,180,13%,0,$48.76,"$8,776.80",13%
+JELROL-T10080-3XL,Beautifully Broken Face Tee,T-Shirt,U,3XL,85,6%,0,$48.76,"$4,144.60",6%
+SUBTOTAL,Beautifully Broken Face Tee,T-Shirt,U,"",1345,23%,1,$48.76,"$65,582.20",24%
+
+JELROL-T10081-S,DREAMS DONT DIE TEE,T-Shirt,U,S,119,14%,0,$48.76,"$5,802.44",14%
+JELROL-T10081-M,DREAMS DONT DIE TEE,T-Shirt,U,M,192,22%,0,$48.76,"$9,361.92",22%
+JELROL-T10081-L,DREAMS DONT DIE TEE,T-Shirt,U,L,214,25%,0,$48.76,"$10,434.64",25%
+JELROL-T10081-XL,DREAMS DONT DIE TEE,T-Shirt,U,XL,185,22%,0,$48.76,"$9,020.60",22%
+JELROL-T10081-XXL,DREAMS DONT DIE TEE,T-Shirt,U,2XL,101,12%,0,$48.76,"$4,924.76",12%
+JELROL-T10081-3XL,DREAMS DONT DIE TEE,T-Shirt,U,3XL,46,5%,0,$48.76,"$2,242.96",5%
+SUBTOTAL,DREAMS DONT DIE TEE,T-Shirt,U,"",857,15%,0,$48.76,"$41,787.32",15%
+
+JELROL-T10082-S,EAGLE TEE,T-Shirt,U,S,83,14%,0,$48.76,"$4,047.08",14%
+JELROL-T10082-M,EAGLE TEE,T-Shirt,U,M,158,26%,0,$48.76,"$7,704.08",26%
+JELROL-T10082-L,EAGLE TEE,T-Shirt,U,L,161,26%,0,$48.76,"$7,850.36",26%
+JELROL-T10082-XL,EAGLE TEE,T-Shirt,U,XL,131,22%,0,$48.76,"$6,387.56",22%
+JELROL-T10082-XXL,EAGLE TEE,T-Shirt,U,2XL,44,7%,0,$48.76,"$2,145.44",7%
+JELROL-T10082-3XL,EAGLE TEE,T-Shirt,U,3XL,31,5%,0,$48.76,"$1,511.56",5%
+SUBTOTAL,EAGLE TEE,T-Shirt,U,"",608,10%,0,$48.76,"$29,646.08",11%
+
+"",Singing Zip Hoodie,T-Shirt,U,S,0,0%,0,$0.00,$0.00,0%
+"",Singing Zip Hoodie,T-Shirt,U,M,0,0%,0,$0.00,$0.00,0%
+"",Singing Zip Hoodie,T-Shirt,U,L,0,0%,0,$0.00,$0.00,0%
+"",Singing Zip Hoodie,T-Shirt,U,XL,0,0%,0,$0.00,$0.00,0%
+"",Singing Zip Hoodie,T-Shirt,U,2XL,0,0%,0,$0.00,$0.00,0%
+"",Singing Zip Hoodie,T-Shirt,U,3XL,0,0%,0,$0.00,$0.00,0%
+SUBTOTAL,Singing Zip Hoodie,T-Shirt,U,"",0,0%,0,$0.00,$0.00,0%
+
+"",Anarchy Hoodie - TOUR,Pullover Hoodie,U,S,19,7%,0,$107.06,"$2,034.14",7%
+"",Anarchy Hoodie - TOUR,Pullover Hoodie,U,M,40,15%,0,$107.06,"$4,282.40",15%
+"",Anarchy Hoodie - TOUR,Pullover Hoodie,U,L,78,28%,1,$107.06,"$8,350.68",28%
+"",Anarchy Hoodie - TOUR,Pullover Hoodie,U,XL,63,23%,0,$107.06,"$6,744.78",23%
+"",Anarchy Hoodie - TOUR,Pullover Hoodie,U,2XL,43,16%,0,$107.06,"$4,603.58",16%
+"",Anarchy Hoodie - TOUR,Pullover Hoodie,U,3XL,31,11%,0,$107.06,"$3,318.86",11%
+SUBTOTAL,Anarchy Hoodie - TOUR,Pullover Hoodie,U,"",274,5%,1,$107.06,"$29,334.44",11%
+
+TOTAL APPAREL,"","","","",4632,79%,3,"","$241,830.52",89%
+
+
+OTHER
+SKU,Name,Type,Sex,Size,Sold,Unit % of Total,Comp,Avg. Price,Gross Rev,% of Total
+JELROL-HAT2006,Distressed Denim Hat,Hat - Other,U,,389,7%,0,$48.76,"$18,967.64",7%
+JELROL-ACC1048,Tall Boy Koozie,Koozie,U,,771,13%,0,$11.66,"$8,989.86",3%
+"",Get By Bandana,Bandana,U,,0,0%,0,$0.00,$0.00,0%
+JELROL-ACC1049,DREAMS DONT DIE METALLIC TOTE,Bag,U,,86,1%,0,$38.16,"$3,281.76",1%
+
+TOTAL OTHER,"","","","",1246,21%,0,"","$31,239.26",11%
+
+
+MUSIC
+UPC,Name,Type,Sex,Size,Sold,Unit % of Total,Comp,Avg. Price,Gross Rev,% of Total
+
+TOTAL MUSIC,"","","","",0,0%,0,"",$0.00,0%
+
+GRAND TOTAL,"","","","",5878,"",3,"","$273,069.78"

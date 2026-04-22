@@ -1,0 +1,25 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Large model file (download from DO Spaces)
+Flask/model_retrained.joblib
+
+# Staging artifacts
+Flask/.staging/
+
+# Local env (contains API key)
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+debug_info/audit_events.*
+
+# Cache
+Python_scripts/cache/

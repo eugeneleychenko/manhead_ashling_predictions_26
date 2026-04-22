@@ -1,0 +1,68 @@
+APPAREL
+SKU,Name,Type,Sex,Size,Sold,Unit % of Total,Comp,Avg. Price,Gross Rev,% of Total
+JELROL-T10079-S,BEAUTIFULLY BROKEN SINGING TEE,T-Shirt,U,S,138,8%,0,$50.09,"$6,912.42",8%
+JELROL-T10079-M,BEAUTIFULLY BROKEN SINGING TEE,T-Shirt,U,M,284,17%,0,$50.09,"$14,225.56",17%
+JELROL-T10079-L,BEAUTIFULLY BROKEN SINGING TEE,T-Shirt,U,L,429,26%,0,$50.09,"$21,488.61",26%
+JELROL-T10079-XL,BEAUTIFULLY BROKEN SINGING TEE,T-Shirt,U,XL,409,25%,0,$50.09,"$20,486.81",25%
+JELROL-T10079-XXL,BEAUTIFULLY BROKEN SINGING TEE,T-Shirt,U,2XL,242,15%,0,$50.09,"$12,121.78",15%
+JELROL-T10079-3XL,BEAUTIFULLY BROKEN SINGING TEE,T-Shirt,U,3XL,132,8%,0,$50.09,"$6,611.88",8%
+SUBTOTAL,BEAUTIFULLY BROKEN SINGING TEE,T-Shirt,U,"",1634,29%,0,$50.09,"$81,847.06",30%
+
+JELROL-T10080-S,Beautifully Broken Face Tee,T-Shirt,U,S,119,9%,0,$50.09,"$5,960.71",9%
+JELROL-T10080-M,Beautifully Broken Face Tee,T-Shirt,U,M,258,20%,0,$50.09,"$12,923.22",20%
+JELROL-T10080-L,Beautifully Broken Face Tee,T-Shirt,U,L,318,25%,0,$50.09,"$15,928.62",25%
+JELROL-T10080-XL,Beautifully Broken Face Tee,T-Shirt,U,XL,310,25%,2,$50.09,"$15,527.90",25%
+JELROL-T10080-XXL,Beautifully Broken Face Tee,T-Shirt,U,2XL,125,10%,0,$50.09,"$6,261.25",10%
+JELROL-T10080-3XL,Beautifully Broken Face Tee,T-Shirt,U,3XL,134,11%,0,$50.09,"$6,712.06",11%
+SUBTOTAL,Beautifully Broken Face Tee,T-Shirt,U,"",1264,22%,2,$50.09,"$63,313.76",23%
+
+JELROL-T10081-S,DREAMS DONT DIE TEE,T-Shirt,U,S,163,21%,0,$50.09,"$8,164.67",21%
+JELROL-T10081-M,DREAMS DONT DIE TEE,T-Shirt,U,M,180,23%,0,$50.09,"$9,016.20",23%
+JELROL-T10081-L,DREAMS DONT DIE TEE,T-Shirt,U,L,144,19%,0,$50.09,"$7,212.96",19%
+JELROL-T10081-XL,DREAMS DONT DIE TEE,T-Shirt,U,XL,144,19%,0,$50.09,"$7,212.96",19%
+JELROL-T10081-XXL,DREAMS DONT DIE TEE,T-Shirt,U,2XL,82,11%,0,$50.09,"$4,107.38",11%
+JELROL-T10081-3XL,DREAMS DONT DIE TEE,T-Shirt,U,3XL,56,7%,0,$50.09,"$2,805.04",7%
+SUBTOTAL,DREAMS DONT DIE TEE,T-Shirt,U,"",769,14%,0,$50.09,"$38,519.21",14%
+
+JELROL-T10082-S,EAGLE TEE,T-Shirt,U,S,118,15%,0,$50.09,"$5,910.62",15%
+JELROL-T10082-M,EAGLE TEE,T-Shirt,U,M,171,22%,0,$50.09,"$8,565.39",22%
+JELROL-T10082-L,EAGLE TEE,T-Shirt,U,L,144,18%,0,$50.09,"$7,212.96",18%
+JELROL-T10082-XL,EAGLE TEE,T-Shirt,U,XL,144,18%,0,$50.09,"$7,212.96",18%
+JELROL-T10082-XXL,EAGLE TEE,T-Shirt,U,2XL,125,16%,0,$50.09,"$6,261.25",16%
+JELROL-T10082-3XL,EAGLE TEE,T-Shirt,U,3XL,85,11%,0,$50.09,"$4,257.65",11%
+SUBTOTAL,EAGLE TEE,T-Shirt,U,"",787,14%,0,$50.09,"$39,420.83",14%
+
+"",Singing Zip Hoodie,T-Shirt,U,S,0,0%,0,$0.00,$0.00,0%
+"",Singing Zip Hoodie,T-Shirt,U,M,0,0%,0,$0.00,$0.00,0%
+"",Singing Zip Hoodie,T-Shirt,U,L,0,0%,0,$0.00,$0.00,0%
+"",Singing Zip Hoodie,T-Shirt,U,XL,0,0%,0,$0.00,$0.00,0%
+"",Singing Zip Hoodie,T-Shirt,U,2XL,0,0%,0,$0.00,$0.00,0%
+"",Singing Zip Hoodie,T-Shirt,U,3XL,0,0%,0,$0.00,$0.00,0%
+SUBTOTAL,Singing Zip Hoodie,T-Shirt,U,"",0,0%,0,$0.00,$0.00,0%
+
+"",Anarchy Hoodie - TOUR,Pullover Hoodie,U,S,28,12%,0,$109.99,"$3,079.72",12%
+"",Anarchy Hoodie - TOUR,Pullover Hoodie,U,M,47,20%,0,$109.99,"$5,169.53",20%
+"",Anarchy Hoodie - TOUR,Pullover Hoodie,U,L,54,23%,0,$109.99,"$5,939.46",23%
+"",Anarchy Hoodie - TOUR,Pullover Hoodie,U,XL,55,23%,0,$109.99,"$6,049.45",23%
+"",Anarchy Hoodie - TOUR,Pullover Hoodie,U,2XL,48,20%,0,$109.99,"$5,279.52",20%
+"",Anarchy Hoodie - TOUR,Pullover Hoodie,U,3XL,4,2%,0,$109.99,$439.96,2%
+SUBTOTAL,Anarchy Hoodie - TOUR,Pullover Hoodie,U,"",236,4%,0,$109.99,"$25,957.64",9%
+
+TOTAL APPAREL,"","","","",4690,83%,2,"","$249,058.50",91%
+
+
+OTHER
+SKU,Name,Type,Sex,Size,Sold,Unit % of Total,Comp,Avg. Price,Gross Rev,% of Total
+JELROL-HAT2006,Distressed Denim Hat,Hat - Other,U,,284,5%,0,$50.09,"$14,225.56",5%
+JELROL-ACC1048,Tall Boy Koozie,Koozie,U,,573,10%,0,$11.98,"$6,864.54",3%
+JELROL-ACC1049,DREAMS DONT DIE METALLIC TOTE,Bag,U,,100,2%,0,$39.20,"$3,920.00",1%
+
+TOTAL OTHER,"","","","",957,17%,0,"","$25,010.10",9%
+
+
+MUSIC
+UPC,Name,Type,Sex,Size,Sold,Unit % of Total,Comp,Avg. Price,Gross Rev,% of Total
+
+TOTAL MUSIC,"","","","",0,0%,0,"",$0.00,0%
+
+GRAND TOTAL,"","","","",5647,"",2,"","$274,068.60"

@@ -1,0 +1,53 @@
+# ===============================================================
+# Manhead Handoff - Cloud Paths Config (DO Droplet)
+# All paths are ABSOLUTE under /opt/manhead/
+# ===============================================================
+
+# Inputs: Raw files (drop files here)
+path_sales_pattern = /opt/manhead/CSVs/add_sales_reports_files_here/*.csv
+path_tour_pattern = /opt/manhead/CSVs/add_tour_summary_files_here/*.csv
+
+# Outputs: Consolidation pipeline
+merch_path_out = /opt/manhead/CSVs/merged_files/combined_sales_report.csv
+tour_path_out = /opt/manhead/CSVs/merged_files/combined_tour_report.csv
+merged_path = /opt/manhead/CSVs/merged_files/merged_merch_tour.csv
+final_out = /opt/manhead/CSVs/merged_files/merged_with_weather.csv
+consolidation_stats_json = /opt/manhead/CSVs/merged_files/consolidation_stats.json
+
+# Training datasets (master + backup)
+master_training_dataset = /opt/manhead/CSVs/merged_files/Training_dataset_continuosly_updated.csv
+master_training_dataset_backup = /opt/manhead/CSVs/merged_files/Training_dataset.__backup__.csv
+
+# Features / enrichment inputs
+spotify_csv = /opt/manhead/CSVs/features/spotify_monthly_listeners.csv
+artist_meta_csv = /opt/manhead/CSVs/features/artist_metadata.csv
+venue_meta_csv = /opt/manhead/CSVs/features/venue_holiday_data.csv
+
+# Geo + caching
+coords_path = /opt/manhead/Python_scripts/zip_coordinates.txt
+geocoding_cache_name = /opt/manhead/Python_scripts/cache/geocoding_cache
+weather_cache_name = /opt/manhead/Python_scripts/cache/.cache
+
+# Flask app (prediction API + artifacts)
+flask_artifacts_dir = /opt/manhead/Flask/
+last_train_metrics_json = /opt/manhead/Flask/last_train_metrics.json
+model_joblib = /opt/manhead/Flask/model_retrained.joblib
+scaler_joblib = /opt/manhead/Flask/robust_scaler_retrained.joblib
+encoder_joblib = /opt/manhead/Flask/label_encoder_retrained.joblib
+
+# Flask runtime folders
+flask_templates_dir = /opt/manhead/Flask/templates
+flask_downloads_dir = /opt/manhead/outputs/flask_downloads
+flask_logs_dir = /opt/manhead/logs
+
+# Flask port (gunicorn binds to this internally; nginx proxies to it)
+flask_port = 5001
+
+# Scripts (entry points)
+consolidation_script_path = /opt/manhead/Python_scripts/consolidate_pipeline.py
+train_model_script_path = /opt/manhead/Python_scripts/train_model.py
+
+# Revenue per Head
+revph_script_path = /opt/manhead/Python_scripts/revenue_per_head.py
+revph_output_csv = /opt/manhead/outputs/predicted_sales_with_revenue_per_head.csv
+revph_summary_json = /opt/manhead/outputs/revenue_per_head_summary.json

@@ -1,0 +1,34 @@
+{
+  "trained_at": "2026-02-13T13:11:28",
+  "input_csv": "C:\\Users\\SwanandSuryakantBars\\repos\\Manhead_Handoff\\CSVs\\merged_files\\Training_dataset_continuosly_updated.csv",
+  "rows_total": 45803,
+  "rows_train": 36642,
+  "rows_test": 9161,
+  "rmse_test": 21.646744592297804,
+  "mae_test": 9.968726156678908,
+  "r2_test": 0.710944098885838,
+  "adj_r2_test": 0.7103749667243793,
+  "cat_features": [
+    "artistName",
+    "Genre",
+    "Show Day",
+    "Show Month",
+    "Day of Week Num",
+    "HolidayStatus",
+    "venue name",
+    "venue city",
+    "venue state",
+    "productType",
+    "product size"
+  ],
+  "num_features": [
+    "attendance",
+    "product price",
+    "spotifyMonthlyListeners",
+    "Instagram",
+    "temperature_daily_mean",
+    "venue capacity",
+    "spotifyMissing"
+  ],
+  "artifact_dir": "C:\\Users\\SwanandSuryakantBars\\repos\\Manhead_Handoff\\Flask"
+}

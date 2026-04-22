@@ -1,0 +1,16 @@
+%_item_sales_per_category,Day of Week Num,Genre,HolidayStatus,Instagram,Show Day,Show Month,artistName,attendance,merch category,predicted_sales_quantity,product price,product size,productType,spotifyMonthlyListeners,temperature_daily_mean,venue capacity,venue city,venue country,venue name,venue postalCode,venue state,$/head
+20.0,2,Country,0,384556,7,5,Lukas Nelson (MH),2741,APPAREL,4,60,S,Sweatshirt,1114929,15.9,12000,Sioux Falls,United States,Denny Sanford Premier Center,57104,SD,0.438
+20.0,2,Country,0,384556,7,5,Lukas Nelson (MH),2741,APPAREL,4,60,M,Sweatshirt,1114929,15.9,12000,Sioux Falls,United States,Denny Sanford Premier Center,57104,SD,0.438
+20.0,2,Country,0,384556,7,5,Lukas Nelson (MH),2741,APPAREL,4,60,L,Sweatshirt,1114929,15.9,12000,Sioux Falls,United States,Denny Sanford Premier Center,57104,SD,0.438
+20.0,2,Country,0,384556,7,5,Lukas Nelson (MH),2741,APPAREL,4,60,XL,Sweatshirt,1114929,15.9,12000,Sioux Falls,United States,Denny Sanford Premier Center,57104,SD,0.438
+20.0,2,Country,0,384556,7,5,Lukas Nelson (MH),2741,APPAREL,4,60,2XL,Sweatshirt,1114929,15.9,12000,Sioux Falls,United States,Denny Sanford Premier Center,57104,SD,0.438
+21.43,3,Punk,0,265400,18,9,The Interrupters (MH),739,APPAREL,3,60,S,Sweatshirt,789746,20.19,700,Buffalo,United States,The Town Ballroom,14203,NY,1.137
+21.43,3,Punk,0,265400,18,9,The Interrupters (MH),739,APPAREL,3,60,M,Sweatshirt,789746,20.19,700,Buffalo,United States,The Town Ballroom,14203,NY,1.137
+21.43,3,Punk,0,265400,18,9,The Interrupters (MH),739,APPAREL,3,60,L,Sweatshirt,789746,20.19,700,Buffalo,United States,The Town Ballroom,14203,NY,1.137
+21.43,3,Punk,0,265400,18,9,The Interrupters (MH),739,APPAREL,3,60,XL,Sweatshirt,789746,20.19,700,Buffalo,United States,The Town Ballroom,14203,NY,1.137
+14.29,3,Punk,0,265400,18,9,The Interrupters (MH),739,APPAREL,2,60,2XL,Sweatshirt,789746,20.19,700,Buffalo,United States,The Town Ballroom,14203,NY,1.137
+16.67,5,Rock,0,195000,17,10,Garbage (MH),817,Garbage Band Photo 2025 Tour Hoodie,3,74,S,Pullover Hoodie,36141826,10.48,2606,Boise,United States,Knitting Factory,83702,ID,1.63
+22.22,5,Rock,0,195000,17,10,Garbage (MH),817,Garbage Band Photo 2025 Tour Hoodie,4,74,M,Pullover Hoodie,36141826,10.48,2606,Boise,United States,Knitting Factory,83702,ID,1.63
+22.22,5,Rock,0,195000,17,10,Garbage (MH),817,Garbage Band Photo 2025 Tour Hoodie,4,74,L,Pullover Hoodie,36141826,10.48,2606,Boise,United States,Knitting Factory,83702,ID,1.63
+22.22,5,Rock,0,195000,17,10,Garbage (MH),817,Garbage Band Photo 2025 Tour Hoodie,4,74,XL,Pullover Hoodie,36141826,10.48,2606,Boise,United States,Knitting Factory,83702,ID,1.63
+16.67,5,Rock,0,195000,17,10,Garbage (MH),817,Garbage Band Photo 2025 Tour Hoodie,3,74,2XL,Pullover Hoodie,36141826,10.48,2606,Boise,United States,Knitting Factory,83702,ID,1.63

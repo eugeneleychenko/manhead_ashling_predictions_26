@@ -1,0 +1,32 @@
+APPAREL
+SKU,Name,Type,Sex,Size,Sold,Unit % of Total,Comp,Avg. Price,Gross Rev,% of Total
+LAINEY-T1014-S, Heart Like a Truck Natural Tee ,T-Shirt,U,S,1,2%,0,$50.00,$50.00,2%
+LAINEY-T1014-M, Heart Like a Truck Natural Tee ,T-Shirt,U,M,14,30%,1,$50.00,$700.00,30%
+LAINEY-T1014-L, Heart Like a Truck Natural Tee ,T-Shirt,U,L,15,33%,1,$50.00,$750.00,33%
+LAINEY-T1014-XL, Heart Like a Truck Natural Tee ,T-Shirt,U,XL,13,28%,0,$50.00,$650.00,28%
+LAINEY-T1014-XXL, Heart Like a Truck Natural Tee ,T-Shirt,U,2XL,3,7%,0,$50.00,$150.00,7%
+SUBTOTAL, Heart Like a Truck Natural Tee ,T-Shirt,U,"",46,43%,2,$50.00,"$2,300.00",51%
+
+LAINEY-T1020-S,Watermelon Moonshine Tie-Dye Tee,T-Shirt,U,S,5,13%,0,$50.00,$250.00,13%
+LAINEY-T1020-M,Watermelon Moonshine Tie-Dye Tee,T-Shirt,U,M,6,15%,1,$50.00,$300.00,15%
+LAINEY-T1020-L,Watermelon Moonshine Tie-Dye Tee,T-Shirt,U,L,14,36%,4,$50.00,$700.00,36%
+LAINEY-T1020-XL,Watermelon Moonshine Tie-Dye Tee,T-Shirt,U,XL,11,28%,3,$50.00,$550.00,28%
+LAINEY-T1020-XXL,Watermelon Moonshine Tie-Dye Tee,T-Shirt,U,2XL,3,8%,2,$50.00,$150.00,8%
+SUBTOTAL,Watermelon Moonshine Tie-Dye Tee,T-Shirt,U,"",39,36%,10,$50.00,"$1,950.00",44%
+
+TOTAL APPAREL,"","","","",85,79%,12,"","$4,250.00",95%
+
+
+OTHER
+SKU,Name,Type,Sex,Size,Sold,Unit % of Total,Comp,Avg. Price,Gross Rev,% of Total
+LAINEY-ACC1011,Middle Finger Koozie 23',Koozie,"",,22,21%,0,$10.00,$220.00,5%
+
+TOTAL OTHER,"","","","",22,21%,0,"",$220.00,5%
+
+
+MUSIC
+UPC,Name,Type,Sex,Size,Sold,Unit % of Total,Comp,Avg. Price,Gross Rev,% of Total
+
+TOTAL MUSIC,"","","","",0,0%,0,"",$0.00,0%
+
+GRAND TOTAL,"","","","",107,"",12,"","$4,470.00"

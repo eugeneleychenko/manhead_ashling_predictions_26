@@ -1,0 +1,68 @@
+APPAREL
+SKU,Name,Type,Sex,Size,Sold,Unit % of Total,Comp,Avg. Price,Gross Rev,% of Total
+AIRS-T1017-S,Balloon Arch Tee,T-Shirt,U,S,2,6%,0,$40.00,$80.00,6%
+AIRS-T1017-M,Balloon Arch Tee,T-Shirt,U,M,9,26%,0,$40.00,$360.00,26%
+AIRS-T1017-L,Balloon Arch Tee,T-Shirt,U,L,8,24%,1,$40.00,$320.00,24%
+AIRS-T1017-XL,Balloon Arch Tee,T-Shirt,U,XL,7,21%,0,$40.00,$280.00,21%
+AIRS-T1017-XXL,Balloon Arch Tee,T-Shirt,U,2XL,3,9%,0,$40.00,$120.00,9%
+AIRS-T1017-3XL,Balloon Arch Tee,T-Shirt,U,3XL,5,15%,0,$40.00,$200.00,15%
+SUBTOTAL,Balloon Arch Tee,T-Shirt,U,"",34,19%,1,$40.00,"$1,360.00",16%
+
+AIRS-T1018-S,Jazzy Balloon Tee,T-Shirt,U,S,1,3%,0,$40.00,$40.00,3%
+AIRS-T1018-M,Jazzy Balloon Tee,T-Shirt,U,M,3,9%,0,$40.00,$120.00,9%
+AIRS-T1018-L,Jazzy Balloon Tee,T-Shirt,U,L,5,16%,0,$40.00,$200.00,16%
+AIRS-T1018-XL,Jazzy Balloon Tee,T-Shirt,U,XL,13,41%,1,$40.00,$520.00,41%
+AIRS-T1018-XXL,Jazzy Balloon Tee,T-Shirt,U,2XL,9,28%,0,$40.00,$360.00,28%
+AIRS-T1018-3XL,Jazzy Balloon Tee,T-Shirt,U,3XL,1,3%,0,$40.00,$40.00,3%
+SUBTOTAL,Jazzy Balloon Tee,T-Shirt,U,"",32,18%,1,$40.00,"$1,280.00",15%
+
+AIRS-T1010-S,Est. 1975 Guitar T-Shirt,T-Shirt,M,S,2,4%,0,$40.00,$80.00,4%
+AIRS-T1010-M,Est. 1975 Guitar T-Shirt,T-Shirt,M,M,6,13%,0,$40.00,$240.00,13%
+AIRS-T1010-L,Est. 1975 Guitar T-Shirt,T-Shirt,M,L,11,23%,0,$40.00,$440.00,23%
+AIRS-T1010-XL,Est. 1975 Guitar T-Shirt,T-Shirt,M,XL,15,32%,0,$40.00,$600.00,32%
+AIRS-T1010-XXL,Est. 1975 Guitar T-Shirt,T-Shirt,M,2XL,8,17%,0,$40.00,$320.00,17%
+AIRS-T1010-3XL,Est. 1975 Guitar T-Shirt,T-Shirt,M,3XL,5,11%,0,$40.00,$200.00,11%
+SUBTOTAL,Est. 1975 Guitar T-Shirt,T-Shirt,M,"",47,26%,0,$40.00,"$1,880.00",22%
+
+AIRS-T1016-S,Women's V-Neck T-Shirt,T-Shirt,F,S,3,16%,0,$40.00,$120.00,16%
+AIRS-T1016-M,Women's V-Neck T-Shirt,T-Shirt,F,M,7,37%,0,$40.00,$280.00,37%
+AIRS-T1016-L,Women's V-Neck T-Shirt,T-Shirt,F,L,4,21%,0,$40.00,$160.00,21%
+AIRS-T1016-XL,Women's V-Neck T-Shirt,T-Shirt,F,XL,3,16%,0,$40.00,$120.00,16%
+AIRS-T1016-XXL,Women's V-Neck T-Shirt,T-Shirt,F,2XL,2,11%,0,$40.00,$80.00,11%
+SUBTOTAL,Women's V-Neck T-Shirt,T-Shirt,F,"",19,11%,0,$40.00,$760.00,9%
+
+AIRS-TOUR-HOOD1003-S,Balloon Arch Hoodie,Sweatshirt,U,S,1,11%,0,$75.00,$75.00,11%
+AIRS-TOUR-HOOD1003-M,Balloon Arch Hoodie,Sweatshirt,U,M,1,11%,0,$75.00,$75.00,11%
+AIRS-TOUR-HOOD1003-L,Balloon Arch Hoodie,Sweatshirt,U,L,1,11%,0,$75.00,$75.00,11%
+AIRS-TOUR-HOOD1003-XL,Balloon Arch Hoodie,Sweatshirt,U,XL,2,22%,0,$75.00,$150.00,22%
+AIRS-TOUR-HOOD1003-XXL,Balloon Arch Hoodie,Sweatshirt,U,2XL,1,11%,0,$75.00,$75.00,11%
+AIRS-TOUR-HOOD1003-3XL,Balloon Arch Hoodie,Sweatshirt,U,3XL,3,33%,0,$75.00,$225.00,33%
+SUBTOTAL,Balloon Arch Hoodie,Sweatshirt,U,"",9,5%,0,$75.00,$675.00,8%
+
+AIRS-JACK1001-S,50th Anniversary Denim Jacket,Jacket,U,S,5,36%,0,$150.00,$750.00,36%
+AIRS-JACK1001-M,50th Anniversary Denim Jacket,Jacket,U,M,3,21%,0,$150.00,$450.00,21%
+AIRS-JACK1001-L,50th Anniversary Denim Jacket,Jacket,U,L,1,7%,0,$150.00,$150.00,7%
+AIRS-JACK1001-XL,50th Anniversary Denim Jacket,Jacket,U,XL,3,21%,0,$150.00,$450.00,21%
+AIRS-JACK1001-XXL,50th Anniversary Denim Jacket,Jacket,U,2XL,2,14%,0,$150.00,$300.00,14%
+SUBTOTAL,50th Anniversary Denim Jacket,Jacket,U,"",14,8%,0,$150.00,"$2,100.00",25%
+
+TOTAL APPAREL,"","","","",155,87%,2,"","$8,055.00",95%
+
+
+OTHER
+SKU,Name,Type,Sex,Size,Sold,Unit % of Total,Comp,Avg. Price,Gross Rev,% of Total
+AIRS-ACC1008,Distressed Logo Tote,Bag,"",,10,6%,0,$30.00,$300.00,4%
+AIRS-ACC1009,Jazzy Balloon Magnet,Magnet,"",,10,6%,0,$10.00,$100.00,1%
+AIRS-TOUR-ACC1001,Red Logo Lanyards '24,Lanyard,"",,3,2%,0,$10.00,$30.00,0%
+AIRS-ACC1005,Logo Bandana 24',Bandana,"",,0,0%,0,$0.00,$0.00,0%
+AIRS-ACC1006,KOALA MAGNET 24',Accessories,"",,0,0%,0,$0.00,$0.00,0%
+
+TOTAL OTHER,"","","","",23,13%,0,"",$430.00,5%
+
+
+MUSIC
+UPC,Name,Type,Sex,Size,Sold,Unit % of Total,Comp,Avg. Price,Gross Rev,% of Total
+
+TOTAL MUSIC,"","","","",0,0%,0,"",$0.00,0%
+
+GRAND TOTAL,"","","","",178,"",2,"","$8,485.00"

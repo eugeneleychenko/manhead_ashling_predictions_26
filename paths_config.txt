@@ -1,0 +1,99 @@
+# ===============================================================
+# Manhead Handoff - Paths Config
+# All paths are RELATIVE to the repo root (where this file lives)
+# ===============================================================
+
+# Inputs: Raw files (drop files here)
+
+# Where the raw merch sales CSV files live
+path_sales_pattern = CSVs/add_sales_reports_files_here/*.csv
+
+# Where the raw tour summary CSV files live
+path_tour_pattern = CSVs/add_tour_summary_files_here/*.csv
+
+
+# Outputs: Consolidation pipeline
+
+# Where to save the combined merch sales file
+merch_path_out = CSVs/merged_files/combined_sales_report.csv
+
+# Where to save the combined tour summary file
+tour_path_out = CSVs/merged_files/combined_tour_report.csv
+
+# Where to save the merged merch + tour file
+merged_path = CSVs/merged_files/merged_merch_tour.csv
+
+# Final fully enriched file that the model will use
+final_out = CSVs/merged_files/merged_with_weather.csv
+
+# Consolidation stats JSON (written by consolidation pipeline)
+consolidation_stats_json = CSVs/merged_files/consolidation_stats.json
+
+
+# Training datasets (master + backup)
+
+# Master training dataset (continuously updated)
+master_training_dataset = CSVs/merged_files/Training_dataset_continuosly_updated.csv
+
+# Backup dataset
+master_training_dataset_backup = CSVs/merged_files/Training_dataset.__backup__.csv
+
+
+# Features / enrichment inputs
+
+# Spotify monthly listeners CSV
+spotify_csv = CSVs/features/spotify_monthly_listeners.csv
+
+# Artist metadata (Instagram + Genre) CSV
+artist_meta_csv = CSVs/features/artist_metadata.csv
+
+# Venue + holiday metadata CSV (put this file in /features)
+venue_meta_csv = CSVs/features/venue_holiday_data.csv
+
+
+# Geo + caching (requests-cache)
+
+# ZIP/postal code -> lat/lon master file
+coords_path = Python_scripts/zip_coordinates.txt
+
+# requests-cache cache basenames
+geocoding_cache_name = Python_scripts/cache/geocoding_cache
+weather_cache_name = Python_scripts/cache/.cache
+
+
+# Flask app (prediction API + artifacts)
+
+# Flask artifacts (joblibs + metrics)
+flask_artifacts_dir = Flask/
+last_train_metrics_json = Flask/last_train_metrics.json
+model_joblib = Flask/model_retrained.joblib
+scaler_joblib = Flask/robust_scaler_retrained.joblib
+encoder_joblib = Flask/label_encoder_retrained.joblib
+
+# Flask runtime folders
+flask_templates_dir = Flask/templates
+flask_downloads_dir = outputs/flask_downloads
+flask_logs_dir = logs
+
+# Flask port
+flask_port = 5000
+
+
+# Scripts (entry points)
+
+# Consolidation pipeline script
+consolidation_script_path = Python_scripts/consolidate_pipeline.py
+
+# Training script
+train_model_script_path = Python_scripts/train_model.py
+
+
+# Revenue per Head
+
+# Step 5 script
+revph_script_path = Python_scripts/revenue_per_head.py
+
+# Step 5 outputs
+revph_output_csv = outputs/predicted_sales_with_revenue_per_head.csv
+revph_summary_json = outputs/revenue_per_head_summary.json
+

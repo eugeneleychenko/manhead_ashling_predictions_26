@@ -1,0 +1,59 @@
+APPAREL
+SKU,Name,Type,Sex,Size,Sold,Unit % of Total,Comp,Avg. Price,Gross Rev,% of Total
+GAR-T2022-S,Octopus Garbage 2025 Tour T-Shirt,T-Shirt,U,S,10,7%,0,$40.00,$400.00,7%
+GAR-T2022-M,Octopus Garbage 2025 Tour T-Shirt,T-Shirt,U,M,28,21%,0,$40.00,"$1,120.00",21%
+GAR-T2022-L,Octopus Garbage 2025 Tour T-Shirt,T-Shirt,U,L,44,33%,0,$40.00,"$1,760.00",33%
+GAR-T2022-XL,Octopus Garbage 2025 Tour T-Shirt,T-Shirt,U,XL,35,26%,0,$40.00,"$1,400.00",26%
+GAR-T2022-XXL,Octopus Garbage 2025 Tour T-Shirt,T-Shirt,U,2XL,18,13%,0,$40.00,$720.00,13%
+SUBTOTAL,Octopus Garbage 2025 Tour T-Shirt,T-Shirt,U,"",135,23%,0,$40.00,"$5,400.00",24%
+
+GAR-T2021-S,Shirley Garbage 2025 Tour T-Shirt,T-Shirt,U,S,23,15%,0,$40.00,$920.00,15%
+GAR-T2021-M,Shirley Garbage 2025 Tour T-Shirt,T-Shirt,U,M,33,21%,0,$40.00,"$1,320.00",21%
+GAR-T2021-L,Shirley Garbage 2025 Tour T-Shirt,T-Shirt,U,L,43,28%,0,$40.00,"$1,720.00",28%
+GAR-T2021-XL,Shirley Garbage 2025 Tour T-Shirt,T-Shirt,U,XL,27,17%,0,$40.00,"$1,080.00",17%
+GAR-T2021-XXL,Shirley Garbage 2025 Tour T-Shirt,T-Shirt,U,2XL,29,19%,0,$40.00,"$1,160.00",19%
+SUBTOTAL,Shirley Garbage 2025 Tour T-Shirt,T-Shirt,U,"",155,27%,0,$40.00,"$6,200.00",28%
+
+GAR-T2024-S,Shirley Lightning Face T-Shirt ,T-Shirt,U,S,9,16%,0,$40.00,$360.00,16%
+GAR-T2024-M,Shirley Lightning Face T-Shirt ,T-Shirt,U,M,10,17%,0,$40.00,$400.00,17%
+GAR-T2024-L,Shirley Lightning Face T-Shirt ,T-Shirt,U,L,15,26%,0,$40.00,$600.00,26%
+GAR-T2024-XL,Shirley Lightning Face T-Shirt ,T-Shirt,U,XL,12,21%,0,$40.00,$480.00,21%
+GAR-T2024-XXL,Shirley Lightning Face T-Shirt ,T-Shirt,U,2XL,12,21%,0,$40.00,$480.00,21%
+SUBTOTAL,Shirley Lightning Face T-Shirt ,T-Shirt,U,"",58,10%,0,$40.00,"$2,320.00",10%
+
+GAR-T2023-S,Screamin' Shirley Band Photo T-Shirt,T-Shirt,U,S,0,0%,0,$0.00,$0.00,0%
+GAR-T2023-M,Screamin' Shirley Band Photo T-Shirt,T-Shirt,U,M,13,16%,0,$40.00,$520.00,16%
+GAR-T2023-L,Screamin' Shirley Band Photo T-Shirt,T-Shirt,U,L,41,51%,0,$40.00,"$1,640.00",51%
+GAR-T2023-XL,Screamin' Shirley Band Photo T-Shirt,T-Shirt,U,XL,16,20%,0,$40.00,$640.00,20%
+GAR-T2023-XXL,Screamin' Shirley Band Photo T-Shirt,T-Shirt,U,2XL,10,13%,0,$40.00,$400.00,13%
+SUBTOTAL,Screamin' Shirley Band Photo T-Shirt,T-Shirt,U,"",80,14%,0,$40.00,"$3,200.00",14%
+
+GAR-HOOD1012-S,Garbage Band Photo 2025 Tour Hoodie,Pullover Hoodie,U,S,2,7%,0,$70.00,$140.00,7%
+GAR-HOOD1012-M,Garbage Band Photo 2025 Tour Hoodie,Pullover Hoodie,U,M,9,31%,0,$70.00,$630.00,31%
+GAR-HOOD1012-L,Garbage Band Photo 2025 Tour Hoodie,Pullover Hoodie,U,L,8,28%,0,$70.00,$560.00,28%
+GAR-HOOD1012-XL,Garbage Band Photo 2025 Tour Hoodie,Pullover Hoodie,U,XL,4,14%,0,$70.00,$280.00,14%
+GAR-HOOD1012-XXL,Garbage Band Photo 2025 Tour Hoodie,Pullover Hoodie,U,2XL,6,21%,0,$70.00,$420.00,21%
+SUBTOTAL,Garbage Band Photo 2025 Tour Hoodie,Pullover Hoodie,U,"",29,5%,0,$70.00,"$2,030.00",9%
+
+GAR-ACC1064,Octopus Hat,Hat,U,One-Size,14,100%,0,$35.00,$490.00,100%
+SUBTOTAL,Octopus Hat,Hat,U,"",14,2%,0,$35.00,$490.00,2%
+
+TOTAL APPAREL,"","","","",471,81%,0,"","$19,640.00",89%
+
+
+OTHER
+SKU,Name,Type,Sex,Size,Sold,Unit % of Total,Comp,Avg. Price,Gross Rev,% of Total
+GAR-ACC1066,Garbage Band Photo Tote,Bag,"",,29,5%,0,$37.45,"$1,086.05",5%
+GAR-ACC1065,2025 North American Tour Poster ,Poster,"",,44,8%,0,$16.05,$706.20,3%
+GAR-ACC1063,Octopus Keychain,Keychain,"",,25,4%,0,$16.05,$401.25,2%
+
+TOTAL OTHER,"","","","",98,17%,0,"","$2,193.50",10%
+
+
+MUSIC
+UPC,Name,Type,Sex,Size,Sold,Unit % of Total,Comp,Avg. Price,Gross Rev,% of Total
+GAR-VIN1008,Vinyl Let All That We Imagine Be The Light,Vinyl,"",,10,2%,0,$32.10,$321.00,1%
+
+TOTAL MUSIC,"","","","",10,2%,0,"",$321.00,1%
+
+GRAND TOTAL,"","","","",579,"",0,"","$22,154.50"

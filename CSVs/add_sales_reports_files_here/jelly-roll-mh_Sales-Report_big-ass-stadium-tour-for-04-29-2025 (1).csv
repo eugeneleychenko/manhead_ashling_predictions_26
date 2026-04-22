@@ -1,0 +1,68 @@
+APPAREL
+SKU,Name,Type,Sex,Size,Sold,Unit % of Total,Comp,Avg. Price,Gross Rev,% of Total
+JELROL-T10079-S,BEAUTIFULLY BROKEN SINGING TEE,T-Shirt,U,S,139,11%,0,$49.80,"$6,922.20",11%
+JELROL-T10079-M,BEAUTIFULLY BROKEN SINGING TEE,T-Shirt,U,M,239,19%,0,$49.80,"$11,902.20",19%
+JELROL-T10079-L,BEAUTIFULLY BROKEN SINGING TEE,T-Shirt,U,L,294,23%,1,$49.80,"$14,641.20",23%
+JELROL-T10079-XL,BEAUTIFULLY BROKEN SINGING TEE,T-Shirt,U,XL,317,25%,0,$49.80,"$15,786.60",25%
+JELROL-T10079-XXL,BEAUTIFULLY BROKEN SINGING TEE,T-Shirt,U,2XL,180,14%,0,$49.80,"$8,964.00",14%
+JELROL-T10079-3XL,BEAUTIFULLY BROKEN SINGING TEE,T-Shirt,U,3XL,101,8%,0,$49.80,"$5,029.80",8%
+SUBTOTAL,BEAUTIFULLY BROKEN SINGING TEE,T-Shirt,U,"",1270,28%,1,$49.80,"$63,246.00",25%
+
+JELROL-T10080-S,Beautifully Broken Face Tee,T-Shirt,U,S,73,10%,0,$49.80,"$3,635.40",10%
+JELROL-T10080-M,Beautifully Broken Face Tee,T-Shirt,U,M,134,18%,0,$49.80,"$6,673.20",18%
+JELROL-T10080-L,Beautifully Broken Face Tee,T-Shirt,U,L,189,26%,0,$49.80,"$9,412.20",26%
+JELROL-T10080-XL,Beautifully Broken Face Tee,T-Shirt,U,XL,167,23%,0,$49.80,"$8,316.60",23%
+JELROL-T10080-XXL,Beautifully Broken Face Tee,T-Shirt,U,2XL,125,17%,0,$49.80,"$6,225.00",17%
+JELROL-T10080-3XL,Beautifully Broken Face Tee,T-Shirt,U,3XL,50,7%,0,$49.80,"$2,490.00",7%
+SUBTOTAL,Beautifully Broken Face Tee,T-Shirt,U,"",738,16%,0,$49.80,"$36,752.40",14%
+
+JELROL-T10081-S,DREAMS DONT DIE TEE,T-Shirt,U,S,95,13%,0,$49.80,"$4,731.00",13%
+JELROL-T10081-M,DREAMS DONT DIE TEE,T-Shirt,U,M,164,22%,1,$49.80,"$8,167.20",22%
+JELROL-T10081-L,DREAMS DONT DIE TEE,T-Shirt,U,L,201,27%,0,$49.80,"$10,009.80",27%
+JELROL-T10081-XL,DREAMS DONT DIE TEE,T-Shirt,U,XL,198,27%,0,$49.80,"$9,860.40",27%
+JELROL-T10081-XXL,DREAMS DONT DIE TEE,T-Shirt,U,2XL,86,12%,0,$49.80,"$4,282.80",12%
+JELROL-T10081-3XL,DREAMS DONT DIE TEE,T-Shirt,U,3XL,0,0%,0,$0.00,$0.00,0%
+SUBTOTAL,DREAMS DONT DIE TEE,T-Shirt,U,"",744,16%,1,$49.80,"$37,051.20",14%
+
+JELROL-T10082-S,EAGLE TEE,T-Shirt,U,S,83,13%,0,$49.80,"$4,133.40",13%
+JELROL-T10082-M,EAGLE TEE,T-Shirt,U,M,131,20%,0,$49.80,"$6,523.80",20%
+JELROL-T10082-L,EAGLE TEE,T-Shirt,U,L,175,27%,0,$49.80,"$8,715.00",27%
+JELROL-T10082-XL,EAGLE TEE,T-Shirt,U,XL,124,19%,1,$49.80,"$6,175.20",19%
+JELROL-T10082-XXL,EAGLE TEE,T-Shirt,U,2XL,108,17%,0,$49.80,"$5,378.40",17%
+JELROL-T10082-3XL,EAGLE TEE,T-Shirt,U,3XL,33,5%,0,$49.80,"$1,643.40",5%
+SUBTOTAL,EAGLE TEE,T-Shirt,U,"",654,14%,1,$49.80,"$32,569.20",13%
+
+"",Singing Zip Hoodie,T-Shirt,U,S,0,0%,0,$0.00,$0.00,0%
+"",Singing Zip Hoodie,T-Shirt,U,M,0,0%,0,$0.00,$0.00,0%
+"",Singing Zip Hoodie,T-Shirt,U,L,0,0%,0,$0.00,$0.00,0%
+"",Singing Zip Hoodie,T-Shirt,U,XL,0,0%,0,$0.00,$0.00,0%
+"",Singing Zip Hoodie,T-Shirt,U,2XL,0,0%,0,$0.00,$0.00,0%
+"",Singing Zip Hoodie,T-Shirt,U,3XL,0,0%,0,$0.00,$0.00,0%
+SUBTOTAL,Singing Zip Hoodie,T-Shirt,U,"",0,0%,0,$0.00,$0.00,0%
+
+"",Anarchy Hoodie - TOUR,Pullover Hoodie,U,S,57,9%,0,$109.33,"$6,231.81",9%
+"",Anarchy Hoodie - TOUR,Pullover Hoodie,U,M,113,18%,0,$109.33,"$12,354.29",18%
+"",Anarchy Hoodie - TOUR,Pullover Hoodie,U,L,142,23%,0,$109.33,"$15,524.86",23%
+"",Anarchy Hoodie - TOUR,Pullover Hoodie,U,XL,146,24%,0,$109.33,"$15,962.18",24%
+"",Anarchy Hoodie - TOUR,Pullover Hoodie,U,2XL,94,15%,0,$109.33,"$10,277.02",15%
+"",Anarchy Hoodie - TOUR,Pullover Hoodie,U,3XL,62,10%,0,$109.33,"$6,778.46",10%
+SUBTOTAL,Anarchy Hoodie - TOUR,Pullover Hoodie,U,"",614,14%,0,$109.33,"$67,128.62",26%
+
+TOTAL APPAREL,"","","","",4020,88%,3,"","$236,747.42",93%
+
+
+OTHER
+SKU,Name,Type,Sex,Size,Sold,Unit % of Total,Comp,Avg. Price,Gross Rev,% of Total
+JELROL-HAT2006,Distressed Denim Hat,Hat - Other,U,,298,7%,0,$49.80,"$14,840.40",6%
+JELROL-ACC1048,Tall Boy Koozie,Koozie,U,,178,4%,0,$11.91,"$2,119.98",1%
+JELROL-ACC1049,DREAMS DONT DIE METALLIC TOTE,Bag,U,,47,1%,0,$38.97,"$1,831.59",1%
+
+TOTAL OTHER,"","","","",523,12%,0,"","$18,791.97",7%
+
+
+MUSIC
+UPC,Name,Type,Sex,Size,Sold,Unit % of Total,Comp,Avg. Price,Gross Rev,% of Total
+
+TOTAL MUSIC,"","","","",0,0%,0,"",$0.00,0%
+
+GRAND TOTAL,"","","","",4543,"",3,"","$255,539.39"

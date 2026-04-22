@@ -1,0 +1,68 @@
+APPAREL
+SKU,Name,Type,Sex,Size,Sold,Unit % of Total,Comp,Avg. Price,Gross Rev,% of Total
+JELROL-T10079-S,BEAUTIFULLY BROKEN SINGING TEE,T-Shirt,U,S,212,10%,0,$49.80,"$10,557.60",10%
+JELROL-T10079-M,BEAUTIFULLY BROKEN SINGING TEE,T-Shirt,U,M,373,18%,0,$49.80,"$18,575.40",18%
+JELROL-T10079-L,BEAUTIFULLY BROKEN SINGING TEE,T-Shirt,U,L,545,26%,0,$49.80,"$27,141.00",26%
+JELROL-T10079-XL,BEAUTIFULLY BROKEN SINGING TEE,T-Shirt,U,XL,541,26%,0,$49.80,"$26,941.80",26%
+JELROL-T10079-XXL,BEAUTIFULLY BROKEN SINGING TEE,T-Shirt,U,2XL,262,13%,0,$49.80,"$13,047.60",13%
+JELROL-T10079-3XL,BEAUTIFULLY BROKEN SINGING TEE,T-Shirt,U,3XL,145,7%,0,$49.80,"$7,221.00",7%
+SUBTOTAL,BEAUTIFULLY BROKEN SINGING TEE,T-Shirt,U,"",2078,35%,0,$49.80,"$103,484.40",38%
+
+JELROL-T10080-S,Beautifully Broken Face Tee,T-Shirt,U,S,101,9%,0,$49.80,"$5,029.80",9%
+JELROL-T10080-M,Beautifully Broken Face Tee,T-Shirt,U,M,219,19%,0,$49.80,"$10,906.20",19%
+JELROL-T10080-L,Beautifully Broken Face Tee,T-Shirt,U,L,291,25%,0,$49.80,"$14,491.80",25%
+JELROL-T10080-XL,Beautifully Broken Face Tee,T-Shirt,U,XL,280,24%,0,$49.80,"$13,944.00",24%
+JELROL-T10080-XXL,Beautifully Broken Face Tee,T-Shirt,U,2XL,157,14%,0,$49.80,"$7,818.60",14%
+JELROL-T10080-3XL,Beautifully Broken Face Tee,T-Shirt,U,3XL,95,8%,0,$49.80,"$4,731.00",8%
+SUBTOTAL,Beautifully Broken Face Tee,T-Shirt,U,"",1143,19%,0,$49.80,"$56,921.40",21%
+
+JELROL-T10081-S,DREAMS DONT DIE TEE,T-Shirt,U,S,102,16%,0,$49.80,"$5,079.60",16%
+JELROL-T10081-M,DREAMS DONT DIE TEE,T-Shirt,U,M,144,22%,0,$49.80,"$7,171.20",22%
+JELROL-T10081-L,DREAMS DONT DIE TEE,T-Shirt,U,L,143,22%,0,$49.80,"$7,121.40",22%
+JELROL-T10081-XL,DREAMS DONT DIE TEE,T-Shirt,U,XL,150,23%,0,$49.80,"$7,470.00",23%
+JELROL-T10081-XXL,DREAMS DONT DIE TEE,T-Shirt,U,2XL,106,16%,0,$49.80,"$5,278.80",16%
+JELROL-T10081-3XL,DREAMS DONT DIE TEE,T-Shirt,U,3XL,0,0%,0,$0.00,$0.00,0%
+SUBTOTAL,DREAMS DONT DIE TEE,T-Shirt,U,"",645,11%,0,$49.80,"$32,121.00",12%
+
+JELROL-T10082-S,EAGLE TEE,T-Shirt,U,S,102,12%,0,$49.80,"$5,079.60",12%
+JELROL-T10082-M,EAGLE TEE,T-Shirt,U,M,161,19%,0,$49.80,"$8,017.80",19%
+JELROL-T10082-L,EAGLE TEE,T-Shirt,U,L,181,21%,0,$49.80,"$9,013.80",21%
+JELROL-T10082-XL,EAGLE TEE,T-Shirt,U,XL,221,25%,0,$49.80,"$11,005.80",25%
+JELROL-T10082-XXL,EAGLE TEE,T-Shirt,U,2XL,130,15%,0,$49.80,"$6,474.00",15%
+JELROL-T10082-3XL,EAGLE TEE,T-Shirt,U,3XL,75,9%,0,$49.80,"$3,735.00",9%
+SUBTOTAL,EAGLE TEE,T-Shirt,U,"",870,15%,0,$49.80,"$43,326.00",16%
+
+"",Singing Zip Hoodie,T-Shirt,U,S,0,0%,0,$0.00,$0.00,0%
+"",Singing Zip Hoodie,T-Shirt,U,M,0,0%,0,$0.00,$0.00,0%
+"",Singing Zip Hoodie,T-Shirt,U,L,0,0%,0,$0.00,$0.00,0%
+"",Singing Zip Hoodie,T-Shirt,U,XL,0,0%,0,$0.00,$0.00,0%
+"",Singing Zip Hoodie,T-Shirt,U,2XL,0,0%,0,$0.00,$0.00,0%
+"",Singing Zip Hoodie,T-Shirt,U,3XL,0,0%,0,$0.00,$0.00,0%
+SUBTOTAL,Singing Zip Hoodie,T-Shirt,U,"",0,0%,0,$0.00,$0.00,0%
+
+"",Anarchy Hoodie - TOUR,Pullover Hoodie,U,S,10,9%,0,$109.33,"$1,093.30",9%
+"",Anarchy Hoodie - TOUR,Pullover Hoodie,U,M,27,25%,0,$109.33,"$2,951.91",25%
+"",Anarchy Hoodie - TOUR,Pullover Hoodie,U,L,23,21%,0,$109.33,"$2,514.59",21%
+"",Anarchy Hoodie - TOUR,Pullover Hoodie,U,XL,23,21%,0,$109.33,"$2,514.59",21%
+"",Anarchy Hoodie - TOUR,Pullover Hoodie,U,2XL,15,14%,0,$109.33,"$1,639.95",14%
+"",Anarchy Hoodie - TOUR,Pullover Hoodie,U,3XL,9,8%,0,$109.33,$983.97,8%
+SUBTOTAL,Anarchy Hoodie - TOUR,Pullover Hoodie,U,"",107,2%,0,$109.33,"$11,698.31",4%
+
+TOTAL APPAREL,"","","","",4843,82%,0,"","$247,551.11",90%
+
+
+OTHER
+SKU,Name,Type,Sex,Size,Sold,Unit % of Total,Comp,Avg. Price,Gross Rev,% of Total
+JELROL-HAT2006,Distressed Denim Hat,Hat - Other,U,,338,6%,0,$49.80,"$16,832.40",6%
+JELROL-ACC1048,Tall Boy Koozie,Koozie,U,,680,12%,0,$11.91,"$8,098.80",3%
+JELROL-ACC1049,DREAMS DONT DIE METALLIC TOTE,Bag,U,,38,1%,0,$38.97,"$1,480.86",1%
+
+TOTAL OTHER,"","","","",1056,18%,0,"","$26,412.06",10%
+
+
+MUSIC
+UPC,Name,Type,Sex,Size,Sold,Unit % of Total,Comp,Avg. Price,Gross Rev,% of Total
+
+TOTAL MUSIC,"","","","",0,0%,0,"",$0.00,0%
+
+GRAND TOTAL,"","","","",5899,"",0,"","$273,963.17"

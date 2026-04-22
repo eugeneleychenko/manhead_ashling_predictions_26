@@ -1,0 +1,72 @@
+APPAREL
+SKU,Name,Type,Sex,Size,Sold,Unit % of Total,Comp,Avg. Price,Gross Rev,% of Total
+JELROL-T10079-S,BEAUTIFULLY BROKEN SINGING TEE,T-Shirt,U,S,114,11%,0,$46.00,"$5,244.00",11%
+JELROL-T10079-M,BEAUTIFULLY BROKEN SINGING TEE,T-Shirt,U,M,147,14%,0,$46.00,"$6,762.00",14%
+JELROL-T10079-L,BEAUTIFULLY BROKEN SINGING TEE,T-Shirt,U,L,279,26%,0,$46.00,"$12,834.00",26%
+JELROL-T10079-XL,BEAUTIFULLY BROKEN SINGING TEE,T-Shirt,U,XL,243,23%,0,$46.00,"$11,178.00",23%
+JELROL-T10079-XXL,BEAUTIFULLY BROKEN SINGING TEE,T-Shirt,U,2XL,165,16%,0,$46.00,"$7,590.00",16%
+JELROL-T10079-3XL,BEAUTIFULLY BROKEN SINGING TEE,T-Shirt,U,3XL,108,10%,0,$46.00,"$4,968.00",10%
+SUBTOTAL,BEAUTIFULLY BROKEN SINGING TEE,T-Shirt,U,"",1056,31%,0,$46.00,"$48,576.00",31%
+
+JELROL-T10080-S,Beautifully Broken Face Tee,T-Shirt,U,S,47,9%,0,$46.00,"$2,162.00",9%
+JELROL-T10080-M,Beautifully Broken Face Tee,T-Shirt,U,M,91,18%,0,$46.00,"$4,186.00",18%
+JELROL-T10080-L,Beautifully Broken Face Tee,T-Shirt,U,L,120,24%,0,$46.00,"$5,520.00",24%
+JELROL-T10080-XL,Beautifully Broken Face Tee,T-Shirt,U,XL,108,22%,0,$46.00,"$4,968.00",22%
+JELROL-T10080-XXL,Beautifully Broken Face Tee,T-Shirt,U,2XL,92,19%,0,$46.00,"$4,232.00",19%
+JELROL-T10080-3XL,Beautifully Broken Face Tee,T-Shirt,U,3XL,38,8%,0,$46.00,"$1,748.00",8%
+SUBTOTAL,Beautifully Broken Face Tee,T-Shirt,U,"",496,15%,0,$46.00,"$22,816.00",15%
+
+JELROL-T10081-S,DREAMS DONT DIE TEE,T-Shirt,U,S,62,13%,0,$46.00,"$2,852.00",13%
+JELROL-T10081-M,DREAMS DONT DIE TEE,T-Shirt,U,M,97,21%,0,$46.00,"$4,462.00",21%
+JELROL-T10081-L,DREAMS DONT DIE TEE,T-Shirt,U,L,98,21%,0,$46.00,"$4,508.00",21%
+JELROL-T10081-XL,DREAMS DONT DIE TEE,T-Shirt,U,XL,100,22%,0,$46.00,"$4,600.00",22%
+JELROL-T10081-XXL,DREAMS DONT DIE TEE,T-Shirt,U,2XL,80,17%,0,$46.00,"$3,680.00",17%
+JELROL-T10081-3XL,DREAMS DONT DIE TEE,T-Shirt,U,3XL,26,6%,0,$46.00,"$1,196.00",6%
+SUBTOTAL,DREAMS DONT DIE TEE,T-Shirt,U,"",463,14%,0,$46.00,"$21,298.00",14%
+
+JELROL-T10082-S,EAGLE TEE,T-Shirt,U,S,56,12%,0,$46.00,"$2,576.00",12%
+JELROL-T10082-M,EAGLE TEE,T-Shirt,U,M,88,19%,0,$46.00,"$4,048.00",19%
+JELROL-T10082-L,EAGLE TEE,T-Shirt,U,L,100,21%,0,$46.00,"$4,600.00",21%
+JELROL-T10082-XL,EAGLE TEE,T-Shirt,U,XL,106,23%,0,$46.00,"$4,876.00",23%
+JELROL-T10082-XXL,EAGLE TEE,T-Shirt,U,2XL,85,18%,0,$46.00,"$3,910.00",18%
+JELROL-T10082-3XL,EAGLE TEE,T-Shirt,U,3XL,32,7%,0,$46.00,"$1,472.00",7%
+SUBTOTAL,EAGLE TEE,T-Shirt,U,"",467,14%,0,$46.00,"$21,482.00",14%
+
+JELROL-TOUR-T1014-S,I'm Not Okay Tee,T-Shirt,U,S,0,0%,0,$0.00,$0.00,0%
+JELROL-TOUR-T1014-M,I'm Not Okay Tee,T-Shirt,U,M,0,0%,0,$0.00,$0.00,0%
+JELROL-TOUR-T1014-L,I'm Not Okay Tee,T-Shirt,U,L,0,0%,0,$0.00,$0.00,0%
+JELROL-TOUR-T1014-XL,I'm Not Okay Tee,T-Shirt,U,XL,0,0%,0,$0.00,$0.00,0%
+JELROL-TOUR-T1014-XXL,I'm Not Okay Tee,T-Shirt,U,2XL,0,0%,0,$0.00,$0.00,0%
+JELROL-TOUR-T1014-3XL,I'm Not Okay Tee,T-Shirt,U,3XL,0,0%,0,$0.00,$0.00,0%
+SUBTOTAL,I'm Not Okay Tee,T-Shirt,U,"",0,0%,0,$0.00,$0.00,0%
+
+"",Anarchy Hoodie - TOUR,Pullover Hoodie,U,S,20,8%,0,$101.00,"$2,020.00",8%
+"",Anarchy Hoodie - TOUR,Pullover Hoodie,U,M,58,24%,0,$101.00,"$5,858.00",24%
+"",Anarchy Hoodie - TOUR,Pullover Hoodie,U,L,78,33%,0,$101.00,"$7,878.00",33%
+"",Anarchy Hoodie - TOUR,Pullover Hoodie,U,XL,48,20%,0,$101.00,"$4,848.00",20%
+"",Anarchy Hoodie - TOUR,Pullover Hoodie,U,2XL,35,15%,0,$101.00,"$3,535.00",15%
+"",Anarchy Hoodie - TOUR,Pullover Hoodie,U,3XL,0,0%,0,$0.00,$0.00,0%
+SUBTOTAL,Anarchy Hoodie - TOUR,Pullover Hoodie,U,"",239,7%,0,$101.00,"$24,139.00",15%
+
+TOTAL APPAREL,"","","","",2721,81%,0,"","$138,311.00",89%
+
+
+OTHER
+SKU,Name,Type,Sex,Size,Sold,Unit % of Total,Comp,Avg. Price,Gross Rev,% of Total
+JELROL-TOUR-ACC1003,Get By Koozie,Koozie,U,,0,0%,0,$0.00,$0.00,0%
+JELROL-TOUR-ACC1004,Skull Tallboy Koozie,Koozie,U,,0,0%,0,$0.00,$0.00,0%
+JELROL-HAT2006,Distressed Denim Hat,Hat - Other,U,,221,7%,0,$48.76,"$10,775.96",7%
+JELROL-ACC1048,Tall Boy Koozie,Koozie,U,,264,8%,0,$11.66,"$3,078.24",2%
+"",Get By Bandana,Bandana,U,,153,5%,0,$22.26,"$3,405.78",2%
+JELROL-ACC1049,DREAMS DONT DIE METALLIC TOTE,Bag,U,,17,1%,0,$38.16,$648.72,0%
+
+TOTAL OTHER,"","","","",655,19%,0,"","$17,908.70",11%
+
+
+MUSIC
+UPC,Name,Type,Sex,Size,Sold,Unit % of Total,Comp,Avg. Price,Gross Rev,% of Total
+ JELROL-VINYL1006,Live in Canada 7” Vinyl,Vinyl,"",,0,0%,0,$0.00,$0.00,0%
+
+TOTAL MUSIC,"","","","",0,0%,0,"",$0.00,0%
+
+GRAND TOTAL,"","","","",3376,"",0,"","$156,219.70"

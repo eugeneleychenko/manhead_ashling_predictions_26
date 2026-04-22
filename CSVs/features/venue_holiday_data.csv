@@ -1,0 +1,921 @@
+showDate	HolidayStatus	venue name	venue city	venue state	venue country	venue capacity
+7/12/2023	0	Sandy City Ampitheater	Sandy	UT	United States	2700
+7/22/2023	0	Paradise Cove Margaritaville	Tulsa	OK	United States	1992
+7/23/2023	0	The Tobin Center For Performing Arts	San Antonio	TX	United States	2935
+7/28/2023	0	Loeb Stadium	Lafayette	IN	United States	3300
+7/29/2023	0	Honeywell Center	Wabash	IN	United States	2200
+7/30/2023	0	Harrah'S Council Bluffs Hotel & Casino	Council Bluffs	IA	United States	3800
+8/4/2023	0	Ocean Resort Casino - Ovation Hall	Atlantic City	NJ	United States	3029
+8/5/2023	0	Nycb Theatre At Westbury	Westbury	NY	United States	3900
+8/6/2023	0	American Music Theatre	Lancaster	PA	United States	1607
+8/11/2023	0	Renfro Valley Old Barn Theater	Mt Vernon	KY	United States	1420
+8/12/2023	0	Caesars Event Center At Caesars Southern Indiana	Elizabeth	IN	United States	1500
+8/17/2023	0	"Fox Theater (Bakersfield, Ca)"	Bakersfield	CA	United States	1500
+8/18/2023	0	Warnors Theatre	Fresno	CA	United States	2100
+8/19/2023	0	The Fruit Yard Amphitheater	Modesto	CA	United States	3218
+9/1/2023	2	Orleans Hotel & Casino	Las Vegas	NV	United States	1580
+9/3/2023	2	Hollywood Bowl (Custom Merch)	Los Angeles	CA	United States	17500
+9/9/2023	0	Mgm Northfield Park - Center Stage	Northfield	OH	United States	2500
+9/10/2023	0	Ridgefield Playhouse	Ridgefield	CT	United States	500
+9/21/2023	0	Bologna Performing Arts Center	Cleveland	MS	United States	1992
+9/22/2023	0	Ip Casino Resort And Spa / Studio A	Biloxi	MS	United States	1992
+10/6/2023	2	The Outdoor Music Center At HarrahÃ¢ÂS Hoosier Park	Anderson	IN	United States	15000
+10/7/2023	2	Music Hall Center For The Performing Arts	Detroit	MI	United States	1600
+10/8/2023	2	Steven Tanger Center For Performing Arts	Greensboro	NC	United States	3200
+10/13/2023	0	Isleta Resort & Casino	Albuquerque	NM	United States	2500
+10/20/2023	0	Grand Theater	Wausau	WI	United States	1785
+10/21/2023	0	Crystal Grand Music Theatre	Wisconsin Dells	WI	United States	2000
+10/27/2023	0	Humphreys Concerts By The Bay	San Diego	CA	United States	3000
+10/28/2023	0	Thunder Valley Casino	Lincoln	CA	United States	4200
+10/29/2023	0	City National Grove Of Anaheim	Anaheim	CA	United States	1700
+11/3/2023	0	The Events Center At Harrah'S Ak-Chin Casino	Maricopa	AZ	United States	5000
+11/5/2023	0	Simmons Bank Arena	North Little Rock	AR	United States	18000
+11/9/2023	0	Plymouth Memorial Hall	Plymouth	MA	United States	1450
+11/10/2023	1	Chevalier Theatre	Medford	MA	United States	1900
+11/11/2023	1	The Theater At Mgm National Harbor	Oxon Hill	MD	United States	2727
+11/17/2023	0	Twin River Casino	Lincoln	RI	United States	3500
+11/18/2023	0	Parx Casino- Xcite Center	Bensalem	PA	United States	5000
+11/19/2023	0	Chubb Theatre At Capitol Center For The Arts	Concord	NH	United States	1304
+11/25/2023	0	Seneca Niagara Casino / Bear'S Den	Niagara Falls	NY	United States	4000
+11/26/2023	0	New Jersey Performing Arts Center	Newark	NJ	United States	2868
+4/15/2022	0	The Magnolia	El Cajon	CA	United States	1200
+4/16/2022	0	Celebrity Theater	Phoenix	AZ	United States	2650
+4/17/2022	0	Kiva Auditorium - Albuquerque Convention Center	Albuquerque	NM	United States	2100
+4/19/2022	0	Pikes Peak Center	Colorado Springs	CO	United States	2012
+4/21/2022	0	State Theatre	Minneapolis	MN	United States	1870
+4/22/2022	0	Adler Theatre	Davenport	IA	United States	2400
+4/23/2022	0	Genessee Theatre	Waukegan	IL	United States	1596
+4/25/2022	0	Pabst Theater	Milwaukee	WI	United States	1339
+4/26/2022	0	Schuster Center Mead Theatre	Dayton	OH	United States	2400
+4/27/2022	0	Royal Oak Music Theatre	Royal Oak	MI	United States	1700
+4/30/2022	0	The Wellmont Theater	Montclair	NJ	United States	2600
+5/2/2022	0	Cruise To The Edge	Cornelius	NC	United States	1500
+1/27/2022	0	The Florida Theatre	Jacksonville	FL	United States	1200
+1/29/2022	0	Ruth Eckerd Hall	Clearwater	FL	United States	2180
+1/30/2022	0	Broward Center For The Performing Arts Center	Fort Lauderdale	FL	United States	2688
+2/1/2022	0	Atlanta Symphony Orchestra	Atlanta	GA	United States	1762
+2/2/2022	0	Charleston Music Hall	Charleston	SC	United States	1200
+2/3/2022	0	Carolina Theatre Of Durham	Durham	NC	United States	1048
+2/7/2022	0	Paramount Theatre	Austin	TX	United States	3040
+3/12/2022	0	The Palladium	Worcester	MA	United States	3700
+3/13/2022	0	Higher Ground Ballroom	South Burlington	VT	United States	1200
+3/14/2022	0	Rapids Theatre	Niagara Falls	NY	United States	450
+3/16/2022	0	House Of Blues	Cleveland	OH	United States	2500
+3/17/2022	0	The Machine Shop	Flint	MI	United States	1000
+3/18/2022	0	The Machine Shop	Flint	MI	United States	1000
+3/19/2022	0	Bogarts	Cincinnati	OH	United States	1500
+3/21/2022	0	The King Of Clubs	Columbus	OH	United States	650
+3/24/2022	0	Pieres Entertainment Center	Fort Wayne	IN	United States	4000
+3/25/2022	0	Pop'S	Sauget	IL	United States	787
+3/26/2022	0	Rust Belt	East Moline	IL	United States	4100
+3/27/2022	0	The Forge	Joliet	IL	United States	900
+3/30/2022	0	Epic Event Center	Green Bay	WI	United States	2500
+3/31/2022	0	Skyway Theatre	Minneapolis	MN	United States	1200
+4/1/2022	0	Hard Rock Hotel & Casino - Anthem	Sioux City	IA	United States	3500
+4/2/2022	0	Q Casino	Dubuque	IA	United States	2000
+4/4/2022	0	The Cotillion	Wichita	KS	United States	2500
+4/5/2022	0	Oriental Theater	Denver	CO	United States	2300
+4/7/2022	0	The Depot	Salt Lake City	UT	United States	1200
+4/8/2022	0	Knitting Factory	Boise	ID	United States	719
+4/9/2022	0	Midtown Ballroom	Bend	OR	United States	800
+4/10/2022	0	Roseland Theater	Portland	OR	United States	1400
+4/12/2022	0	The Elm	Bozeman	MT	United States	1100
+4/13/2022	0	The Knitting Factory	Spokane	WA	United States	702
+4/14/2022	0	El Corazon	Seattle	WA	United States	800
+4/18/2022	0	Ace Of Spades	Sacramento	CA	United States	1000
+4/24/2022	0	Sunshine Studios Live	Colorado Springs	CO	United States	666
+4/28/2022	0	Amplified Live	Dallas	TX	United States	1200
+4/29/2022	0	Come And Take It Live	Austin	TX	United States	900
+5/3/2022	0	Jannus Live	Saint Petersburg	FL	United States	2000
+5/4/2022	0	House Of Blues	Lake Buena Vista	FL	United States	2500
+5/5/2022	0	Revolution Live	Fort Lauderdale	FL	United States	1300
+5/7/2022	0	The Blind Tiger	Greensboro	NC	United States	800
+5/8/2022	0	The Neighborhood Theatre - Side	Charlotte	NC	United States	500
+5/9/2022	0	Buckhead Theatre	Atlanta	GA	United States	1800
+5/10/2022	0	Mercy Lounge / Cannery Ballroom	Nashville	TN	United States	600
+5/12/2022	0	Hi-Fi Annex (Behind Hi-Fi)	Indianapolis	IN	United States	350
+5/13/2022	0	Jergel'S Rhythm Grille	Warrendale	PA	United States	700
+5/14/2022	0	Hmac	Harrisburg	PA	United States	820
+5/15/2022	0	Baltimore Sound Stage	Baltimore	MD	United States	1000
+5/17/2022	0	One Centre Square	Easton	PA	United States	2000
+5/18/2022	0	The Wellmont Theater	Montclair	NJ	United States	2600
+5/19/2022	0	Paramount Theatre	Huntington	NY	United States	3040
+5/20/2022	0	Webster Theatre	Hartford	CT	United States	1750
+4/11/2022	0	House Of Blues	Dallas	TX	United States	2500
+5/1/2022	0	Webster Theatre	Hartford	CT	United States	1750
+9/6/2022	0	Georgia Theatre	Athens	GA	United States	1000
+9/7/2022	0	The Underground At Fillmore Charlotte	Charlotte	NC	United States	1000
+9/8/2022	0	The Orange Peel	Asheville	NC	United States	1050
+9/9/2022	0	Baltimore Sound Stage	Baltimore	MD	United States	1000
+9/11/2022	0	Harrisburg Midtown Arts	Harrisburg	PA	United States	1200
+9/13/2022	0	State Theatre	Portland	ME	United States	1870
+9/14/2022	0	Paramount Theatre	Huntington	NY	United States	3040
+9/15/2022	0	The Wellmont Theater	Montclair	NJ	United States	2600
+9/16/2022	0	Theatre Of Living Arts	Philadelphia	PA	United States	2800
+9/17/2022	0	The Town Ballroom	Buffalo	NY	United States	700
+9/18/2022	0	House Of Blues Cleveland	Cleveland	OH	United States	1700
+9/19/2022	0	Piere'S	Fort Wayne	IN	United States	1800
+9/21/2022	0	The Intersection	Grand Rapids	MI	United States	1000
+9/23/2022	0	Brooklyn Bowl Nashville	Nashville	TN	United States	1500
+9/24/2022	0	The Vogue Theatre	Indianapolis	IN	United States	1500
+9/25/2022	0	The Rave / Eagles Club	Milwaukee	WI	United States	2500
+9/26/2022	0	Pop'S Concert Venue	East Saint Louis	IL	United States	300
+9/27/2022	0	Liberty Hall	Lawrence	KS	United States	800
+9/28/2022	0	Summit Music Hall	Denver	CO	United States	1200
+9/30/2022	0	Rialto Theatre	Tucson	AZ	United States	1200
+10/1/2022	0	The Observatory North Park	San Diego	CA	United States	1200
+10/2/2022	0	The Observatory	Santa Ana	CA	United States	1100
+10/4/2022	0	Brooklyn Bowl Vegas	Las Vegas	NV	United States	3000
+10/5/2022	0	Majestic Ventura Theater - Half House	Ventura	CA	United States	750
+10/6/2022	0	The Catalyst Club	Santa Cruz	CA	United States	400
+9/17/2023	0	The Fillmore	Charlotte	NC	United States	1426
+9/18/2023	0	Brooklyn Bowl Nashville	Nashville	TN	United States	1500
+9/19/2023	0	Tabernacle	Atlanta	GA	United States	3000
+9/23/2023	0	Revolution Live	Fort Lauderdale	FL	United States	1300
+9/24/2023	0	House Of Blues	Lake Buena Vista	FL	United States	2500
+9/26/2023	0	Stubb'S Bbq	Austin	TX	United States	1600
+9/27/2023	0	Bayou Music Center	Houston	AK	United States	3464
+9/28/2023	0	Toyota Music Factory	Irving	TX	United States	4000
+9/30/2023	0	The Van Buren	Phoenix	AZ	United States	1800
+10/1/2023	0	Hollywood Palladium	Los Angeles	CA	United States	5000
+10/2/2023	0	House Of Blues (Las Vegas)	Las Vegas	NV	United States	1800
+10/4/2023	0	Soma	San Diego	CA	United States	1085
+10/11/2023	0	Paramount Theatre	Seattle	WA	United States	3040
+10/14/2023	0	The Fillmore Auditorium	Denver	CO	United States	2000
+10/16/2023	0	The Fillmore Minneapolis	Minneapolis	MN	United States	1850
+10/18/2023	0	"The Sylvee- Madison, Wi"	Madison	WI	United States	2500
+10/19/2023	0	Byline Bank Aragon Ballroom	Chicago	IL	United States	5000
+10/22/2023	0	The Fillmore	Detroit	MI	United States	1426
+10/23/2023	0	Roxian Theatre	Mckees Rocks	PA	United States	1400
+10/26/2023	0	Mgm Music Hall At Fenway	Boston	MA	United States	5500
+10/30/2023	0	The Fillmore Philladephina	Philadelphia	PA	United States	3000
+10/31/2023	0	The Fillmore	Silver Spring	MD	United States	1426
+11/1/2023	0	The Ritz	Raleigh	NC	United States	1800
+1/14/2022	2	Keller Auditorium	Portland	OR	United States	5247
+1/15/2022	2	Mccaw Hall	Seattle	WA	United States	6498
+1/18/2022	0	Keller Auditorium	Portland	OR	United States	5247
+1/20/2022	0	Saroyan Theatre	Fresno	CA	United States	2800
+1/21/2022	0	Warfield Theatre	San Francisco	CA	United States	2361
+1/23/2022	0	Mechanics Bank Arena	Bakersfield	CA	United States	10000
+1/28/2022	0	The Theater At Virgin Hotels	Las Vegas	NV	United States	2539
+2/4/2022	0	The Orpheum	Wichita	KS	United States	2800
+2/5/2022	0	Gillioz Theatre	Springfield	MO	United States	1901
+2/6/2022	0	Simmons Bank Arena	North Little Rock	AR	United States	18000
+2/17/2022	0	Mark C. Smith Concert Hall	Huntsville	AL	United States	4293
+2/18/2022	2	Thomas Wolfe Auditorium	Asheville	NC	United States	2431
+2/19/2022	2	Berglund Performing Arts Theatre	Roanoke	VA	United States	2987
+2/20/2022	2	Altria Theater	Richmond	VA	United States	3565
+2/24/2022	0	Chrysler Hall	Norfolk	VA	United States	4599
+2/25/2022	0	The Township Auditorium	Columbia	SC	United States	3200
+2/26/2022	0	Johnny Mercer Theatre	Savannah	GA	United States	5085
+2/27/2022	0	Macon City Auditorium	Macon	GA	United States	2688
+3/2/2022	0	Saenger Theatre	Pensacola	FL	United States	4397
+3/4/2022	0	Bjcc Concert Hall	Birmingham	AL	United States	2835
+3/5/2022	0	The Orpheum Theatre	Memphis	TN	United States	4173
+3/6/2022	0	Old National Events Plaza	Evansville	IN	United States	3500
+3/9/2022	0	Durham Performing Arts Center	Durham	NC	United States	2712
+3/10/2022	0	Steven Tanger Center For Performing Arts	Greensboro	NC	United States	3200
+3/11/2022	0	Durham Performing Arts Center	Durham	NC	United States	2712
+4/3/2022	0	Palace Theatre	Albany	NY	United States	4692
+5/11/2022	0	The Criterion	Oklahoma City	OK	United States	3000
+6/16/2022	0	Four Winds Field	South Bend	IN	United States	7000
+6/17/2022	2	Kfc Yum Center	Louisville	KY	United States	22000
+6/18/2022	2	Day Air Credit Union Ballpark	Dayton	OH	United States	7230
+6/19/2022	1	Frontier Field	Rochester	NY	United States	8500
+6/23/2022	0	Bon Secours Wellness Arena	Greenville	AL	United States	15000
+6/24/2022	0	Bristol Motor Speedway	Bristol	TN	United States	140000
+6/25/2022	0	Coolray Field	Lawrenceville	GA	United States	10427
+6/26/2022	0	Brandon Amphitheatre	Brandon	MS	United States	8000
+8/28/2023	0	Spokane Pavilion Concerts	Spokane	WA	United States	3000
+8/31/2023	0	Kettlehouse Amphitheater	Bonner Springs	MT	United States	5000
+9/2/2023	2	Budweiser Events Center	Loveland	CO	United States	7200
+9/8/2023	0	The Anthem	Washington	DC	United States	6000
+9/12/2023	0	Kings Theatre	Brooklyn	NY	United States	3000
+9/14/2023	0	The Inlet Ocean City Bike Fest	Ocean City	MD	United States	5106
+9/16/2023	0	Freedom Mortgage Pavilion	Camden	NJ	United States	25000
+4/29/2023	0	Paramount Theatre	Seattle	WA	United States	3040
+5/1/2023	0	Eccles Theater	Salt Lake City	UT	United States	2468
+5/2/2023	0	Temple Hoyne Buell Theatre	Denver	CO	United States	2900
+5/4/2023	0	San Jose Performing Arts Center	San Jose	CA	United States	2200
+5/5/2023	0	Golden Gate Theatre	San Francisco	CA	United States	2300
+5/6/2023	0	Pantages Theatre	Los Angeles	CA	United States	2703
+5/7/2023	0	Gammage Auditorium	Tempe	AZ	United States	3000
+5/9/2023	0	Paramount Theatre	Austin	TX	United States	3040
+5/10/2023	0	Winspear Opera House	Dallas	TX	United States	2300
+5/12/2023	0	The Tobin Center For Performing Arts	San Antonio	TX	United States	2935
+5/13/2023	0	Bayou Music Center	Houston	AK	United States	3464
+5/14/2023	0	Saenger Theatre	New Orleans	LA	United States	4397
+5/16/2023	0	Murat Theatre	Indianapolis	IN	United States	4200
+5/18/2023	0	Fisher Theatre	Detroit	MI	United States	2089
+5/20/2023	0	Bradley Symphony Center	Milwaukee	WI	United States	1650
+5/21/2023	0	The Orpheum Theater	Madison	WI	United States	2800
+5/23/2023	0	State Theatre	Minneapolis	MN	United States	1870
+5/24/2023	0	Creighton Orpheum Theater	Omaha	NE	United States	2877
+5/26/2023	2	The Chicago Theatre	Chicago	IL	United States	3700
+5/27/2023	2	The Louisville Palace Theater	Louisville	KY	United States	2500
+5/28/2023	2	Heinz Hall For The Performing Arts	Pittsburgh	PA	United States	2800
+5/31/2023	0	Beacon Theatre	New York City	NY	United States	2894
+6/1/2023	0	Philadelphia Metro	Philadelphia	PA	United States	2000
+6/2/2023	0	Warner Theatre	Washington	DC	United States	1780
+6/3/2023	0	The Grand Theater At Foxwoods Resort Casino	Mashantucket	CT	United States	4000
+8/4/2022	0	Granada Theater	Dallas	TX	United States	1600
+8/5/2022	0	Emo'S	Austin	TX	United States	1700
+8/6/2022	0	Warehouse Live	Houston	TX	United States	1500
+8/8/2022	0	The Basement East	Nashville	TN	United States	600
+8/9/2022	0	Delmar Hall	St. Louis	MO	United States	750
+8/10/2022	0	Record Bar	Kansas City	MO	United States	850
+8/12/2022	0	The Gothic Theater	Englewood	CO	United States	1200
+8/13/2022	0	Soundwell	Salt Lake City	UT	United States	1500
+8/15/2022	0	The Crescent Ballroom	Phoenix	AZ	United States	600
+8/16/2022	0	The Belly Up Tavern	Solana Beach	CA	United States	600
+8/18/2022	0	The Teragram Ballroom	Los Angeles	CA	United States	1500
+8/19/2022	0	The Independent	San Francisco	CA	United States	500
+8/21/2022	0	Hawthorne Theater	Portland	OR	United States	500
+8/22/2022	0	Neumos	Seattle	WA	United States	700
+5/6/2022	0	The Foundry @ The Fillmore	Philadelphia	PA	United States	750
+10/17/2022	0	Varsity Theatre	Minneapolis	MN	United States	1350
+10/18/2022	0	"House Of Blues (Chicago, Il)"	Chicago	IL	United States	1600
+10/19/2022	0	St. Andrew'S Hall	Detroit	MI	United States	2000
+10/21/2022	0	House Of Independents	Asbury Park	NJ	United States	500
+10/23/2022	0	Bowery Ballroom	New York City	NY	United States	1150
+10/25/2022	0	Brooklyn Bowl Philly	Philadelphia	PA	United States	900
+10/27/2022	0	Recher Theatre	Towson	MD	United States	1500
+10/28/2022	0	Lincoln Theater	Raleigh	NC	United States	1200
+10/29/2022	0	Variety Playhouse	Atlanta	GA	United States	2200
+11/1/2022	0	Brooklyn Bowl Nashville	Nashville	TN	United States	1500
+11/7/2022	0	The Teragram Ballroom	Los Angeles	CA	United States	1500
+10/5/2023	0	State Theatre	Minneapolis	MN	United States	1870
+10/9/2023	1	Packard Music Hall	Warren	OH	United States	2418
+10/12/2023	0	American Music Theatre	Lancaster	PA	United States	1607
+10/15/2023	0	The Palace Theatre	Greensburg	PA	United States	2800
+10/17/2023	0	Midland Center For The Arts	Midland	MI	United States	1230
+10/24/2023	0	Texas Trust Cu Theatre At Grand Prairie	Grand Prairie	TX	United States	7500
+10/25/2023	0	Smart Financial Centre	Sugar Land	TX	United States	3000
+11/2/2023	0	Sharon L. Morse Performing Arts Center	The Villages	FL	United States	950
+11/7/2023	0	Jefferson Center	Roanoke	VA	United States	1500
+11/8/2023	0	Capitol One Hall	Tysons Corner	VA	United States	1600
+11/13/2023	2	"Hackensack Meridian Health Theatre Red - Bank, Nj"	Red Bank	NJ	United States	1000
+11/24/2023	0	Kennedy Center Concert Hall	Washington	DC	United States	7012
+11/28/2023	0	Bergen Performing Arts Center	Englewood	NJ	United States	1367
+11/29/2023	0	Lowell Memorial Auditorium	Lowell	MA	United States	2800
+11/30/2023	0	Count Basie Theatre	Red Bank	NJ	United States	1568
+12/2/2023	0	Norton Center For The Arts	Danville	KY	United States	2700
+12/3/2023	0	Music Hall Center For The Performing Arts	Detroit	MI	United States	1600
+12/5/2023	0	Heinz Hall For The Performing Arts	Pittsburgh	PA	United States	2800
+12/7/2023	0	Gallagher Bluedorn Performing Arts Center	Cedar Falls	IA	United States	1700
+12/9/2023	0	Mystic Lake Casino	Prior Lake	MN	United States	4000
+12/11/2023	0	Abravanel Hall	Salt Lake City	UT	United States	2768
+12/12/2023	0	Boettcher Concert Hall	Denver	CO	United States	2634
+12/15/2023	0	Segerstrom Center For The Arts	Costa Mesa	CA	United States	3100
+12/16/2023	0	Segerstrom Center For The Arts	Costa Mesa	CA	United States	3100
+12/18/2023	0	Peace Center For The Performing Arts	Greenville	SC	United States	2100
+12/19/2023	0	Peabody Auditorium	Daytona Beach	FL	United States	2521
+12/20/2023	0	Kroger Center For The Arts	Columbia	SC	United States	2400
+12/21/2023	0	Atlanta Symphony Orchestra	Atlanta	GA	United States	1762
+6/23/2023	0	Hollywood Casino Amphitheatre Stl	Maryland Heights	MO	United States	20000
+6/24/2023	0	Azura Amphitheatre	Bonner Springs	KS	United States	18000
+6/28/2023	0	Dos Equis Pavilion	Dallas	GA	United States	20000
+6/30/2023	0	Talking Stick Resort Amphitheater	Phoenix	AZ	United States	20000
+7/1/2023	0	North Island Credit Union Amphitheatre	Chula Vista	CA	United States	20500
+7/5/2023	0	Shoreline Amphitheater	Mountain View	CA	United States	23000
+7/7/2023	0	Usana Amphiteater	Salt Lake City	UT	United States	25000
+7/9/2023	0	Fiddler'S Green Amphitheatre	Englewood	CO	United States	18000
+7/11/2023	0	Walmart Amp	Rogers	AR	United States	10000
+7/13/2023	0	Somerset Amphitheater	Somerset	KY	United States	40000
+7/15/2023	0	Riverbend Music Center	Cincinnati	OH	United States	20500
+7/16/2023	0	Ruoff Music Center	Noblesville	IN	United States	24790
+7/18/2023	0	Blossom Music Center	Cuyahoga Falls	OH	United States	23000
+7/19/2023	0	Jiffy Lube Live	Bristow	VA	United States	25262
+7/21/2023	0	Pnc Music Pavilion	Charlotte	NC	United States	18500
+7/24/2023	0	Ithink Financial Amphitheatre	West Palm Beach	FL	United States	25000
+7/25/2023	0	Midflorida Credit Union Amphitheatre	Tampa	FL	United States	20000
+7/26/2023	0	Lakewood Amphitheater	Atlanta	GA	United States	15669
+8/1/2023	0	Forest Hills Stadium	Forest Hills	NY	United States	14000
+11/8/2022	0	Downtown Nashville	Nashville	TN	United States	6800
+11/9/2022	0	Bridgestone Arena	Nashville	TN	United States	20000
+5/16/2022	0	Union Transfer	Philadelphia	PA	United States	1200
+5/21/2022	0	Royale	Boston	MA	United States	1200
+5/26/2022	0	El Club	Detroit	MI	United States	475
+5/27/2022	2	Riviera Theatre	Chicago	IL	United States	2500
+5/28/2022	2	The Fillmore Minneapolis	Minneapolis	MN	United States	1850
+5/30/2022	1	The Gothic Theater	Englewood	CO	United States	1200
+5/31/2022	0	The Depot	Salt Lake City	UT	United States	1200
+6/4/2022	0	Showbox Sodo	Seattle	WA	United States	1300
+6/5/2022	0	Wonder Ballroom Concert Merchandise	Portland	OR	United States	778
+6/7/2022	0	Great American Music Hall	San Francisco	CA	United States	740
+6/8/2022	0	Henry Fonda Theatre	Los Angeles	CA	United States	1200
+6/11/2022	0	The Observatory North Park	San Diego	CA	United States	1200
+6/12/2022	0	Marquee Theatre	Tempe	AZ	United States	2500
+6/15/2022	0	Granada Theater	Dallas	TX	United States	1600
+6/20/2022	1	The Orange Peel	Asheville	NC	United States	1050
+6/21/2022	0	The National	Richmond	VA	United States	1000
+6/28/2022	0	The Pageant/Delmar Hall	St. Louis	MO	United States	2400
+6/29/2022	0	The Truman	Kansas City	MO	United States	600
+7/9/2022	0	Lakeland Community College	Kirtland	OH	United States	1200
+6/27/2023	0	The Cynthia Woods Mitchell Pavilion	The Woodlands	TX	United States	16500
+2/27/2023	0	The Knitting Factory	Spokane	WA	United States	702
+2/28/2023	0	Revolution Concert House & Event Center	Garden City	ID	United States	2000
+3/2/2023	0	Fox Theatre	Boulder	CO	United States	5174
+3/4/2023	0	Slowdown	Omaha	NE	United States	677
+3/6/2023	0	Granada Theatre	Lawrence	KS	United States	1550
+3/7/2023	0	Wooly'S	Des Moines	IA	United States	700
+3/8/2023	0	The Intersection	Grand Rapids	MI	United States	1000
+3/13/2023	0	Bogarts	Cincinnati	OH	United States	1500
+3/14/2023	0	Newport Music Hall	Columbus	OH	United States	1700
+3/15/2023	0	Xl Live	Harrisburg	PA	United States	25000
+3/17/2023	0	The Town Ballroom	Buffalo	NY	United States	700
+3/20/2023	0	Higher Ground Ballroom	South Burlington	VT	United States	1200
+3/21/2023	0	State Theatre	Portland	ME	United States	1870
+3/22/2023	0	Fete Music Hall	Providence	RI	United States	605
+3/23/2023	0	Toad'S Place	New Haven	CT	United States	900
+3/25/2023	0	Starland Ballroom	Sayreville	NJ	United States	2500
+3/26/2023	0	Paramount Theatre	Huntington	NY	United States	3040
+3/28/2023	0	Rams Head Live	Baltimore	MD	United States	1750
+3/30/2023	0	The Norva	Norfolk	VA	United States	1500
+3/31/2023	0	Music Farm	Charleston	SC	United States	1500
+4/1/2023	0	The Ritz	Raleigh	NC	United States	1800
+4/3/2023	0	Jannus Live	Saint Petersburg	FL	United States	2000
+4/4/2023	0	Vivid Music Hall	Gainesville	FL	United States	1050
+4/5/2023	0	Vinyl Music Hall	Pensacola	FL	United States	840
+4/7/2023	0	Minglewood Hall	Memphis	TN	United States	2000
+4/8/2023	0	Iron City Birmingham	Birmingham	AL	United States	1000
+4/9/2023	0	"Little Rock Music Hall/Little Rock, Ar"	Little Rock	AR	United States	1200
+4/11/2023	0	Tower Theatre	Oklahoma City	OK	United States	2100
+4/12/2023	0	Tannahill'S Tavern & Music Hall	Fort Worth	TX	United States	691
+4/14/2023	0	Rock Box	San Antonio	TX	United States	606
+4/16/2023	0	Encore	Tucson	AZ	United States	2000
+4/17/2023	0	The Observatory North Park	San Diego	CA	United States	1200
+4/18/2023	0	The Observatory	Santa Ana	CA	United States	1100
+10/3/2023	0	Charleston Coliseum	Charleston	WV	United States	13247
+10/10/2023	0	Rupp Arena	Lexington	KY	United States	20500
+1/28/2023	0	Grand Sierra Resort Theatre	Reno	NV	United States	2426
+2/21/2023	0	Majestic Ventura Theatre	Los Angeles	CA	United States	1500
+2/22/2023	0	The Midway	San Francisco	CA	United States	800
+2/24/2023	0	Riverside Municipal Auditorium	Riverside	CA	United States	1500
+2/25/2023	0	Marquee Theater	Phoenix	AZ	United States	3000
+2/26/2023	0	Rialto Theatre	Tucson	AZ	United States	1200
+3/5/2023	0	Jj'S Live	Fayetteville	AR	United States	3000
+3/10/2023	0	The Carolina Theatre	Durham	NC	United States	2100
+3/11/2023	0	The Wellmont Theater	Montclair	NJ	United States	2600
+3/12/2023	0	Paramount Theatre	Huntington	NY	United States	3040
+3/18/2023	0	Parx Casino- Xcite Center	Bensalem	PA	United States	5000
+3/19/2023	0	The Town Ballroom	Buffalo	NY	United States	700
+3/24/2023	0	The Factory	Chesterfield	MO	United States	3000
+3/27/2023	0	Ogden Theatre	Denver	CO	United States	1600
+3/29/2023	0	Knitting Factory	Boise	ID	United States	719
+6/16/2023	2	Charleen & Charles Hinson Amphitheater	New Albany	OH	United States	800
+6/17/2023	2	Community Center Performing Arts Pavillion	New Lenox	IL	United States	3000
+6/10/2022	0	Northwell Health At Jones Beach Theater	Wantagh	NY	United States	15000
+6/14/2022	0	Bb&T Pavillion (Formerly Susquehanna Bank Center)	Camden	NJ	United States	25488
+6/30/2022	0	Pnc Music Pavilion	Charlotte	NC	United States	18500
+7/1/2022	2	Coastal Credit Union Music Park	Raleigh	NC	United States	20601
+7/2/2022	2	Veterans United Home Loans Amphitheater At Virginia Beach	Virginia Beach	VA	United States	20000
+7/7/2022	0	Bank Of New Hampshire Pavilion At Meadowbrook	Gilford	NH	United States	9000
+7/8/2022	0	Bethel Woods Center For The Arts	Bethel	NY	United States	16000
+7/12/2022	0	Pine Knob Music Theatre	Clarkston	MI	United States	15274
+7/13/2022	0	Ruoff Music Center	Noblesville	IN	United States	24790
+7/15/2022	0	Hollywood Casino Amphitheatre Stl	Tinley Park	IL	United States	20000
+7/16/2022	0	Hollywood Casino Amphitheatre Stl	Maryland Heights	MO	United States	20000
+7/17/2022	0	Walmart Amp	Rogers	AR	United States	10000
+7/19/2022	0	Germania Insurance Amphitheater	Austin	TX	United States	14000
+7/20/2022	0	Dos Equis Pavilion	Dallas	GA	United States	20000
+7/21/2022	0	Cynthia Woods Mitchell Pavilion	Spring	TX	United States	16500
+7/23/2022	0	Isleta Amphitheater	Albuquerque	NM	United States	15000
+7/24/2022	0	Talking Stick Resort Amphitheater	Phoenix	AZ	United States	20000
+7/26/2022	0	Northern Island Credit Union	San Diego	CA	United States	25000
+7/29/2022	0	Fivepoint Amphitheatre	Irvine	CA	United States	12000
+7/30/2022	0	Concord Pavilion	Concord	CA	United States	12500
+7/31/2022	0	Shoreline Amphitheater	Mountain View	CA	United States	23000
+8/2/2022	0	Climate Pledge Arena	Seattle	WA	United States	17459
+8/3/2022	0	Hayden Homes Amphitheater	Bend	OR	United States	8000
+4/15/2023	0	Mgm Grand Theater At Foxwoods	Mashantucket	CT	United States	9000
+4/20/2023	0	Des Plaines Theater	Des Plaines	IL	United States	900
+4/21/2023	0	The Arcada Theatre	Saint Charles	IL	United States	2800
+4/22/2023	0	The Crofoot Ballroom	Pontiac	MI	United States	1100
+9/1/2022	0	Frost Amphitheater	Stanford	CA	United States	8500
+9/2/2022	2	Bill Graham Civic Auditorium	San Francisco	CA	United States	8500
+9/10/2022	0	The Fillmore Denver	Denver	CO	United States	6764
+10/13/2022	0	Roadrunner	Boston	MA	United States	6480
+10/15/2022	0	The Anthem	Washington	DC	United States	6000
+9/29/2023	0	Toyota Center	Houston	TX	United States	18300
+11/4/2023	0	Spectrum Center	Charlotte	NC	United States	17500
+11/6/2023	0	State Farm Arena	Atlanta	GA	United States	21000
+3/22/2022	0	Rose Bowl Tavern	Urbana	IL	United States	650
+3/23/2022	0	The Stache	Grand Rapids	MI	United States	500
+3/29/2022	0	Ardmore Music Hall	Ardmore	PA	United States	500
+4/6/2022	0	3S Artspace	Portsmouth	NH	United States	400
+5/22/2022	0	Ventura Music Hall	Ventura	CA	United States	1800
+5/23/2022	0	The Belly Up Tavern	Solana Beach	CA	United States	600
+5/25/2022	0	Golden State Theatre	Monterey	CA	United States	1300
+5/29/2022	2	The Triple Door	Seattle	WA	United States	600
+6/1/2022	0	Rose Wagner Performing Arts Center	Salt Lake City	UT	United States	925
+6/3/2022	0	Paramount Theatre	Denver	CO	United States	3040
+6/6/2022	0	Coach House	San Juan Capistrano	CA	United States	660
+5/24/2022	0	Cable Dahmer Arena	Independence	MO	United States	5800
+10/8/2022	2	Apollo Theater	New York City	NY	United States	2491
+2/10/2022	0	Staples Center	Los Angeles	CA	United States	21000
+12/3/2022	0	Midflorida Credit Union Amphitheatre	Tampa	FL	United States	20000
+12/4/2022	0	Audacy Beach Festival	Fort Lauderdale	FL	United States	11000
+6/22/2022	0	Pnc Arena	Raleigh	NC	United States	19000
+7/3/2022	2	Little Caesars Arena	Detroit	MI	United States	22000
+7/5/2022	0	St. JosephÃ¢ÂS Health Amphitheater At Lakeview	Syracuse	NY	United States	17500
+7/11/2022	0	Footprint Center	Phoenix	AZ	United States	19000
+7/22/2022	0	Climate Pledge Arena	Seattle	WA	United States	17459
+7/25/2022	0	Spokane Arena	Spokane	WA	United States	8039
+7/27/2022	0	Fargodome	Fargo	ND	United States	25000
+7/28/2022	0	Xcel Energy Center	Saint Paul	MN	United States	18000
+8/7/2022	0	Ball Arena	Denver	CO	United States	21000
+8/11/2022	0	Ruoff Music Center	Noblesville	IN	United States	24790
+9/20/2022	0	Little Caesars Arena	Detroit	MI	United States	22000
+10/7/2022	2	Gas South Arena	Duluth	GA	United States	13000
+10/9/2022	2	Enterprise Center	St. Louis	MO	United States	19260
+10/11/2022	0	Ball Arena	Denver	CO	United States	21000
+10/16/2022	0	Climate Pledge Arena	Seattle	WA	United States	17459
+5/17/2023	0	Great American Music Hall	San Francisco	CA	United States	740
+9/7/2023	0	The Observatory	Santa Ana	CA	United States	1100
+9/11/2023	0	Granada Theater	Dallas	TX	United States	1600
+9/13/2023	0	White Oak Music Hall	Houston	TX	United States	1500
+9/15/2023	0	Jannus Live	Saint Petersburg	FL	United States	2000
+9/20/2023	0	The Orange Peel	Asheville	NC	United States	1050
+10/14/2022	0	Garden Grove Ampitheater	Garden Grove	CA	United States	7000
+11/30/2022	0	The Clubhouse	Toms River	NJ	United States	600
+12/2/2022	0	Starland Ballroom	Sayreville	NJ	United States	2500
+12/9/2022	0	Mulcahy'S	Wantagh	NY	United States	800
+12/10/2022	0	The Palladium	Worcester	MA	United States	3700
+8/3/2023	0	Pier 17	New York City	NY	United States	5000
+3/3/2023	0	The Anthem	Washington	DC	United States	6000
+3/16/2023	0	Mission Ballroom	Denver	CO	United States	3900
+3/9/2023	0	Colonial Life Arena	Columbia	CA	United States	19000
+4/2/2023	0	Dickies Arena	Fort Worth	TX	United States	14000
+4/6/2023	0	Pechanga Arena	San Diego	CA	United States	16100
+4/13/2023	0	Rocket Mortgage Fieldhouse	Cleveland	OH	United States	21000
+4/23/2023	0	Greensboro Coliseum	Greensboro	NC	United States	23000
+4/28/2023	0	Ftx Arena	Miami	FL	United States	20000
+4/30/2023	0	Amalie Arena	Tampa	FL	United States	21500
+3/20/2022	0	Staples Center	Los Angeles	CA	United States	21000
+6/6/2023	0	Concord Pavilion	Concord	CA	United States	12500
+6/7/2023	0	Santa Barbara Bowl	Santa Barbara	CA	United States	4562
+6/9/2023	0	The Greek Theatre La	Los Angeles	CA	United States	5900
+6/10/2023	0	North Island Credit Union Amphitheatre	Chula Vista	CA	United States	20500
+6/11/2023	0	Talking Stick Resort Arena	Phoenix	AZ	United States	20000
+6/13/2023	0	Usana Amphitheatre	West Valley City	UT	United States	15500
+6/15/2023	0	Levitt Pavillion	Denver	CO	United States	3353
+6/18/2023	2	Germania Insurance Amphitheater	Austin	TX	United States	14000
+6/21/2023	0	Ithink Financial Amphitheatre	West Palm Beach	FL	United States	25000
+6/22/2023	0	Midflorida Credit Union Amphitheatre	Tampa	FL	United States	20000
+6/25/2023	0	Firstbank Amphitheater	Franklin	TN	United States	7500
+6/29/2023	0	Ruoff Home Mortgage Music Center	Noblesville	IN	United States	24000
+7/6/2023	0	Pine Knob Music Theatre	Clarkston	MI	United States	15274
+7/8/2023	0	Broadview Stage At Spac	Saratoga Springs	NY	United States	25000
+7/10/2023	0	Central Park - Rumsey Playfield	New York City	NY	United States	5500
+7/14/2023	0	The Mann Center For The Performing Arts	Philadelphia	PA	United States	10000
+11/15/2023	0	Mcmenamin'S Crystal Ballroom	Portland	OR	United States	1200
+11/20/2023	0	Cain'S Ballroom	Tulsa	OK	United States	1800
+11/21/2023	0	South Side Ballroom	Dallas	TX	United States	4000
+11/22/2023	0	Acl Live	Austin	TX	United States	2750
+11/27/2023	0	The Sound	Del Mar	CA	United States	8000
+4/25/2023	0	Arizona Financial Theatre	Phoenix	AZ	United States	5000
+5/11/2023	0	The Met Philadelphia	Philadelphia	PA	United States	3500
+5/19/2023	0	The Orpheum Theatre	Minneapolis	MN	United States	4173
+5/30/2023	0	Bellco Theatre	Denver	CO	United States	5000
+6/12/2023	0	Paramount Theatre	Seattle	WA	United States	3040
+1/7/2022	0	Encore Theater At Wynn Las Vegas	Las Vegas	NV	United States	4310
+3/28/2022	0	Mvp Arena	Albany	NY	United States	17000
+11/14/2023	0	Buckhead Theatre	Atlanta	GA	United States	1800
+11/16/2023	0	The National	Richmond	VA	United States	1000
+12/17/2023	0	Little Caesars Arena	Detroit	MI	United States	22000
+8/25/2022	0	Doug Fir Lounge	Portland	OR	United States	808
+8/26/2022	0	The Crocodile	Seattle	WA	United States	808
+8/28/2022	0	Brookside At The Rose Bowl	Pasadena	CA	United States	808
+8/30/2022	0	Fine Line Music Cafe	Minneapolis	MN	United States	650
+8/31/2022	0	Thalia Hall	Chicago	IL	United States	808
+9/3/2022	2	Mahall'S 20 Lanes	Lakewood	OH	United States	808
+10/10/2022	1	Red Flag	St. Louis	MO	United States	850
+10/12/2022	0	Headliners Music Hall	Louisville	KY	United States	1000
+5/15/2023	0	Irving Plaza	New York City	NY	United States	1961
+5/22/2023	0	Bell'S Eccentric Cafe	Kalamazoo	MI	United States	370
+6/4/2023	0	Toulouse Theatre	New Orleans	LA	United States	750
+2/17/2023	2	Bluebird Theater	Denver	CO	United States	550
+2/18/2023	2	Aggie Theatre	Fort Collins	CO	United States	37000
+3/1/2023	0	The Fillmore	San Francisco	CA	United States	1426
+11/10/2022	0	Terminal West	Atlanta	GA	United States	1200
+11/11/2022	1	The Basement East	Nashville	TN	United States	600
+11/12/2022	2	The Grey Eagle Tavern & Music Hall	Asheville	NC	United States	550
+11/13/2022	2	The Camel	Richmond	VA	United States	400
+11/15/2022	0	Asbury Lanes	Asbury Park	NJ	United States	700
+11/16/2022	0	Black Cat	Washington	DC	United States	1000
+11/18/2022	0	Webster Hall	New York City	NY	United States	1500
+11/19/2022	0	Music Hall Of Williamsburg	Brooklyn	NY	United States	400
+11/20/2022	0	Underground Arts	Philadelphia	PA	United States	466
+11/22/2022	0	Paradise Rock Club	Boston	MA	United States	1000
+11/25/2022	0	Spirit	Pittsburgh	PA	United States	500
+11/27/2022	0	Metro	Chicago	IL	United States	1100
+11/29/2022	0	High Noon Saloon	Madison	WI	United States	400
+12/29/2023	2	Cobb Energy Pac	Atlanta	GA	United States	2750
+1/13/2022	0	Revolution Hall	Portland	OR	United States	1700
+2/11/2022	0	Santander Performing Arts Centre	Reading	PA	United States	2800
+2/12/2022	0	Borgata Hotel Casion & Spa: Music Box	Atlantic City	NJ	United States	1707
+4/20/2022	0	The Catalyst Club	Santa Cruz	CA	United States	400
+5/29/2023	1	The Pageant/Delmar Hall	St. Louis	MO	United States	2400
+6/5/2023	0	The Fillmore	Detroit	MI	United States	1426
+6/8/2023	0	Uptown Theater	Kansas City	MO	United States	2400
+7/18/2022	0	The Chapel	San Francisco	CA	United States	1000
+2/22/2022	0	Ppg Paints Arena	Pittsburgh	PA	United States	19000
+2/23/2022	0	Wells Fargo Center	Philadelphia	PA	United States	19300
+2/28/2022	0	Td Garden	Boston	MA	United States	19500
+3/8/2022	0	Mvp Arena	Albany	NY	United States	17000
+2/4/2023	0	Ppl Center	Allentown	PA	United States	8500
+2/5/2023	0	John Paul Jones Arena	Charlottesville	VA	United States	14593
+2/8/2023	0	Enmarket Arena	Savannah	GA	United States	9500
+2/9/2023	0	Macon City Auditorium	Macon	GA	United States	2688
+2/10/2023	0	Colonial Life Arena	Columbia	CA	United States	19000
+2/11/2023	0	Greensboro Coliseum	Greensboro	NC	United States	23000
+2/14/2023	0	Rupp Arena	Lexington	KY	United States	20500
+2/16/2023	0	Ferguson Center Of The Arts	Newport News	VA	United States	1725
+2/19/2023	2	Brookshire Grocery Arena	Bossier City	LA	United States	14000
+2/23/2023	0	Cajundome Arena & Convention Center	Lafayette	LA	United States	8761
+4/19/2023	0	Stockton Arena	Stockton	CA	United States	12000
+1/20/2023	0	The Fox Theatre Atlanta	Atlanta	GA	United States	4600
+4/26/2023	0	The First Interstate Center For The Arts	Spokane	WA	United States	2400
+10/20/2022	0	The Roxy Theatre	West Hollywood	CA	United States	5000
+10/22/2022	0	Sob'S	New York City	NY	United States	400
+9/25/2023	0	State Theatre	Portland	ME	United States	1870
+7/3/2024	0	Ridgefield Playhouse	Ridgefield	CT	United States	500
+7/6/2024	0	Chevalier Theatre	Medford	MA	United States	1900
+7/7/2024	0	Paramount Theatre	Huntington	NY	United States	3040
+7/9/2024	0	Bergen Performing Arts Center	Englewood	NJ	United States	1367
+7/10/2024	0	Count Basie Center For The Arts	Red Bank	NJ	United States	1568
+7/12/2024	0	Tropicana Casino Resort	Atlantic City	NJ	United States	1700
+7/13/2024	0	Wind Creek Event Center	Bethlehem	PA	United States	3700
+7/14/2024	0	American Music Theatre	Lancaster	PA	United States	1607
+7/16/2024	0	Spartanburg Memorial Auditorium	Spartanburg	SC	United States	2600
+7/17/2024	0	Ryman Auditorium	Nashville	TN	United States	3460
+7/20/2024	0	Hard Rock Live	Orlando	FL	United States	7000
+7/21/2024	0	Parker Theatre	Fort Lauderdale	FL	United States	1500
+7/22/2024	0	Seminole Hard Rock	Tampa	FL	United States	1500
+7/26/2024	0	Saenger Theatre	Mobile	AL	United States	4397
+7/28/2024	0	Mark C. Smith Concert Hall	Huntsville	AL	United States	4293
+7/30/2024	0	The Arcada Theatre	Saint Charles	IL	United States	2800
+7/31/2024	0	Pabst Theater	Milwaukee	WI	United States	1339
+6/9/2024	0	Talking Stick Resort Amphitheater	Phoenix	AZ	United States	20000
+6/12/2024	0	Moody Center	Austin	TX	United States	15000
+6/14/2024	0	Dos Equis Pavilion	Dallas	GA	United States	20000
+6/16/2024	0	Cynthia Woods Mitchell Pavilion	Spring	TX	United States	16500
+6/19/2024	1	Midflorida Credit Union Amphitheatre	Tampa	FL	United States	20000
+6/20/2024	0	Ithink Financial Amphitheatre	West Palm Beach	FL	United States	25000
+6/22/2024	0	Ameris Bank Amphitheatre	Alpharetta	GA	United States	12000
+6/23/2024	0	Bridgestone Arena	Nashville	TN	United States	20000
+6/26/2024	0	Pnc Music Pavilion	Charlotte	NC	United States	18500
+6/27/2024	0	Coastal Credit Union Music Park At Walnut Creek	Raleigh	NC	United States	20601
+7/2/2024	0	Freedom Mortgage Pavilion	Camden	NJ	United States	25000
+7/5/2024	0	Bethel Woods Center For The Arts	Bethel	NY	United States	16000
+7/19/2024	0	Harriet Island Park Minnesota Yacht Club	St Paul	MN	United States	35000
+7/23/2024	0	Hollywood Casino Amphitheatre Stl	Maryland Heights	MO	United States	20000
+7/24/2024	0	Riverbend Music Center	Cincinnati	OH	United States	20500
+7/27/2024	0	Ruoff Music Center	Noblesville	IN	United States	24790
+8/1/2024	0	Utah First Credit Union Amphitheatre	West Valley City	UT	United States	20000
+8/3/2024	0	White River Amphitheatre	Auburn	WA	United States	16000
+8/4/2024	0	Moda Center	Portland	OR	United States	19980
+8/7/2024	0	Shoreline Amphitheater	Mountain View	CA	United States	23000
+8/8/2024	0	Acrisure Arena	Thousand Palms	CA	United States	11007
+8/10/2024	0	Kia Forum	Inglewood	CA	United States	17505
+9/21/2024	0	Daily'S Place	Jacksonville	FL	United States	5500
+9/29/2024	0	Tsurt @ Ohana	San Clemente	CA	United States	5365
+12/2/2024	0	Troubadour	West Hollywood	CA	United States	3172
+12/10/2024	0	Aragon Ballroom (Merch Chicago)	Chicago	IL	United States	4500
+12/12/2024	0	The Rave Ii	Milwaukee	WI	United States	2500
+9/27/2024	0	Showbox Sodo	Seattle	WA	United States	1300
+10/3/2024	0	Aragon Ballroom	Chicago	IL	United States	5000
+10/8/2024	0	Terminal 5	New York City	NY	United States	3000
+10/9/2024	0	Roadrunner	Boston	MA	United States	6480
+10/11/2024	2	The Anthem	Washington	DC	United States	6000
+10/13/2024	2	The Eastern	Atlanta	GA	United States	775
+10/15/2024	0	Acl Live	Austin	TX	United States	2750
+10/17/2024	0	The Factory At Deep Ellum	Dallas	TX	United States	4036
+10/20/2024	0	Hollywood Palladium	Los Angeles	CA	United States	5000
+7/11/2024	0	Empower Fcu Amphitheater	Syracuse	NY	United States	17500
+7/25/2024	0	Enmarket Arena	Savannah	GA	United States	9500
+8/2/2024	0	Freedom Mortgage Pavilion	Camden	NJ	United States	25000
+8/16/2024	0	Concert Venue At Soaring Eagle Casino And Resort	Mt. Pleasant	MI	United States	12500
+8/17/2024	0	Alpine Valley Music Theatre	East Troy	WI	United States	37000
+8/24/2024	0	Banknh Pavilion	Gilford	NH	United States	14030
+8/29/2024	0	Greensboro Coliseum	Greensboro	AL	United States	23000
+8/30/2024	2	Jiffy Lube Live	Bristow	VA	United States	25262
+9/5/2024	0	Hayden Homes Amphitheater	Bend	OR	United States	8000
+9/6/2024	0	Ford Idaho Center	Nampa	ID	United States	12279
+9/7/2024	0	Usana Amphiteater	Salt Lake City	UT	United States	25000
+10/5/2024	0	Atrium Health Amphitheater	Macon	GA	United States	10000
+12/14/2024	0	Akins Forda Arena	Athens	GA	United States	8500
+10/31/2024	0	The Anthem	Washington	DC	United States	6000
+11/2/2024	0	Riviera Theater	Chicago	IL	United States	2400
+11/13/2024	0	The Venetian Theatre At The Venetian Resort	Las Vegas	NV	United States	4500
+4/12/2024	0	The Venetian Theatre At The Venetian Resort	Las Vegas	NV	United States	4500
+4/13/2024	0	The Venetian Theatre At The Venetian Resort	Las Vegas	NV	United States	4500
+4/17/2024	0	The Venetian Theatre At The Venetian Resort	Las Vegas	NV	United States	4500
+4/19/2024	0	The Venetian Theatre At The Venetian Resort	Las Vegas	NV	United States	4500
+4/20/2024	0	The Venetian Theatre At The Venetian Resort	Las Vegas	NV	United States	4500
+8/31/2024	2	Margaritaville Resort Casino	Bossier City	LA	United States	800
+9/12/2024	0	Templeton-Blackburn Alumni Memorial Auditorium	Athens	OH	United States	1365
+9/13/2024	0	Tippecanoe County Amphitheatre Park	West Lafayette	IN	United States	5000
+9/14/2024	0	Savannah Riverfest	Savannah	GA	United States	5000
+9/20/2024	0	7 Clans First Council Casino	Newkirk	OK	United States	3000
+9/22/2024	0	Cain'S Ballroom	Tulsa	OK	United States	1800
+9/28/2024	0	Petersen Event Center	Pittsburgh	PA	United States	6000
+10/4/2024	0	The Amp At Log Still	New Haven	KY	United States	15000
+10/24/2024	0	House Of Blues	Orlando	FL	United States	2500
+11/15/2024	0	The Intersection	Grand Rapids	MI	United States	1000
+11/16/2024	0	North Star Mohican Casino Resort	Bowler	WI	United States	2500
+11/22/2024	0	The Fillmore	Detroit	MI	United States	1426
+11/23/2024	0	Templelive Cleveland	Cleveland	OH	United States	2500
+12/5/2024	0	Blue Gate Performing Arts Center	Shipshewana	IN	United States	1500
+2/8/2024	0	Agua Caliente Casino Resort Spa	Rancho Mirage	CA	United States	21500
+2/9/2024	0	Thunder Valley Casino	Lincoln	CA	United States	4200
+3/2/2024	0	Belly Up	Aspen	CO	United States	1800
+5/3/2024	0	Sunfest	West Palm Beach	FL	United States	10000
+5/5/2024	0	Shaky Knees	Atlanta	GA	United States	9000
+5/10/2024	0	Pepsi Amphitheater	Flagstaff	AZ	United States	6700
+5/11/2024	0	Ava Amphitheatre - Casino Del Sol	Tucson	AZ	United States	4400
+5/14/2024	0	Hard Rock Casino & Hotel	Catoosa	OK	United States	3500
+5/16/2024	0	Pinewood Bowl	Lincoln	NE	United States	5500
+5/19/2024	0	Hard Rock Casino Northern Indiana	Gary	IN	United States	3000
+8/9/2024	0	The Abbey	Orlando	FL	United States	500
+8/11/2024	0	The Underground At Fillmore Charlotte	Charlotte	NC	United States	1000
+8/13/2024	0	The Atlantis	Washington	DC	United States	15000
+8/14/2024	0	The Gramercy Theatre	New York City	NY	United States	650
+8/18/2024	0	Brighton Music Hall	Boston	MA	United States	400
+8/23/2024	0	House Of Blues Cleveland - Cambridge Room	Cleveland	OH	United States	218
+8/25/2024	0	Thalia Hall	Chicago	IL	United States	808
+8/27/2024	0	The Hi-Fi	Indianapolis	IN	United States	600
+8/28/2024	0	The Basement East	Nashville	TN	United States	600
+9/19/2024	0	Mountain Health Arena	Huntington	WV	United States	7500
+9/26/2024	0	Ljvm Coliseum	Winston-Salem	NC	United States	17000
+10/10/2024	0	Rasing Cane'S Center Arena	Baton Rouge	LA	United States	10400
+10/12/2024	2	The Sound Amphitheatre	Gautier	MS	United States	6000
+10/18/2024	0	Mckenzie Arena	Chattanooga	TN	United States	10000
+10/19/2024	0	Atrium Health Amphitheater	Macon	GA	United States	10000
+8/26/2024	0	Hollywood Forever	Hollywood	CA	United States	1000
+9/10/2024	0	Rialto Theatre	Tucson	AZ	United States	1200
+9/11/2024	0	Smith Center	Las Vegas	NV	United States	2800
+9/15/2024	0	Orpheum Theatre	Los Angeles	CA	United States	1364
+9/16/2024	0	The Magnolia Theatre	El Cajon	CA	United States	1200
+9/17/2024	0	Granada Theatre	Santa Barbara	CA	United States	1550
+9/18/2024	0	Visalia Fox Theatre	Visalia	CA	United States	2000
+9/24/2024	0	Moore Theater	Seattle	WA	United States	1800
+9/25/2024	0	"Craterian Theater, The Collier Center"	Medford	OR	United States	732
+9/30/2024	0	Pikes Peak Center	Colorado Springs	CO	United States	2012
+10/2/2024	0	Kauffman Center For The Performing Arts	Kansas City	MO	United States	1800
+10/6/2024	0	Detroit Music Hall	Detroit	MI	United States	1701
+10/14/2024	1	James K. Polk Theatre-Tpac	Nashville	TN	United States	1600
+10/23/2024	0	Saenger Theatre	Pensacola	FL	United States	4397
+10/25/2024	0	Spartanburg Memorial Auditorium	Spartanburg	SC	United States	2600
+10/26/2024	0	The Carolina Theatre	Durham	NC	United States	2100
+10/27/2024	0	Midland Theatre	Newark	OH	United States	3200
+10/29/2024	0	The Palace Theatre	Greensburg	PA	United States	2800
+10/30/2024	0	Community Arts Center	Williamsport	PA	United States	1000
+11/1/2024	0	Scottish Rite Auditorium	Collingswood	NJ	United States	2600
+11/3/2024	0	H. Ric Luhrs Performing Arts Center	Shippensburg	PA	United States	1000
+11/4/2024	0	Forum Theatre	Binghamton	NY	United States	1525
+11/5/2024	0	The Paramount Theatre	Rutland	VT	United States	4400
+11/7/2024	0	Foxwoods Resort Casino	Mashantucket	CT	United States	4000
+11/8/2024	2	Plymouth Memorial Hall	Plymouth	MA	United States	1450
+11/9/2024	2	Lowell Memorial Auditorium	Lowell	MA	United States	2800
+11/10/2024	2	Capitol Center For The Arts	Concord	NH	United States	1304
+2/22/2024	0	Ã Tennessee Performing Arts Center Andrew Jackson Hall	Nashville	TN	United States	2400
+2/23/2024	0	Thalia Mara Hall	Jackson	MS	United States	2040
+2/24/2024	0	Raising Cane'S River Center Theatre	Baton Rouge	LA	United States	3100
+2/25/2024	0	Montgomery Pac	Montgomery	AL	United States	978
+2/27/2024	0	"Saenger Theatre, Pensacola Fl"	Pensacola	FL	United States	2800
+2/28/2024	0	Jacksonville Center For The Performing Arts	Jacksonville	FL	United States	1600
+2/29/2024	0	Van Wezel Performing Arts Hall	Sarasota	FL	United States	1741
+3/1/2024	0	Parker Theatre	Fort Lauderdale	FL	United States	1500
+3/3/2024	0	Maxwell C. King Center For The Performing Arts	Melbourne	FL	United States	2000
+3/5/2024	0	Barbara B Mann Performing Arts Hall	Fort Myers	FL	United States	1874
+3/7/2024	0	The Classic Center	Athens	GA	United States	8300
+3/8/2024	0	The Fox Theatre	Atlanta	GA	United States	4500
+3/9/2024	0	Durham Performing Arts Center	Durham	NC	United States	2712
+3/10/2024	0	Johnny Mercer Theatre	Savannah	GA	United States	5085
+3/12/2024	0	Steven Tanger Center For Performing Arts	Greensboro	NC	United States	3200
+3/13/2024	0	Ovens Auditorium	Charlotte	NC	United States	2460
+3/14/2024	0	Altria Theater	Richmond	VA	United States	3565
+3/15/2024	0	Mayo Performing Arts Center	Morristown	NJ	United States	2100
+3/16/2024	0	State Theatre	New Brunswick	NJ	United States	1870
+3/17/2024	0	Hippodrome Theatre	Baltimore	MD	United States	2300
+3/19/2024	0	Sandler Center For The Performing Arts	Virginia Beach	VA	United States	2200
+3/20/2024	0	Palace Theatre	Albany	NY	United States	4692
+3/21/2024	0	Chevalier Theatre	Medford	MA	United States	1900
+3/22/2024	0	Chubb Theatre At Capitol Center For The Arts	Concord	NH	United States	1304
+3/23/2024	0	Mohegan Sun Arena	Uncasville	CT	United States	10000
+3/24/2024	0	Eisenhower Hall	West Point	NY	United States	4324
+3/26/2024	0	The Maryland Theatre	Hagerstown	MD	United States	1600
+3/27/2024	0	Wharton Center For Performing Arts	East Lansing	MI	United States	3500
+3/28/2024	0	Playhouse Square - Keybank State Theatre	Cleveland	OH	United States	4000
+3/29/2024	0	American Music Theatre	Lancaster	PA	United States	1607
+3/30/2024	0	American Music Theatre	Lancaster	PA	United States	1607
+4/2/2024	0	"Capitol Theatre 1015 Main St Wheeling, Wv 26003"	Wheeling	WV	United States	2315
+4/3/2024	0	Oncenter Crouse Hinds Theater	Syracuse	NY	United States	2600
+4/4/2024	0	West Herr Auditorium	Rochester	NY	United States	3000
+4/6/2024	0	Fisher Theatre	Detroit	MI	United States	2089
+4/7/2024	0	Rosemont Theatre	Rosemont	IL	United States	4400
+4/9/2024	0	Devos Performance Hall	Grand Rapids	MI	United States	2543
+4/10/2024	0	Veterans Memorial Civic Center	Lima	OH	United States	3500
+4/11/2024	0	Honeywell Center	Wabash	IN	United States	2200
+4/14/2024	0	The Riverside Theater	Milwaukee	WI	United States	2500
+4/16/2024	0	State Theatre	Minneapolis	MN	United States	1870
+4/18/2024	0	The Louisville Palace Theater	Louisville	KY	United States	2500
+4/21/2024	0	Juanita K. Hammons Hall For The Performing Arts	Springfield	MO	United States	1800
+4/23/2024	0	Mark C. Smith Concert Hall	Huntsville	AL	United States	4293
+4/24/2024	0	Bjcc Concert Hall	Birmingham	AL	United States	2835
+4/25/2024	0	The Orpheum Theatre	Memphis	TN	United States	4173
+4/26/2024	0	Beau Rivage Theatre	Biloxi	MS	United States	1595
+4/27/2024	0	Beau Rivage Theatre	Biloxi	MS	United States	1595
+4/29/2024	0	Houston Smart Financial Centre	Houston	TX	United States	3000
+4/30/2024	0	Rose State College	Oklahoma City	OK	United States	2800
+5/1/2024	0	Texas Trust Cu Theatre	Grand Prairie	TX	United States	5000
+5/2/2024	0	Majestic Theatre	San Antonio	TX	United States	1704
+5/4/2024	0	Plaza Theater	El Paso	TX	United States	700
+5/7/2024	0	Orpheum Theatre	Phoenix	AZ	United States	1364
+5/8/2024	0	Findlay Toyota Center	Prescott Valley	AZ	United States	6200
+5/9/2024	0	San Diego Civic Theatre	San Diego	CA	United States	4889
+5/12/2024	0	Hult Center For The Performing Arts	Eugene	OR	United States	2400
+5/15/2024	0	Paramount Theatre	Seattle	WA	United States	3040
+5/17/2024	0	Silver Legacy Resort Casino Reno	Reno	NV	United States	1700
+5/18/2024	0	Chumash Casino Resort	Santa Ynez	CA	United States	1400
+5/21/2024	0	The Smith Center For The Performing Arts - Reynolds Hall	Las Vegas	NV	United States	2800
+5/23/2024	0	Eccles Theater	Salt Lake City	UT	United States	2468
+5/24/2024	2	The Avalon Theatre	Grand Junction	CO	United States	1100
+5/25/2024	2	Pikes Peak Center	Colorado Springs	CO	United States	2012
+5/26/2024	2	Paramount Theatre	Denver	CO	United States	3040
+11/29/2024	0	Yaamava' Theater	Highland	CA	United States	4700
+11/30/2024	0	Thunder Valley Casino	Lincoln	CA	United States	4200
+12/3/2024	0	Abravanel Hall	Salt Lake City	UT	United States	2768
+12/7/2024	0	Miller Auditorium	Kalamazoo	MI	United States	3497
+12/8/2024	0	Stifel Theatre	St. Louis	MO	United States	3100
+12/13/2024	0	Kennedy Center Concert Hall	Washington	DC	United States	7012
+12/15/2024	0	The Wellmont Theater	Montclair	NJ	United States	2600
+12/17/2024	0	The Playhouse On Rodney Square	Wilmington	DE	United States	1176
+12/18/2024	0	Lowell Memorial Auditorium	Lowell	MA	United States	2800
+12/19/2024	0	Paramount Theatre	Huntington	NY	United States	3040
+12/21/2024	0	Atlanta Symphony Orchestra	Atlanta	GA	United States	1762
+3/4/2024	0	Honda Center	Anaheim	CA	United States	19578
+3/11/2024	0	Paycom Arena	Oklahoma City	OK	United States	17500
+3/31/2024	0	Bridgestone Arena	Nashville	TN	United States	20000
+4/5/2024	0	Chi Health Center	Omaha	NE	United States	18975
+11/19/2024	0	Downtown Nashville	Nashville	TN	United States	6800
+11/20/2024	0	Bridgestone Arena	Nashville	TN	United States	20000
+11/6/2024	0	Amalie Arena	Tampa	FL	United States	21500
+11/12/2024	0	American Airlines Center	Dallas	TX	United States	20000
+11/14/2024	0	Moody Center	Austin	TX	United States	15000
+11/24/2024	0	Acrisure Arena	Thousand Palms	CA	United States	11007
+11/26/2024	0	Chase Center	San Francisco	CA	United States	18064
+12/1/2024	0	Climate Pledge Arena	Seattle	WA	United States	17459
+12/4/2024	0	Target Center	Minneapolis	MN	United States	20500
+10/16/2024	0	The Fillmore Denver	Denver	CO	United States	6764
+10/22/2024	0	Arizona Financial Theatre	Phoenix	AZ	United States	5000
+1/13/2024	2	Honda Center	Anaheim	CA	United States	19578
+8/6/2024	0	The Greek Theatre La	Los Angeles	CA	United States	5900
+8/20/2024	0	The Anthem	Washington	DC	United States	6000
+8/21/2024	0	Summerstage (Central Park)	New York City	NY	United States	5000
+9/1/2024	2	The Fillmore Detroit	Detroit	MI	United States	2200
+6/21/2024	0	Bmo Harris Pavillion	Milwaukee	WI	United States	23000
+6/30/2024	0	Columbus Commons	Columbus	OH	United States	6000
+5/6/2024	0	Soul Kitchen Music Hall	Mobile	AL	United States	598
+7/15/2024	0	Bank Of New Hampshire Pavilion At Meadowbrook	Gilford	NH	United States	9000
+10/21/2024	0	Roxian Theatre	Mckees Rocks	PA	United States	1400
+5/22/2024	0	Riverbend Music Center	Cincinnati	OH	United States	20500
+5/28/2024	0	Pine Knob Music Theatre	Detroit	MI	United States	15274
+5/29/2024	0	Blossom Music Center	Cuyahoga Falls	OH	United States	23000
+5/31/2024	0	Xfinity Center	Mansfield	MA	United States	17950
+6/1/2024	0	Xfinity Theatre	Hartford	AL	United States	24100
+6/2/2024	0	Jiffy Lube Live	Bristow	VA	United States	25262
+6/4/2024	0	Veterans United Home Loans Amphitheater At Virginia Beach	Virginia Beach	VA	United States	20000
+6/5/2024	0	Ccnb Heritage Park Amphitheatre	Simpsonville	KY	United States	15000
+6/6/2024	0	Pnc Music Pavilion	Charlotte	NC	United States	18500
+6/13/2024	0	Ithink Financial Amphitheatre	West Palm Beach	FL	United States	25000
+6/15/2024	0	Cellairis Amphitheatre At Lakewood	Atlanta	GA	United States	18920
+7/4/2024	1	Summerfest Generac Stage	Milwaukee	WI	United States	23000
+9/3/2024	0	Sap Center	San Jose	CA	United States	17500
+9/4/2024	0	Golden 1 Center	Sacramento	CA	United States	17608
+9/9/2024	0	Utep Don Haskins Center	El Paso	TX	United States	14000
+10/1/2024	0	Bryce Jordan Center	University Park	PA	United States	15451
+10/7/2024	0	Ubs Arena	Elmont	NY	United States	17500
+11/17/2024	0	Toyota Center	Houston	TX	United States	18300
+11/18/2024	0	American Bank Center	Corpus Christi	TX	United States	10000
+11/21/2024	0	Legacy Arena At Bjcc	Birmingham	AL	United States	17500
+10/28/2024	0	Piedmont Hall	Greensboro	AL	United States	2300
+6/7/2024	0	Tailgate N' Tallboys	Clinton	IA	United States	13000
+7/18/2024	0	Rock The South	Cullman	AL	United States	27000
+1/18/2024	0	The Blue Note	Columbia	MO	United States	747
+1/19/2024	0	District 142	Wyandotte	MI	United States	850
+1/20/2024	0	The Intersection	Grand Rapids	MI	United States	1000
+1/21/2024	0	Bluebird Nightclub	Bloomington	IN	United States	550
+1/26/2024	0	The Hall	Little Rock	AR	United States	1000
+1/27/2024	0	Mars Music Hall	Huntsville	AL	United States	1000
+2/1/2024	0	Knitting Factory	Boise	ID	United States	719
+2/2/2024	0	The Union Event Center	Salt Lake City	UT	United States	3500
+2/3/2024	0	Ogden Theatre	Denver	CO	United States	1600
+2/4/2024	0	Templelive Wichita	Wichita	KS	United States	1200
+2/10/2024	0	Mercury Ballroom	Louisville	KY	United States	900
+6/8/2024	0	Birmingham-Jefferson Convention Complex	Birmingham	AL	United States	19000
+12/6/2024	0	Coyote Joe'S	Charlotte	NC	United States	4000
+11/28/2024	1	At&T Stadium	Arlington	GA	United States	80000
+8/22/2024	0	Findlay Toyota Center	Prescott Valley	AZ	United States	6200
+6/28/2024	0	Hartford Healthcare Amphitheater	Bridgeport	CT	United States	10000
+6/29/2024	0	Maine Savings Amphitheater	Bangor	ME	United States	11448
+4/28/2024	0	Merlefest	Wilkesboro	NC	United States	60000
+2/21/2024	0	Mcmenamin'S Crystal Ballroom	Portland	OR	United States	1200
+3/6/2024	0	The Bellwether	Los Angeles	CA	United States	893
+2/17/2024	2	Senator Theatre	Chico	CA	United States	1000
+2/18/2024	2	Mcdonald Theater	Eugene	OR	United States	1000
+2/16/2024	2	Thunder Valley Casino	Lincoln	CA	United States	4200
+2/20/2024	0	Showbox At The Market	Seattle	WA	United States	1200
+2/13/2024	0	August Hall	San Francisco	CA	United States	951
+2/15/2024	0	Neptune Theatre	Seattle	WA	United States	1200
+2/19/2024	1	The Union Event Center	Salt Lake City	UT	United States	3500
+2/26/2024	0	Deluxe At Old National Centre	Indianapolis	IN	United States	659
+5/20/2024	0	Wooly'S	Des Moines	IA	United States	700
+5/27/2024	1	Punk Rock Bowling	Las Vegas	NV	United States	6800
+5/30/2024	0	Hammerstein Ballrom	New York City	NY	United States	3038
+9/8/2024	0	Starland Ballroom	Sayreville	NJ	United States	2500
+11/11/2024	1	Warfield Theatre	San Francisco	CA	United States	2361
+8/15/2024	0	Rock The Ruins	Indianapolis	IN	United States	2500
+6/10/2024	0	The Parkway Theater	Minneapolis	MN	United States	900
+8/5/2024	0	Isleta Amphitheater	Albuquerque	NM	United States	15000
+8/12/2024	0	White River Amphitheatre	Auburn	WA	United States	16000
+6/3/2024	0	Mcgrath Amphitheatre	Cedar Rapids	IA	United States	2250
+6/11/2024	0	Steelhouse Omaha	Omaha	NE	United States	3000
+6/18/2024	0	Powder Ridge Mountain Park & Resort	Middlefield	CT	United States	2080
+6/25/2024	0	Hampton Beach Ballroom Casino	Hampton	AR	United States	1516
+12/28/2024	0	The United Theater On Broadway	Los Angeles	CA	United States	3200
+12/31/2024	0	Hollywood Palladium	Los Angeles	CA	United States	5000
+5/13/2024	0	Brooklyn Bowl Nashville	Nashville	TN	United States	1500
+1/5/2024	0	Paramount Theatre	Seattle	WA	United States	3040
+1/6/2024	0	Davies Symphony Hall	San Francisco	CA	United States	2743
+9/23/2024	0	The Fillmore Miami Beach At The Jackie Gleason Theatre	Miami Beach	FL	United States	2200
+7/8/2024	0	Somerset Amphitheater	Somerset	KY	United States	40000
+4/15/2024	0	Bjcc Arena	Birmingham	AL	United States	19000
+12/30/2024	0	Boulder Theater	Boulder	CO	United States	2400
+8/19/2024	0	Dickies Arena	Fort Worth	TX	United States	14000
+7/29/2024	0	Pnc Music Pavilion	Charlotte	NC	United States	18500
+4/4/2025	0	Mystic Lake Casino	Prior Lake	MN	United States	2100
+4/5/2025	0	Hard Rock Casino Rockford	Rockford	IL	United States	2000
+4/10/2025	0	Sunrise Theatre	Fort Pierce	FL	United States	1214
+4/11/2025	0	The Florida Theatre	Jacksonville	FL	United States	1900
+4/13/2025	0	The Baycare Sound	Clearwater	FL	United States	9000
+4/25/2025	0	Honeywell Center 	Wabash	IN	United States	1500
+4/26/2025	0	The Lerner Theatre	Elkhart	IN	United States	1707
+5/3/2025	0	Magic City Casino	Miami	FL	United States	3000
+5/4/2025	0	Van Wezel Performing Arts Hall	Sarasota	FL	United States	1736
+5/10/2025	0	Mohegan Sun Arena	Uncasville	CT	United States	10000
+5/13/2025	0	Stern Auditorium / Perelman Stage at Carnegie Hall	New York`	NY	United States	2804
+5/16/2025	0	River City Casino & Hotel	Saint Louis	MO	United States	1114
+5/17/2025	0	Ameristar Casino	Kansas City	MO	United States	1332
+5/18/2025	0	Paramount Theatre	Denver	CO	United States	1870
+5/23/2025	0	Westgate Las Vegas	Las Vegas	NV	United States	3000
+6/5/2025	0	Pikes Peak Center	Colorado Springs	CO	United States	2000
+6/6/2025	0	Spokane Tribe & Resort	Airway Heights	WA	United States	2000
+6/19/2025	1	Alameda County Fairgrounds	Pleasanton	CA	United States	3000
+6/20/2025	0	Angel of the Winds Casino Resort	Arlington	WA	United States	1000
+5/30/2025	0	OLG Stage at Fallsview Casino Resort	Niagara Falls	ON	Canada	6000
+8/29/2025	0	Target Center	Minneapolis	MN	United States	20000
+8/30/2025	0	Fiserv Forum	Milwaukee	WI	United States	18000
+9/1/2025	1	KeyBank Center	Buffalo	NY	United States	19200
+9/10/2025	0	Rocket Arena	Cleveland	OH	United States	19530
+9/11/2025	0	CFG Bank Arena	Baltimore	MD	United States	14000
+9/13/2025	0	Enterprise Center	Saint Louis	MO	United States	22000
+9/15/2025	0	Ball Arena	Denver	CO	United States	20000
+9/17/2025	0	T-Mobile Center	Kansas City	MO	United States	18972
+8/22/2025	0	Vancouver Rogers Arena	Vancouver	BC	Canada	18000
+8/24/2025	0	Rogers Place	Edmonton	AB	Canada	20734
+8/25/2025	0	The Scotiabank Saddledome	Calgary	AB	Canada	19289
+8/27/2025	0	Canada Life Centre	Winnipeg	MB	Canada	15310
+9/3/2025	0	Rogers Stadium	Toronto	ON	Canada	95000
+9/7/2025	0	Centre Videotron	Quebec City	QC	Canada	14000
+9/8/2025	0	Centre Bell	Montreal	QC	Canada	21273
+9/5/2025	0	Pompano Beach Amphitheatre	Pompano Beach	FL	United States	3211
+9/6/2025	0	Jannus Live	Saint Petersburg	FL	United States	1950
+9/12/2025	0	Agora Theatre	Cleveland	OH	United States	2000
+9/16/2025	0	Franklin Music Hall	Philadelphia	PA	United States	2700
+9/18/2025	0	Roadrunner	Boston	MA	United States	3500
+9/20/2025	0	Brooklyn Paramount	Brooklyn	NY	United States	2750
+9/21/2025	0	College Street Music Hall	New Haven	CT	United States	2183
+9/23/2025	0	Stage AE Pittsburgh	Pittsburgh	PA	United States	2300
+9/26/2025	0	Ohana Festival	Dana Point	CA	United States	22000
+9/29/2025	0	Salt Shed	Chicago	IL	United States	3300
+9/30/2025	1	MegaCorp Pavilion	Newport	KY	United States	2550
+10/1/2025	0	Kemba Live	Columbus	OH	United States	2200
+10/3/2025	0	The Sylvee	Madison	WI	United States	2400
+10/4/2025	0	First Avenue	Minneapolis	MN	United States	1550
+10/6/2025	0	Midland Theatre	Kansas City	MO	United States	2587
+10/7/2025	0	The Factory in Deep Ellum	Dallas	TX	United States	4300
+10/8/2025	0	ACL Live at the Moody Theatre	Austin	TX	United States	2576
+10/10/2025	0	The Criterion	Oklahoma City	OK	United States	2606
+10/12/2025	0	The Mission Ballroom	Denver	CO	United States	3650
+10/15/2025	0	Paramount Theatre	Seattle	WA	United States	2735
+10/17/2025	0	Knitting Factory	Boise	ID	United States	2606
+10/18/2025	0	The Knitting Factory	Spokane	WA	United States	1427
+10/21/2025	0	McMenamins Crystal Ballroom	Portland	OR	United States	1460
+10/23/2025	0	Mountain Winery	Saratoga	CA	United States	2500
+10/24/2025	0	Warfield Theatre	San Francisco	CA	United States	2454
+10/26/2025	0	Silver Legacy Resort Casino Reno	Reno	NV	United States	1456
+9/24/2025	0	HISTORY	Toronto	ON	Canada	2287
+10/20/2025	0	Orpheum Theatre	Vancouver	BC	Canada	2515

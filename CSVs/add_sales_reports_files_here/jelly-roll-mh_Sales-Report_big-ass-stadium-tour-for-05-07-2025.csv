@@ -1,0 +1,68 @@
+APPAREL
+SKU,Name,Type,Sex,Size,Sold,Unit % of Total,Comp,Avg. Price,Gross Rev,% of Total
+JELROL-T10079-S,BEAUTIFULLY BROKEN SINGING TEE,T-Shirt,U,S,148,11%,0,$49.80,"$7,370.40",11%
+JELROL-T10079-M,BEAUTIFULLY BROKEN SINGING TEE,T-Shirt,U,M,220,17%,0,$49.80,"$10,956.00",17%
+JELROL-T10079-L,BEAUTIFULLY BROKEN SINGING TEE,T-Shirt,U,L,331,25%,0,$49.80,"$16,483.80",25%
+JELROL-T10079-XL,BEAUTIFULLY BROKEN SINGING TEE,T-Shirt,U,XL,340,26%,0,$49.80,"$16,932.00",26%
+JELROL-T10079-XXL,BEAUTIFULLY BROKEN SINGING TEE,T-Shirt,U,2XL,160,12%,0,$49.80,"$7,968.00",12%
+JELROL-T10079-3XL,BEAUTIFULLY BROKEN SINGING TEE,T-Shirt,U,3XL,108,8%,0,$49.80,"$5,378.40",8%
+SUBTOTAL,BEAUTIFULLY BROKEN SINGING TEE,T-Shirt,U,"",1307,30%,0,$49.80,"$65,088.60",33%
+
+JELROL-T10080-S,Beautifully Broken Face Tee,T-Shirt,U,S,68,11%,0,$49.80,"$3,386.40",11%
+JELROL-T10080-M,Beautifully Broken Face Tee,T-Shirt,U,M,117,18%,0,$49.80,"$5,826.60",18%
+JELROL-T10080-L,Beautifully Broken Face Tee,T-Shirt,U,L,161,25%,0,$49.80,"$8,017.80",25%
+JELROL-T10080-XL,Beautifully Broken Face Tee,T-Shirt,U,XL,150,24%,0,$49.80,"$7,470.00",24%
+JELROL-T10080-XXL,Beautifully Broken Face Tee,T-Shirt,U,2XL,85,13%,0,$49.80,"$4,233.00",13%
+JELROL-T10080-3XL,Beautifully Broken Face Tee,T-Shirt,U,3XL,55,9%,0,$49.80,"$2,739.00",9%
+SUBTOTAL,Beautifully Broken Face Tee,T-Shirt,U,"",636,15%,0,$49.80,"$31,672.80",16%
+
+JELROL-T10081-S,DREAMS DONT DIE TEE,T-Shirt,U,S,73,14%,0,$49.80,"$3,635.40",14%
+JELROL-T10081-M,DREAMS DONT DIE TEE,T-Shirt,U,M,104,20%,0,$49.80,"$5,179.20",20%
+JELROL-T10081-L,DREAMS DONT DIE TEE,T-Shirt,U,L,152,29%,0,$49.80,"$7,569.60",29%
+JELROL-T10081-XL,DREAMS DONT DIE TEE,T-Shirt,U,XL,136,26%,0,$49.80,"$6,772.80",26%
+JELROL-T10081-XXL,DREAMS DONT DIE TEE,T-Shirt,U,2XL,66,12%,0,$49.80,"$3,286.80",12%
+JELROL-T10081-3XL,DREAMS DONT DIE TEE,T-Shirt,U,3XL,0,0%,0,$0.00,$0.00,0%
+SUBTOTAL,DREAMS DONT DIE TEE,T-Shirt,U,"",531,12%,0,$49.80,"$26,443.80",13%
+
+JELROL-T10082-S,EAGLE TEE,T-Shirt,U,S,87,12%,0,$49.80,"$4,332.60",12%
+JELROL-T10082-M,EAGLE TEE,T-Shirt,U,M,145,21%,0,$49.80,"$7,221.00",21%
+JELROL-T10082-L,EAGLE TEE,T-Shirt,U,L,176,25%,0,$49.80,"$8,764.80",25%
+JELROL-T10082-XL,EAGLE TEE,T-Shirt,U,XL,178,25%,0,$49.80,"$8,864.40",25%
+JELROL-T10082-XXL,EAGLE TEE,T-Shirt,U,2XL,91,13%,0,$49.80,"$4,531.80",13%
+JELROL-T10082-3XL,EAGLE TEE,T-Shirt,U,3XL,29,4%,0,$49.80,"$1,444.20",4%
+SUBTOTAL,EAGLE TEE,T-Shirt,U,"",706,16%,0,$49.80,"$35,158.80",18%
+
+"",Singing Zip Hoodie,T-Shirt,U,S,0,0%,0,$0.00,$0.00,0%
+"",Singing Zip Hoodie,T-Shirt,U,M,0,0%,0,$0.00,$0.00,0%
+"",Singing Zip Hoodie,T-Shirt,U,L,0,0%,0,$0.00,$0.00,0%
+"",Singing Zip Hoodie,T-Shirt,U,XL,0,0%,0,$0.00,$0.00,0%
+"",Singing Zip Hoodie,T-Shirt,U,2XL,0,0%,0,$0.00,$0.00,0%
+"",Singing Zip Hoodie,T-Shirt,U,3XL,0,0%,0,$0.00,$0.00,0%
+SUBTOTAL,Singing Zip Hoodie,T-Shirt,U,"",0,0%,0,$0.00,$0.00,0%
+
+"",Anarchy Hoodie - TOUR,Pullover Hoodie,U,S,14,8%,0,$109.33,"$1,530.62",8%
+"",Anarchy Hoodie - TOUR,Pullover Hoodie,U,M,24,15%,0,$109.33,"$2,623.92",15%
+"",Anarchy Hoodie - TOUR,Pullover Hoodie,U,L,45,27%,0,$109.33,"$4,919.85",27%
+"",Anarchy Hoodie - TOUR,Pullover Hoodie,U,XL,29,18%,1,$109.33,"$3,170.57",18%
+"",Anarchy Hoodie - TOUR,Pullover Hoodie,U,2XL,49,30%,0,$109.33,"$5,357.17",30%
+"",Anarchy Hoodie - TOUR,Pullover Hoodie,U,3XL,4,2%,0,$109.33,$437.32,2%
+SUBTOTAL,Anarchy Hoodie - TOUR,Pullover Hoodie,U,"",165,4%,1,$109.33,"$18,039.45",9%
+
+TOTAL APPAREL,"","","","",3345,78%,1,"","$176,403.45",88%
+
+
+OTHER
+SKU,Name,Type,Sex,Size,Sold,Unit % of Total,Comp,Avg. Price,Gross Rev,% of Total
+JELROL-HAT2006,Distressed Denim Hat,Hat - Other,U,,289,7%,0,$49.80,"$14,392.20",7%
+JELROL-ACC1048,Tall Boy Koozie,Koozie,U,,615,14%,0,$11.91,"$7,324.65",4%
+JELROL-ACC1049,DREAMS DONT DIE METALLIC TOTE,Bag,U,,53,1%,0,$38.97,"$2,065.41",1%
+
+TOTAL OTHER,"","","","",957,22%,0,"","$23,782.26",12%
+
+
+MUSIC
+UPC,Name,Type,Sex,Size,Sold,Unit % of Total,Comp,Avg. Price,Gross Rev,% of Total
+
+TOTAL MUSIC,"","","","",0,0%,0,"",$0.00,0%
+
+GRAND TOTAL,"","","","",4302,"",1,"","$200,185.71"

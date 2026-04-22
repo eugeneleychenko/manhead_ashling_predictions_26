@@ -1,0 +1,20 @@
+[Unit]
+Description=Manhead Prediction API
+After=network.target
+
+[Service]
+User=manhead
+Group=manhead
+WorkingDirectory=/opt/manhead
+EnvironmentFile=/opt/manhead/.env
+ExecStart=/opt/manhead/.venv/bin/gunicorn \
+    --bind 127.0.0.1:5001 \
+    --workers 2 \
+    --timeout 300 \
+    --chdir /opt/manhead/Python_scripts \
+    run_all_products_sales_by_size_prediction_app:app
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

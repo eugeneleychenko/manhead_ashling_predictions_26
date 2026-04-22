@@ -1,0 +1,88 @@
+APPAREL
+SKU,Name,Type,Sex,Size,Sold,Unit % of Total,Comp,Avg. Price,Gross Rev,% of Total
+LAINEY-T1049-S,2024 Tour T-Shirt,T-Shirt,"",S,83,24%,0,$45.00,"$3,735.00",24%
+LAINEY-T1049-M,2024 Tour T-Shirt,T-Shirt,"",M,110,31%,0,$45.00,"$4,950.00",31%
+LAINEY-T1049-L,2024 Tour T-Shirt,T-Shirt,"",L,89,25%,0,$45.00,"$4,005.00",25%
+LAINEY-T1049-XL,2024 Tour T-Shirt,T-Shirt,"",XL,44,12%,0,$45.00,"$1,980.00",12%
+LAINEY-T1049-XXL,2024 Tour T-Shirt,T-Shirt,"",2XL,27,8%,0,$45.00,"$1,215.00",8%
+SUBTOTAL,2024 Tour T-Shirt,T-Shirt,"","",353,10%,0,$45.00,"$15,885.00",10%
+
+LAINEY-T1056-S,Country's Cool Again Tour T-Shirt,T-Shirt,U,S,83,19%,0,$45.00,"$3,735.00",19%
+LAINEY-T1056-M,Country's Cool Again Tour T-Shirt,T-Shirt,U,M,91,21%,0,$45.00,"$4,095.00",21%
+LAINEY-T1056-L,Country's Cool Again Tour T-Shirt,T-Shirt,U,L,115,27%,0,$45.00,"$5,175.00",27%
+LAINEY-T1056-XL,Country's Cool Again Tour T-Shirt,T-Shirt,U,XL,93,22%,0,$45.00,"$4,185.00",22%
+LAINEY-T1056-XXL,Country's Cool Again Tour T-Shirt,T-Shirt,U,2XL,45,11%,0,$45.00,"$2,025.00",11%
+SUBTOTAL,Country's Cool Again Tour T-Shirt,T-Shirt,U,"",427,13%,0,$45.00,"$19,215.00",12%
+
+LAINEY-T1048-S,Green Wildflowers T-Shirt,T-Shirt,U,S,135,24%,0,$45.00,"$6,075.00",24%
+LAINEY-T1048-M,Green Wildflowers T-Shirt,T-Shirt,U,M,164,29%,0,$45.00,"$7,380.00",29%
+LAINEY-T1048-L,Green Wildflowers T-Shirt,T-Shirt,U,L,120,21%,0,$45.00,"$5,400.00",21%
+LAINEY-T1048-XL,Green Wildflowers T-Shirt,T-Shirt,U,XL,92,16%,0,$45.00,"$4,140.00",16%
+LAINEY-T1048-XXL,Green Wildflowers T-Shirt,T-Shirt,U,2XL,53,9%,0,$45.00,"$2,385.00",9%
+SUBTOTAL,Green Wildflowers T-Shirt,T-Shirt,U,"",564,17%,0,$45.00,"$25,380.00",16%
+
+LAINEY-T1047-S,Cream Guitar T-Shirt ,T-Shirt,U,S,42,25%,0,$45.00,"$1,890.00",25%
+LAINEY-T1047-M,Cream Guitar T-Shirt ,T-Shirt,U,M,51,30%,0,$45.00,"$2,295.00",30%
+LAINEY-T1047-L,Cream Guitar T-Shirt ,T-Shirt,U,L,37,22%,0,$45.00,"$1,665.00",22%
+LAINEY-T1047-XL,Cream Guitar T-Shirt ,T-Shirt,U,XL,22,13%,0,$45.00,$990.00,13%
+LAINEY-T1047-XXL,Cream Guitar T-Shirt ,T-Shirt,U,2XL,16,10%,0,$45.00,$720.00,10%
+SUBTOTAL,Cream Guitar T-Shirt ,T-Shirt,U,"",168,5%,0,$45.00,"$7,560.00",5%
+
+LAINEY-T1051-S,Desert Circle Photo T-Shirt,T-Shirt,U,S,21,23%,0,$45.00,$945.00,23%
+LAINEY-T1051-M,Desert Circle Photo T-Shirt,T-Shirt,U,M,18,20%,0,$45.00,$810.00,20%
+LAINEY-T1051-L,Desert Circle Photo T-Shirt,T-Shirt,U,L,21,23%,0,$45.00,$945.00,23%
+LAINEY-T1051-XL,Desert Circle Photo T-Shirt,T-Shirt,U,XL,22,24%,0,$45.00,$990.00,24%
+LAINEY-T1051-XXL,Desert Circle Photo T-Shirt,T-Shirt,U,2XL,10,11%,0,$45.00,$450.00,11%
+SUBTOTAL,Desert Circle Photo T-Shirt,T-Shirt,U,"",92,3%,0,$45.00,"$4,140.00",3%
+
+LAINEY-T1052-S,Spotlight Photo T-Shirt,T-Shirt,U,S,50,21%,0,$45.00,"$2,250.00",21%
+LAINEY-T1052-M,Spotlight Photo T-Shirt,T-Shirt,U,M,82,34%,0,$45.00,"$3,690.00",34%
+LAINEY-T1052-L,Spotlight Photo T-Shirt,T-Shirt,U,L,55,23%,0,$45.00,"$2,475.00",23%
+LAINEY-T1052-XL,Spotlight Photo T-Shirt,T-Shirt,U,XL,46,19%,0,$45.00,"$2,070.00",19%
+LAINEY-T1052-XXL,Spotlight Photo T-Shirt,T-Shirt,U,2XL,9,4%,0,$45.00,$405.00,4%
+SUBTOTAL,Spotlight Photo T-Shirt,T-Shirt,U,"",242,7%,0,$45.00,"$10,890.00",7%
+
+LAINEY-T1010-S,Youth Flowers Tee,T-Shirt,U,YS,36,35%,0,$35.00,"$1,260.00",35%
+LAINEY-T1010-M,Youth Flowers Tee,T-Shirt,U,YM,25,24%,0,$35.00,$875.00,24%
+LAINEY-T1010-L,Youth Flowers Tee,T-Shirt,U,YL,42,41%,0,$35.00,"$1,470.00",41%
+SUBTOTAL,Youth Flowers Tee,T-Shirt,U,"",103,3%,0,$35.00,"$3,605.00",2%
+
+LAINEY-ACC1042,Logo Rope Trucker Hat,Hat,"",One-Size,71,100%,0,$35.00,"$2,485.00",100%
+SUBTOTAL,Logo Rope Trucker Hat,Hat,"","",71,2%,0,$35.00,"$2,485.00",2%
+
+LAINEY-T1050-S,Black Overlay Photo T-Shirt,T-Shirt,U,S,12,22%,0,$45.00,$540.00,22%
+LAINEY-T1050-M,Black Overlay Photo T-Shirt,T-Shirt,U,M,8,15%,0,$45.00,$360.00,15%
+LAINEY-T1050-L,Black Overlay Photo T-Shirt,T-Shirt,U,L,16,29%,0,$45.00,$720.00,29%
+LAINEY-T1050-XL,Black Overlay Photo T-Shirt,T-Shirt,U,XL,12,22%,0,$45.00,$540.00,22%
+LAINEY-T1050-XXL,Black Overlay Photo T-Shirt,T-Shirt,U,2XL,7,13%,0,$45.00,$315.00,13%
+SUBTOTAL,Black Overlay Photo T-Shirt,T-Shirt,U,"",55,2%,0,$45.00,"$2,475.00",2%
+
+LAINEY-HOOD1005-S,Country's Cool Again Hoodie,Pullover Hoodie,U,S,89,15%,0,$75.00,"$6,675.00",15%
+LAINEY-HOOD1005-M,Country's Cool Again Hoodie,Pullover Hoodie,U,M,142,23%,0,$75.00,"$10,650.00",23%
+LAINEY-HOOD1005-L,Country's Cool Again Hoodie,Pullover Hoodie,U,L,146,24%,0,$75.00,"$10,950.00",24%
+LAINEY-HOOD1005-XL,Country's Cool Again Hoodie,Pullover Hoodie,U,XL,135,22%,0,$75.00,"$10,125.00",22%
+LAINEY-HOOD1005-XXL,Country's Cool Again Hoodie,Pullover Hoodie,U,2XL,96,16%,0,$75.00,"$7,200.00",16%
+SUBTOTAL,Country's Cool Again Hoodie,Pullover Hoodie,U,"",608,18%,0,$75.00,"$45,600.00",30%
+
+TOTAL APPAREL,"","","","",2683,79%,0,"","$137,235.00",89%
+
+
+OTHER
+SKU,Name,Type,Sex,Size,Sold,Unit % of Total,Comp,Avg. Price,Gross Rev,% of Total
+"",Hat '24,Hat - Other,"",,122,4%,0,$35.00,"$4,270.00",3%
+"",Wildflowers Tote '24,Bag,U,,204,6%,0,$20.00,"$4,080.00",3%
+LAINEY-TOUR-ACC1002,BLACK FLORAL HORSE TALL KOOZIE,Koozie,"",,79,2%,0,$10.00,$790.00,1%
+LAINEY-TOUR-ACC1004,KHAKI HORSES KOOZIE,Koozie,"",,101,3%,0,$5.00,$505.00,0%
+"",City Poster '24,Poster,"",,62,2%,1,$40.00,"$2,480.00",2%
+LAINEY-TOUR-ACC1001,DUSTY BLUE HIGHWAY KOOZIE,Koozie,U,,121,4%,0,$5.00,$605.00,0%
+"",Signed Guitar 24',Accessories,"",,4,0%,0,"$1,000.00","$4,000.00",3%
+
+TOTAL OTHER,"","","","",693,21%,1,"","$16,730.00",11%
+
+
+MUSIC
+UPC,Name,Type,Sex,Size,Sold,Unit % of Total,Comp,Avg. Price,Gross Rev,% of Total
+
+TOTAL MUSIC,"","","","",0,0%,0,"",$0.00,0%
+
+GRAND TOTAL,"","","","",3376,"",1,"","$153,965.00"

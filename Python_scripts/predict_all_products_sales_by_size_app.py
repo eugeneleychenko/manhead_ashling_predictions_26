@@ -454,6 +454,61 @@ def status():
     }), 200
 
 
+# ── Artist Metadata ──
+
+@app.route("/api/artist-metadata", methods=["GET"])
+def api_get_artist_metadata():
+    """Return current artist metadata CSV as JSON."""
+    meta_path = paths.get("artist_meta_csv", "")
+    if not meta_path or not os.path.exists(meta_path):
+        return jsonify({"data": [], "count": 0}), 200
+    try:
+        df = pd.read_csv(meta_path)
+        return jsonify({"data": df.to_dict(orient="records"), "count": len(df)}), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route("/api/artist-metadata", methods=["POST"])
+def api_add_artist_metadata():
+    """Add new artist rows to the metadata CSV."""
+    data = request.get_json()
+    if not data or "artists" not in data:
+        return jsonify({"error": "JSON body with 'artists' array required"}), 400
+
+    artists = data["artists"]
+    if not artists:
+        return jsonify({"error": "No artist entries provided"}), 400
+
+    meta_path = paths.get("artist_meta_csv", "")
+    if not meta_path:
+        return jsonify({"error": "artist_meta_csv not configured"}), 500
+
+    os.makedirs(os.path.dirname(meta_path), exist_ok=True)
+
+    if os.path.exists(meta_path):
+        existing_df = pd.read_csv(meta_path)
+    else:
+        existing_df = pd.DataFrame(columns=["artistName", "Instagram_followers", "Genre"])
+
+    # Normalize column names
+    if "Instagram" in existing_df.columns and "Instagram_followers" not in existing_df.columns:
+        existing_df = existing_df.rename(columns={"Instagram": "Instagram_followers"})
+
+    new_df = pd.DataFrame(artists)
+    for col in ["artistName", "Instagram_followers", "Genre"]:
+        if col not in new_df.columns:
+            new_df[col] = ""
+
+    new_df = new_df[["artistName", "Instagram_followers", "Genre"]]
+    updated_df = pd.concat([existing_df, new_df], ignore_index=True)
+    updated_df.to_csv(meta_path, index=False)
+
+    return jsonify({
+        "rows_added": len(artists),
+        "rows_total": len(updated_df),
+    }), 200
+
+
 # ── Retrain ──
 
 RETRAIN_STATE_FILE = os.path.join(os.path.dirname(os.path.abspath(config_path)), ".retrain_state.json")

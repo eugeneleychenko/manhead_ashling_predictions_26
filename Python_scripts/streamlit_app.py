@@ -87,6 +87,9 @@ def _api_headers():
         h["X-API-Key"] = API_KEY
     return h
 
+IS_CLOUD = bool(_get_secret("PREDICTION_API_BASE_URL", ""))
+FLASK_ARTIST_META_URL = f"{_api_base.rstrip('/')}/api/artist-metadata"
+
 st.set_page_config(page_title="Merch Sales Prediction", layout="wide")
 
 st.title("Merch Sales Prediction by Size")
@@ -187,97 +190,117 @@ if add_artist_choice == "Yes":
                 )
                 st.error("Please enter at least one artist name.")
             else:
-                if os.path.exists(ARTIST_METADATA_PATH):
+                if IS_CLOUD:
+                    # Remote: POST to DO droplet API
                     try:
-                        existing_df = pd.read_csv(ARTIST_METADATA_PATH)
+                        resp = requests.post(
+                            FLASK_ARTIST_META_URL,
+                            json={"artists": cleaned_artists},
+                            headers=_api_headers(),
+                            timeout=30,
+                            verify=False,
+                        )
+                        if resp.ok:
+                            body = resp.json()
+                            st.session_state["artist_entries"].extend(cleaned_artists)
+                            st.success(f"Added {body.get('rows_added', len(cleaned_artists))} artist row(s) to server.")
+                        else:
+                            st.error(f"Failed to add artist data: {resp.text}")
+                    except requests.RequestException as e:
+                        st.error(f"Could not reach artist metadata API: {e}")
+                else:
+                    # Local: write to CSV directly
+                    if os.path.exists(ARTIST_METADATA_PATH):
+                        try:
+                            existing_df = pd.read_csv(ARTIST_METADATA_PATH)
+                        except PermissionError as e:
+                            log_event(
+                                step="step1_artist_meta",
+                                status="error",
+                                details={
+                                    "artist_meta_path": ARTIST_METADATA_PATH,
+                                    "error": f"PermissionError reading artist metadata: {e}",
+                                },
+                            )
+                            st.error(
+                                "Could not read artist_metadata.csv. "
+                                "Please close it if it's open in Excel or another program and try again."
+                            )
+                            existing_df = pd.DataFrame(columns=["artistName", INSTAGRAM_COL, "Genre"])
+                        except Exception as e:
+                            log_event(
+                                step="step1_artist_meta",
+                                status="error",
+                                details={
+                                    "artist_meta_path": ARTIST_METADATA_PATH,
+                                    "error": f"Error reading artist metadata: {e}",
+                                },
+                            )
+                            st.error(f"Could not read artist_metadata.csv: {e}")
+                            existing_df = pd.DataFrame(columns=["artistName", INSTAGRAM_COL, "Genre"])
+                    else:
+                        existing_df = pd.DataFrame(columns=["artistName", INSTAGRAM_COL, "Genre"])
+
+                    if "Instagram" in existing_df.columns:
+                        if INSTAGRAM_COL not in existing_df.columns:
+                            existing_df = existing_df.rename(columns={"Instagram": INSTAGRAM_COL})
+                        else:
+                            existing_df[INSTAGRAM_COL] = existing_df[INSTAGRAM_COL].fillna(existing_df["Instagram"])
+                        existing_df = existing_df.drop(columns=["Instagram"])
+
+                    for col in ["artistName", INSTAGRAM_COL, "Genre"]:
+                        if col not in existing_df.columns:
+                            existing_df[col] = ""
+
+                    new_df = pd.DataFrame(cleaned_artists)
+                    new_df = new_df[["artistName", INSTAGRAM_COL, "Genre"]]
+
+                    updated_df = pd.concat([existing_df, new_df], ignore_index=True)
+
+                    try:
+                        updated_df.to_csv(ARTIST_METADATA_PATH, index=False)
                     except PermissionError as e:
                         log_event(
                             step="step1_artist_meta",
                             status="error",
                             details={
                                 "artist_meta_path": ARTIST_METADATA_PATH,
-                                "error": f"PermissionError reading artist metadata: {e}",
+                                "error": f"PermissionError writing artist metadata: {e}",
+                                "rows_attempted_add": int(len(cleaned_artists)),
                             },
                         )
                         st.error(
-                            "Could not read artist_metadata.csv. "
-                            "Please close it if it's open in Excel or another program and try again."
+                            "Could not update artist_metadata.csv. "
+                            "Most likely the file is open in Excel or another application. "
+                            "Please close it and try again."
                         )
-                        existing_df = pd.DataFrame(columns=["artistName", INSTAGRAM_COL, "Genre"])
                     except Exception as e:
                         log_event(
                             step="step1_artist_meta",
                             status="error",
                             details={
                                 "artist_meta_path": ARTIST_METADATA_PATH,
-                                "error": f"Error reading artist metadata: {e}",
+                                "error": f"Error writing artist metadata: {e}",
+                                "rows_attempted_add": int(len(cleaned_artists)),
                             },
                         )
-                        st.error(f"Could not read artist_metadata.csv: {e}")
-                        existing_df = pd.DataFrame(columns=["artistName", INSTAGRAM_COL, "Genre"])
-                else:
-                    existing_df = pd.DataFrame(columns=["artistName", INSTAGRAM_COL, "Genre"])
-
-                if "Instagram" in existing_df.columns:
-                    if INSTAGRAM_COL not in existing_df.columns:
-                        existing_df = existing_df.rename(columns={"Instagram": INSTAGRAM_COL})
+                        st.error(f"Could not update artist_metadata.csv: {e}")
                     else:
-                        existing_df[INSTAGRAM_COL] = existing_df[INSTAGRAM_COL].fillna(existing_df["Instagram"])
-                    existing_df = existing_df.drop(columns=["Instagram"])
+                        st.session_state["artist_entries"].extend(cleaned_artists)
 
-                for col in ["artistName", INSTAGRAM_COL, "Genre"]:
-                    if col not in existing_df.columns:
-                        existing_df[col] = ""
+                        file_hash = sha256_file(ARTIST_METADATA_PATH) if os.path.exists(ARTIST_METADATA_PATH) else ""
+                        log_event(
+                            step="step1_artist_meta",
+                            status="success",
+                            details={
+                                "artist_meta_path": ARTIST_METADATA_PATH,
+                                "rows_added": int(len(cleaned_artists)),
+                                "rows_total_after": int(updated_df.shape[0]),
+                                "artist_meta_hash": file_hash,
+                            },
+                        )
 
-                new_df = pd.DataFrame(cleaned_artists)
-                new_df = new_df[["artistName", INSTAGRAM_COL, "Genre"]]
-
-                updated_df = pd.concat([existing_df, new_df], ignore_index=True)
-
-                try:
-                    updated_df.to_csv(ARTIST_METADATA_PATH, index=False)
-                except PermissionError as e:
-                    log_event(
-                        step="step1_artist_meta",
-                        status="error",
-                        details={
-                            "artist_meta_path": ARTIST_METADATA_PATH,
-                            "error": f"PermissionError writing artist metadata: {e}",
-                            "rows_attempted_add": int(len(cleaned_artists)),
-                        },
-                    )
-                    st.error(
-                        "Could not update artist_metadata.csv. "
-                        "Most likely the file is open in Excel or another application. "
-                        "Please close it and try again."
-                    )
-                except Exception as e:
-                    log_event(
-                        step="step1_artist_meta",
-                        status="error",
-                        details={
-                            "artist_meta_path": ARTIST_METADATA_PATH,
-                            "error": f"Error writing artist metadata: {e}",
-                            "rows_attempted_add": int(len(cleaned_artists)),
-                        },
-                    )
-                    st.error(f"Could not update artist_metadata.csv: {e}")
-                else:
-                    st.session_state["artist_entries"].extend(cleaned_artists)
-
-                    file_hash = sha256_file(ARTIST_METADATA_PATH) if os.path.exists(ARTIST_METADATA_PATH) else ""
-                    log_event(
-                        step="step1_artist_meta",
-                        status="success",
-                        details={
-                            "artist_meta_path": ARTIST_METADATA_PATH,
-                            "rows_added": int(len(cleaned_artists)),
-                            "rows_total_after": int(updated_df.shape[0]),
-                            "artist_meta_hash": file_hash,
-                        },
-                    )
-
-                    st.success(f"Added {len(cleaned_artists)} artist row(s) to artist_metadata.csv.")
+                        st.success(f"Added {len(cleaned_artists)} artist row(s) to artist_metadata.csv.")
 
 if st.session_state["artist_entries"]:
     st.subheader("Artists added in this session")

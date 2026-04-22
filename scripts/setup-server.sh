@@ -13,6 +13,9 @@ MODEL_DEST="$APP_DIR/Flask/model_retrained.joblib"
 echo "==> [1/9] System packages..."
 export DEBIAN_FRONTEND=noninteractive
 apt-get update -qq
+apt-get install -y -qq software-properties-common
+add-apt-repository -y ppa:deadsnakes/ppa
+apt-get update -qq
 apt-get install -y -qq python3.13 python3.13-venv python3.13-dev \
     nginx certbot python3-certbot-nginx \
     curl wget build-essential libffi-dev
@@ -28,7 +31,7 @@ chown -R "$APP_USER":"$APP_USER" "$APP_DIR"
 echo "==> [4/9] Create Python venv + install deps..."
 sudo -u "$APP_USER" python3.13 -m venv "$VENV"
 sudo -u "$APP_USER" "$VENV/bin/pip" install --upgrade pip
-sudo -u "$APP_USER" "$VENV/bin/pip" install -r "$APP_DIR/requirements.txt"
+sudo -u "$APP_USER" "$VENV/bin/pip" install -r "$APP_DIR/requirements-server.txt"
 sudo -u "$APP_USER" "$VENV/bin/pip" install gunicorn python-dotenv
 
 echo "==> [5/9] Download model from DO Spaces (~2.9GB, be patient)..."

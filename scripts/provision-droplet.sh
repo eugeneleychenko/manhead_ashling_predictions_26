@@ -6,7 +6,7 @@ set -euo pipefail
 
 DROPLET_NAME="manhead-predict"
 REGION="nyc3"
-SIZE="s-4vcpu-32gb-320gb-intel"
+SIZE="s-4vcpu-16gb-amd"
 IMAGE="ubuntu-24-04-x64"
 SSH_KEY_NAME="Macbook Air"
 

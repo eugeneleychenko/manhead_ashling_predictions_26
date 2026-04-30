@@ -512,7 +512,6 @@ def api_add_artist_metadata():
 # ── Master Dataset ──
 
 @app.route("/api/master-dataset/tail", methods=["GET"])
-@require_api_key
 def api_master_dataset_tail():
     """Return the last N rows of the master training dataset as JSON."""
     master_path = paths.get("master_training_dataset", "")
@@ -534,7 +533,6 @@ def api_master_dataset_tail():
 
 
 @app.route("/api/master-dataset/download", methods=["GET"])
-@require_api_key
 def api_master_dataset_download():
     """Download the full master training dataset as CSV."""
     master_path = paths.get("master_training_dataset", "")

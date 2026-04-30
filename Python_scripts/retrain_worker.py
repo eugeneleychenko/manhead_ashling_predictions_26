@@ -66,30 +66,20 @@ def main(config_path: str):
                                      os.path.join(repo_root, "Python_scripts", "consolidate_pipeline.py"))
 
     if os.path.exists(consolidation_script):
-        # Import and run consolidation with skip_spotify=True
-        sys.path.insert(0, os.path.dirname(consolidation_script))
-        try:
-            import consolidate_pipeline
-            # The consolidation pipeline has a main function that accepts paths_config
-            if hasattr(consolidate_pipeline, "run_pipeline"):
-                consolidate_pipeline.run_pipeline(config_path, skip_spotify=True)
-            elif hasattr(consolidate_pipeline, "main"):
-                consolidate_pipeline.main(config_path, skip_spotify=True)
-            else:
-                # Fallback: run as subprocess with env var to skip spotify
-                import subprocess
-                env = os.environ.copy()
-                env["SKIP_SPOTIFY"] = "1"
-                result = subprocess.run(
-                    [sys.executable, consolidation_script, config_path],
-                    cwd=repo_root, env=env,
-                    capture_output=True, text=True, timeout=1800,
-                )
-                print(result.stdout)
-                if result.returncode != 0:
-                    print(f"[retrain] Consolidation warnings: {result.stderr}")
-        except Exception as e:
-            print(f"[retrain] Consolidation error (continuing): {e}")
+        import subprocess as _sp
+        env = os.environ.copy()
+        env["SKIP_SPOTIFY"] = "1"
+        result = _sp.run(
+            [sys.executable, consolidation_script],
+            cwd=repo_root, env=env,
+            capture_output=True, text=True, timeout=1800,
+        )
+        if result.stdout:
+            print(result.stdout[-2000:])
+        if result.returncode != 0:
+            print(f"[retrain] Consolidation failed (exit {result.returncode})")
+            if result.stderr:
+                print(f"[retrain] stderr: {result.stderr[-2000:]}")
     else:
         print(f"[retrain] Consolidation script not found at {consolidation_script}, skipping Step 2")
 

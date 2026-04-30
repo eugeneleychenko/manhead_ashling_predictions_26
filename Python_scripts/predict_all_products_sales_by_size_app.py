@@ -11,7 +11,7 @@ from io import BytesIO
 import numpy as np
 import pandas as pd
 import datetime as dt
-from flask import Flask, render_template, request, send_from_directory, url_for, jsonify
+from flask import Flask, render_template, request, send_file, send_from_directory, url_for, jsonify
 
 
 try:
@@ -507,6 +507,41 @@ def api_add_artist_metadata():
         "rows_added": len(artists),
         "rows_total": len(updated_df),
     }), 200
+
+
+# ── Master Dataset ──
+
+@app.route("/api/master-dataset/tail", methods=["GET"])
+@require_api_key
+def api_master_dataset_tail():
+    """Return the last N rows of the master training dataset as JSON."""
+    master_path = paths.get("master_training_dataset", "")
+    if not master_path or not os.path.exists(master_path):
+        return jsonify({"error": "Master dataset not found"}), 404
+    try:
+        n = int(request.args.get("n", 50))
+        n = min(n, 500)
+        df = pd.read_csv(master_path)
+        total_rows = len(df)
+        tail = df.tail(n)
+        return jsonify({
+            "total_rows": total_rows,
+            "rows_returned": len(tail),
+            "data": tail.to_dict(orient="records"),
+        })
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route("/api/master-dataset/download", methods=["GET"])
+@require_api_key
+def api_master_dataset_download():
+    """Download the full master training dataset as CSV."""
+    master_path = paths.get("master_training_dataset", "")
+    if not master_path or not os.path.exists(master_path):
+        return jsonify({"error": "Master dataset not found"}), 404
+    return send_file(master_path, mimetype="text/csv", as_attachment=True,
+                     download_name="Training_dataset_master.csv")
 
 
 # ── Retrain ──

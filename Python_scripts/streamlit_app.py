@@ -1082,7 +1082,7 @@ if st.session_state.get("retrain_polling"):
 
     try:
         resp = requests.get(FLASK_RETRAIN_STATUS_URL, headers=_api_headers(),
-                            timeout=10, verify=False)
+                            timeout=30, verify=False)
         if resp.ok:
             status_data = resp.json()
             current_status = status_data.get("status", "unknown")
@@ -1110,6 +1110,50 @@ if st.session_state.get("retrain_polling"):
                     with mc2:
                         st.metric("New R²", f"{new_m.get('r2_test', 'N/A'):.4f}" if isinstance(new_m.get('r2_test'), (int, float)) else "N/A")
                         st.metric("New RMSE", f"{new_m.get('rmse_test', 'N/A'):.4f}" if isinstance(new_m.get('rmse_test'), (int, float)) else "N/A")
+
+                # Master dataset summary
+                old_rows = (old_m.get("rows_total") or 0) if old_m else 0
+                new_rows = (new_m.get("rows_total") or 0) if new_m else 0
+                if old_rows or new_rows:
+                    rows_delta = new_rows - old_rows
+                    sign = "+" if rows_delta >= 0 else ""
+                    st.markdown(f"### Master Dataset: {old_rows:,} → {new_rows:,} rows ({sign}{rows_delta:,})")
+
+                # Fetch and preview the tail of the master dataset
+                FLASK_MASTER_TAIL_URL = f"{_api_base.rstrip('/')}/api/master-dataset/tail"
+                FLASK_MASTER_DL_URL = f"{_api_base.rstrip('/')}/api/master-dataset/download"
+                try:
+                    tail_resp = requests.get(
+                        FLASK_MASTER_TAIL_URL, params={"n": 50},
+                        headers=_api_headers(), timeout=30, verify=False,
+                    )
+                    if tail_resp.ok:
+                        tail_data = tail_resp.json()
+                        st.markdown(
+                            f"**Showing last {tail_data['rows_returned']} of "
+                            f"{tail_data['total_rows']:,} total rows** (newest additions at the bottom)"
+                        )
+                        df_tail = pd.DataFrame(tail_data["data"])
+                        st.dataframe(df_tail, use_container_width=True)
+                except Exception:
+                    pass
+
+                # Download full master dataset
+                try:
+                    dl_resp = requests.get(
+                        FLASK_MASTER_DL_URL, headers=_api_headers(),
+                        timeout=60, verify=False,
+                    )
+                    if dl_resp.ok:
+                        st.download_button(
+                            label="Download full master dataset CSV",
+                            data=dl_resp.content,
+                            file_name="Training_dataset_master.csv",
+                            mime="text/csv",
+                            key="dl_master_csv",
+                        )
+                except Exception:
+                    pass
 
             elif current_status == "failed":
                 st.session_state["retrain_polling"] = False

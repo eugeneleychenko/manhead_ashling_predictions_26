@@ -656,6 +656,7 @@ with tab_upload:
                                     "predicted_sales_streamlit.csv",
                                     pred_csv_str.encode("utf-8"),
                                 )
+                                st.session_state["predicted_csv_bytes"] = pred_csv_str.encode("utf-8")
 
                                 st.download_button(
                                     label="Download predictions as CSV",
@@ -797,6 +798,7 @@ with tab_convert:
                             df_pred.to_csv(pred_csv, index=False)
                             pred_str = pred_csv.getvalue()
                             save_streamlit_download_copy("predicted_sales_streamlit.csv", pred_str.encode("utf-8"))
+                            st.session_state["predicted_csv_bytes"] = pred_str.encode("utf-8")
                             st.download_button(
                                 label="Download predictions as CSV",
                                 data=pred_str,
@@ -808,14 +810,20 @@ with tab_convert:
 st.markdown("---")
 st.header("Step 5: Calculate Revenue Per Head")
 
-st.write("Upload the Step 4 prediction output CSV. Step 5 will run automatically.")
+st.write("Upload the Step 4 prediction output CSV, or use the prediction from the previous step.")
 
 STEP5_SCRIPT_PATH = PATHS["revph_script_path"]
 STEP5_OUTPUT_PATH = PATHS["revph_output_csv"]
 STEP5_SUMMARY_PATH = PATHS["revph_summary_json"]
 
+if "predicted_csv_bytes" in st.session_state:
+    if st.button("Use predicted sales from Step 4", key="btn_use_step4_pred"):
+        st.session_state["step5_auto_bytes"] = st.session_state["predicted_csv_bytes"]
+        st.session_state["step5_auto_name"] = "predicted_sales_streamlit.csv"
+        st.session_state["step5_last_hash"] = None
+
 revph_file = st.file_uploader(
-    "Upload Step 4 output CSV",
+    "Or upload Step 4 output CSV",
     type=["csv"],
     key="revph_uploader_v3",
 )
@@ -859,17 +867,27 @@ def _run_step5_script(uploaded_bytes: bytes):
 
     return result, output_path, summary_path, file_hash
 
+# Determine input: uploaded file or auto from Step 4
+_step5_bytes = None
+_step5_name = None
 if revph_file is not None:
-    st.write("File name:", revph_file.name)
+    _step5_bytes = revph_file.getvalue()
+    _step5_name = revph_file.name
+elif "step5_auto_bytes" in st.session_state:
+    _step5_bytes = st.session_state.pop("step5_auto_bytes")
+    _step5_name = st.session_state.pop("step5_auto_name", "predicted_sales_streamlit.csv")
 
-    uploaded_bytes = revph_file.getvalue()
+if _step5_bytes is not None:
+    st.write("File name:", _step5_name)
+
+    uploaded_bytes = _step5_bytes
     current_hash = hashlib.sha256(uploaded_bytes).hexdigest()[:16]
 
     if st.session_state["step5_last_hash"] != current_hash:
         log_event(
             step="step5_revph",
             status="start",
-            details={"input_file": revph_file.name, "input_hash": current_hash},
+            details={"input_file": _step5_name, "input_hash": current_hash},
         )
 
         with st.spinner("Running Step 5 calculations..."):
@@ -880,7 +898,7 @@ if revph_file is not None:
                 step="step5_revph",
                 status="error",
                 details={
-                    "input_file": revph_file.name,
+                    "input_file": _step5_name,
                     "input_hash": current_hash,
                     "returncode": int(result.returncode),
                     "stderr": (result.stderr or "")[:4000],
@@ -954,7 +972,7 @@ if revph_file is not None:
                     step="step5_revph",
                     status="success",
                     details={
-                        "input_file": revph_file.name,
+                        "input_file": _step5_name,
                         "input_hash": current_hash,
                         "output_csv": out_csv_path,
                         "summary_json": summary_path,

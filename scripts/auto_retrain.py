@@ -266,6 +266,8 @@ def write_sales_report(show: dict, variant_lookup: dict, band_slug: str,
     settlement = show["settlements"][0] if show.get("settlements") else None
     if not settlement or settlement["status"] != "DONE":
         return None
+    if not settlement.get("settlementOutput"):
+        return None
 
     show_date = show["showDate"]
     loc = show.get("location") or {}
@@ -360,7 +362,8 @@ def write_tour_summary(shows: list[dict], band_name: str, band_slug: str,
                        tour_name: str, tour_slug: str, outdir: str) -> str | None:
     done_shows = [s for s in shows if s["state"] == "DONE"
                   and s.get("settlements")
-                  and s["settlements"][0]["status"] == "DONE"]
+                  and s["settlements"][0]["status"] == "DONE"
+                  and s["settlements"][0].get("settlementOutput")]
     if not done_shows:
         return None
 
@@ -528,7 +531,8 @@ def main():
 
             settled = [s for s in shows if s["state"] == "DONE"
                        and s.get("settlements")
-                       and s["settlements"][0]["status"] == "DONE"]
+                       and s["settlements"][0]["status"] == "DONE"
+                       and s["settlements"][0].get("settlementOutput")]
             if not settled:
                 continue
 

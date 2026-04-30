@@ -392,8 +392,12 @@ def append_consolidated_to_master(df_new: pd.DataFrame, master_path: str, backup
                 f"New columns: {new_cols}"
             )
 
+    _DEDUPE_COLS = [
+        "artistName", "showDate", "venue name", "venue city",
+        "merch category", "productType", "product size",
+    ]
     df_combined = pd.concat([df_master, df_new], ignore_index=True)
-    df_combined = df_combined.drop_duplicates(keep="first")
+    df_combined = df_combined.drop_duplicates(subset=_DEDUPE_COLS, keep="first")
 
     master_rows_after = len(df_combined)
     rows_added = master_rows_after - master_rows_before
@@ -1015,7 +1019,11 @@ def main():
                 df_final[col] = ""
 
         df_final = df_final[desired_order]
-        df_final = df_final.drop_duplicates(keep="first")
+        _DEDUPE_COLS = [
+            "artistName", "showDate", "venue name", "venue city",
+            "merch category", "productType", "product size",
+        ]
+        df_final = df_final.drop_duplicates(subset=_DEDUPE_COLS, keep="first")
 
         venue_name_clean = df_final["venue name"].fillna("").astype(str).str.strip()
         venue_city_clean = df_final["venue city"].fillna("").astype(str).str.strip()

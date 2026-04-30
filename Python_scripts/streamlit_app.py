@@ -1095,6 +1095,8 @@ if st.session_state.get("retrain_polling"):
             elif current_status == "completed":
                 st.session_state["retrain_polling"] = False
                 status_placeholder.success("Retrain completed! New model is live.")
+                st.toast("Retrain completed! New model is live.", icon="🎉")
+                st.balloons()
 
                 old_m = status_data.get("metrics_old") or {}
                 new_m = status_data.get("metrics_new") or {}

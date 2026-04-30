@@ -542,6 +542,37 @@ def api_master_dataset_download():
                      download_name="Training_dataset_master.csv")
 
 
+# ── Training Input Files ──
+
+@app.route("/api/training-files", methods=["GET"])
+def api_training_files():
+    """List files in the sales-report and tour-summary upload folders."""
+    repo_root = os.path.dirname(os.path.abspath(config_path))
+    sales_dir = os.path.join(repo_root, "CSVs", "add_sales_reports_files_here")
+    tour_dir = os.path.join(repo_root, "CSVs", "add_tour_summary_files_here")
+
+    def _list(directory):
+        if not os.path.isdir(directory):
+            return []
+        entries = []
+        for fname in sorted(os.listdir(directory)):
+            fpath = os.path.join(directory, fname)
+            if os.path.isfile(fpath):
+                entries.append({
+                    "name": fname,
+                    "size_bytes": os.path.getsize(fpath),
+                    "modified": os.path.getmtime(fpath),
+                })
+        return entries
+
+    sales = _list(sales_dir)
+    tours = _list(tour_dir)
+    return jsonify({
+        "sales_reports": {"count": len(sales), "files": sales},
+        "tour_summaries": {"count": len(tours), "files": tours},
+    })
+
+
 # ── Retrain ──
 
 RETRAIN_STATE_FILE = os.path.join(os.path.dirname(os.path.abspath(config_path)), ".retrain_state.json")

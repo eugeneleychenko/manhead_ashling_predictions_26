@@ -1167,3 +1167,84 @@ if st.session_state.get("retrain_polling"):
     except requests.RequestException as e:
         st.session_state["retrain_polling"] = False
         status_placeholder.error(f"Could not check retrain status: {e}")
+
+# ── Master Dataset & Training Files (always visible) ──
+
+st.markdown("---")
+st.subheader("Master Dataset & Training Files")
+
+_tab_master, _tab_files = st.tabs(["Master Dataset", "Training Input Files"])
+
+with _tab_master:
+    FLASK_MASTER_TAIL_URL2 = f"{_api_base.rstrip('/')}/api/master-dataset/tail"
+    FLASK_MASTER_DL_URL2 = f"{_api_base.rstrip('/')}/api/master-dataset/download"
+    try:
+        tail_resp2 = requests.get(
+            FLASK_MASTER_TAIL_URL2, params={"n": 50},
+            headers=_api_headers(), timeout=30, verify=False,
+        )
+        if tail_resp2.ok:
+            tail_data2 = tail_resp2.json()
+            st.markdown(
+                f"**{tail_data2['total_rows']:,} total rows** — showing last {tail_data2['rows_returned']}"
+            )
+            st.dataframe(pd.DataFrame(tail_data2["data"]), use_container_width=True)
+    except Exception:
+        st.info("Could not fetch master dataset preview.")
+
+    try:
+        dl_resp2 = requests.get(
+            FLASK_MASTER_DL_URL2, headers=_api_headers(),
+            timeout=60, verify=False,
+        )
+        if dl_resp2.ok:
+            st.download_button(
+                label="Download full master dataset CSV",
+                data=dl_resp2.content,
+                file_name="Training_dataset_master.csv",
+                mime="text/csv",
+                key="dl_master_csv_always",
+            )
+    except Exception:
+        pass
+
+with _tab_files:
+    FLASK_TRAINING_FILES_URL = f"{_api_base.rstrip('/')}/api/training-files"
+    try:
+        tf_resp = requests.get(
+            FLASK_TRAINING_FILES_URL, headers=_api_headers(),
+            timeout=30, verify=False,
+        )
+        if tf_resp.ok:
+            tf_data = tf_resp.json()
+            sales_info = tf_data["sales_reports"]
+            tour_info = tf_data["tour_summaries"]
+
+            col_s, col_t = st.columns(2)
+            with col_s:
+                st.markdown(f"**Sales Reports** — {sales_info['count']:,} files")
+                if sales_info["files"]:
+                    sales_df = pd.DataFrame(sales_info["files"])
+                    sales_df["size"] = sales_df["size_bytes"].apply(
+                        lambda b: f"{b/1024:.1f} KB" if b < 1048576 else f"{b/1048576:.1f} MB"
+                    )
+                    sales_df["modified"] = pd.to_datetime(sales_df["modified"], unit="s").dt.strftime("%Y-%m-%d %H:%M")
+                    st.dataframe(sales_df[["name", "size", "modified"]], use_container_width=True, hide_index=True)
+                else:
+                    st.info("No sales report files on server.")
+
+            with col_t:
+                st.markdown(f"**Tour Summaries** — {tour_info['count']:,} files")
+                if tour_info["files"]:
+                    tour_df = pd.DataFrame(tour_info["files"])
+                    tour_df["size"] = tour_df["size_bytes"].apply(
+                        lambda b: f"{b/1024:.1f} KB" if b < 1048576 else f"{b/1048576:.1f} MB"
+                    )
+                    tour_df["modified"] = pd.to_datetime(tour_df["modified"], unit="s").dt.strftime("%Y-%m-%d %H:%M")
+                    st.dataframe(tour_df[["name", "size", "modified"]], use_container_width=True, hide_index=True)
+                else:
+                    st.info("No tour summary files on server.")
+        else:
+            st.error(f"Failed to fetch training files: {tf_resp.status_code}")
+    except requests.RequestException as e:
+        st.info(f"Could not reach server: {e}")

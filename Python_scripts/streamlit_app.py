@@ -564,100 +564,245 @@ if st.button("Train model"):
 st.markdown("---")
 st.header("Step 4: Run Predictions")
 
-st.write("Upload a CSV and get predictions from the Flask model API.")
+tab_convert, tab_upload = st.tabs(["Convert from AtVenu", "Upload CSV"])
 
-uploaded_file = st.file_uploader(
-    "Upload your CSV file for prediction",
-    type=["csv"],
-    key="prediction_uploader",
-)
+# ── Tab 1: Upload pre-formatted CSV (existing flow) ──
+with tab_upload:
+    st.write("Upload a pre-formatted 21-column CSV and get predictions from the Flask model API.")
 
-if uploaded_file is not None:
-    st.write("File name:", uploaded_file.name)
+    uploaded_file = st.file_uploader(
+        "Upload your CSV file for prediction",
+        type=["csv"],
+        key="prediction_uploader",
+    )
 
-    if st.button("Run prediction"):
-        file_bytes = uploaded_file.getvalue()
-        file_hash = sha256_bytes(file_bytes)
+    if uploaded_file is not None:
+        st.write("File name:", uploaded_file.name)
 
-        log_event(
-            step="step4_predict",
-            status="start",
-            details={"input_file": uploaded_file.name, "input_hash": file_hash},
-        )
+        if st.button("Run prediction", key="btn_predict_upload"):
+            file_bytes = uploaded_file.getvalue()
+            file_hash = sha256_bytes(file_bytes)
 
-        files = {"csv_file": (uploaded_file.name, file_bytes, "text/csv")}
+            log_event(
+                step="step4_predict",
+                status="start",
+                details={"input_file": uploaded_file.name, "input_hash": file_hash},
+            )
 
-        with st.spinner("Calling prediction API and running model..."):
-            try:
-                response = requests.post(FLASK_API_URL, files=files, headers=_api_headers(), timeout=120, verify=False)
-                response.raise_for_status()
-            except requests.RequestException as e:
-                log_event(
-                    step="step4_predict",
-                    status="error",
-                    details={"input_file": uploaded_file.name, "input_hash": file_hash, "error": str(e)},
-                )
-                st.error(f"Error calling prediction API: {e}")
-            else:
+            files = {"csv_file": (uploaded_file.name, file_bytes, "text/csv")}
+
+            with st.spinner("Calling prediction API and running model..."):
                 try:
-                    payload = response.json()
-                except ValueError:
+                    response = requests.post(FLASK_API_URL, files=files, headers=_api_headers(), timeout=120, verify=False)
+                    response.raise_for_status()
+                except requests.RequestException as e:
                     log_event(
                         step="step4_predict",
                         status="error",
-                        details={"input_file": uploaded_file.name, "input_hash": file_hash, "error": "API did not return valid JSON"},
+                        details={"input_file": uploaded_file.name, "input_hash": file_hash, "error": str(e)},
                     )
-                    st.error("API did not return valid JSON.")
+                    st.error(f"Error calling prediction API: {e}")
                 else:
-                    if "error" in payload:
+                    try:
+                        payload = response.json()
+                    except ValueError:
                         log_event(
                             step="step4_predict",
                             status="error",
-                            details={"input_file": uploaded_file.name, "input_hash": file_hash, "error": payload.get("error")},
+                            details={"input_file": uploaded_file.name, "input_hash": file_hash, "error": "API did not return valid JSON"},
                         )
-                        st.error(f"API returned an error: {payload['error']}")
+                        st.error("API did not return valid JSON.")
                     else:
-                        data = payload.get("data", [])
-
-                        if not data:
+                        if "error" in payload:
                             log_event(
                                 step="step4_predict",
-                                status="warning",
-                                details={"input_file": uploaded_file.name, "input_hash": file_hash, "warning": "API returned no data"},
+                                status="error",
+                                details={"input_file": uploaded_file.name, "input_hash": file_hash, "error": payload.get("error")},
                             )
+                            st.error(f"API returned an error: {payload['error']}")
+                        else:
+                            data = payload.get("data", [])
+
+                            if not data:
+                                log_event(
+                                    step="step4_predict",
+                                    status="warning",
+                                    details={"input_file": uploaded_file.name, "input_hash": file_hash, "warning": "API returned no data"},
+                                )
+                                st.warning("API returned no data.")
+                            else:
+                                df_pred = pd.DataFrame(data)
+
+                                log_event(
+                                    step="step4_predict",
+                                    status="success",
+                                    details={
+                                        "input_file": uploaded_file.name,
+                                        "input_hash": file_hash,
+                                        "rows_out": int(df_pred.shape[0]),
+                                        "cols_out": list(df_pred.columns),
+                                    },
+                                )
+
+                                st.success("Predictions generated successfully.")
+                                st.subheader("Preview of predictions")
+                                st.dataframe(df_pred, use_container_width=True)
+
+                                csv_buffer = StringIO()
+                                df_pred.to_csv(csv_buffer, index=False)
+
+                                pred_csv_str = csv_buffer.getvalue()
+                                save_streamlit_download_copy(
+                                    "predicted_sales_streamlit.csv",
+                                    pred_csv_str.encode("utf-8"),
+                                )
+
+                                st.download_button(
+                                    label="Download predictions as CSV",
+                                    data=pred_csv_str,
+                                    file_name="predicted_sales_streamlit.csv",
+                                    mime="text/csv",
+                                )
+
+# ── Tab 2: Convert from AtVenu inventory xlsx ──
+with tab_convert:
+    from converter_utils import convert_inventory_to_prediction_input, ConversionInputError, fetch_band_names_from_api
+
+    @st.cache_data(ttl=3600, show_spinner="Loading band list from AtVenu...")
+    def _cached_band_names():
+        return fetch_band_names_from_api()
+
+    st.write(
+        "Upload a raw AtVenu inventory/forecast file (xlsx or csv). "
+        "Product prices are fetched live from the AtVenu API."
+    )
+
+    band_names = _cached_band_names()
+
+    atvenu_file = st.file_uploader(
+        "Upload AtVenu inventory file",
+        type=["xlsx", "xls", "csv"],
+        key="atvenu_uploader",
+    )
+    conv_band_name = st.selectbox("Band name", options=[""] + band_names, index=0, key="conv_band")
+    conv_weather = st.checkbox("Fetch weather data (slower)", value=False, key="conv_weather")
+
+    if atvenu_file is not None and conv_band_name:
+        if st.button("Convert", key="btn_convert"):
+            progress_area = st.empty()
+            def _progress(msg: str):
+                progress_area.info(msg)
+
+            try:
+                with st.spinner("Converting..."):
+                    conv_df, conv_meta = convert_inventory_to_prediction_input(
+                        file_bytes=atvenu_file.getvalue(),
+                        file_name=atvenu_file.name,
+                        band_name=conv_band_name.strip(),
+                        artist_meta_path=PATHS.get("artist_meta_csv"),
+                        spotify_path=PATHS.get("spotify_csv"),
+                        fetch_weather=conv_weather,
+                        progress_callback=_progress,
+                    )
+            except ConversionInputError as e:
+                st.error(f"Conversion error: {e}")
+            except Exception as e:
+                st.error(f"Unexpected error during conversion: {e}")
+            else:
+                progress_area.empty()
+
+                # Warnings
+                if conv_meta.get("venue_misses"):
+                    st.warning(
+                        f"{conv_meta['venue_misses']} of {conv_meta['shows_parsed']} shows "
+                        f"had no venue match in AtVenu API (attendance/capacity = 0)."
+                    )
+                if conv_meta.get("price_miss_skus"):
+                    st.warning(
+                        f"{len(conv_meta['price_miss_skus'])} SKUs had no price in AtVenu API. "
+                        f"First few: {', '.join(conv_meta['price_miss_skus'][:10])}"
+                    )
+
+                nan_prices = int(conv_df["product price"].isna().sum())
+                if nan_prices:
+                    st.warning(f"{nan_prices} rows have missing prices (NaN). The model may still predict, but results may be less accurate.")
+
+                st.success(
+                    f"Converted {conv_meta['products_parsed']} products x "
+                    f"{conv_meta['shows_parsed']} shows = {conv_meta['rows_out']} rows. "
+                    f"API prices found: {conv_meta['prices_found']}."
+                )
+
+                st.subheader("Preview of converted data")
+                st.dataframe(conv_df, use_container_width=True)
+
+                # Download converted CSV
+                conv_csv = conv_df.to_csv(index=False)
+                save_streamlit_download_copy("converted_atvenu_input.csv", conv_csv.encode("utf-8"))
+                st.download_button(
+                    label="Download converted CSV",
+                    data=conv_csv,
+                    file_name="converted_atvenu_input.csv",
+                    mime="text/csv",
+                    key="dl_converted",
+                )
+
+                # Store in session for direct prediction
+                st.session_state["converted_csv_bytes"] = conv_csv.encode("utf-8")
+                st.session_state["converted_csv_name"] = f"converted_{atvenu_file.name.rsplit('.', 1)[0]}.csv"
+
+    # Run prediction on converted data
+    if "converted_csv_bytes" in st.session_state:
+        st.markdown("---")
+        st.subheader("Run prediction on converted data")
+        if st.button("Run prediction on converted file", key="btn_predict_converted"):
+            conv_bytes = st.session_state["converted_csv_bytes"]
+            conv_name = st.session_state["converted_csv_name"]
+            file_hash = sha256_bytes(conv_bytes)
+
+            log_event(
+                step="step4_predict_converted",
+                status="start",
+                details={"input_file": conv_name, "input_hash": file_hash},
+            )
+
+            files = {"csv_file": (conv_name, conv_bytes, "text/csv")}
+
+            with st.spinner("Calling prediction API..."):
+                try:
+                    response = requests.post(FLASK_API_URL, files=files, headers=_api_headers(), timeout=120, verify=False)
+                    response.raise_for_status()
+                    payload = response.json()
+                except Exception as e:
+                    st.error(f"Prediction API error: {e}")
+                else:
+                    if "error" in payload:
+                        st.error(f"API error: {payload['error']}")
+                    else:
+                        data = payload.get("data", [])
+                        if not data:
                             st.warning("API returned no data.")
                         else:
                             df_pred = pd.DataFrame(data)
-
                             log_event(
-                                step="step4_predict",
+                                step="step4_predict_converted",
                                 status="success",
-                                details={
-                                    "input_file": uploaded_file.name,
-                                    "input_hash": file_hash,
-                                    "rows_out": int(df_pred.shape[0]),
-                                    "cols_out": list(df_pred.columns),
-                                },
+                                details={"input_file": conv_name, "rows_out": int(df_pred.shape[0])},
                             )
-
                             st.success("Predictions generated successfully.")
                             st.subheader("Preview of predictions")
                             st.dataframe(df_pred, use_container_width=True)
 
-                            csv_buffer = StringIO()
-                            df_pred.to_csv(csv_buffer, index=False)
-
-                            pred_csv_str = csv_buffer.getvalue()
-                            save_streamlit_download_copy(
-                                "predicted_sales_streamlit.csv",
-                                pred_csv_str.encode("utf-8"),
-                            )
-
+                            pred_csv = StringIO()
+                            df_pred.to_csv(pred_csv, index=False)
+                            pred_str = pred_csv.getvalue()
+                            save_streamlit_download_copy("predicted_sales_streamlit.csv", pred_str.encode("utf-8"))
                             st.download_button(
                                 label="Download predictions as CSV",
-                                data=pred_csv_str,
+                                data=pred_str,
                                 file_name="predicted_sales_streamlit.csv",
                                 mime="text/csv",
+                                key="dl_pred_converted",
                             )
 
 st.markdown("---")

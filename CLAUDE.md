@@ -40,11 +40,22 @@ All endpoints except `/health` require `X-API-Key` header.
 
 ## How the system works
 
-### Prediction flow
-1. Manhead staff opens Streamlit → uploads formatted CSV in Step 4
-2. Streamlit sends CSV to `POST /api/predict` on DO droplet
-3. Flask loads model from memory, runs prediction, returns results
-4. Staff downloads predictions CSV
+### Prediction flow (Upload CSV tab)
+1. Manhead staff opens Streamlit → Step 4 → "Upload CSV" tab
+2. Uploads a pre-formatted 21-column CSV
+3. Streamlit sends CSV to `POST /api/predict` on DO droplet
+4. Flask loads model from memory, runs prediction, returns results
+5. Staff downloads predictions CSV
+
+### Prediction flow (Convert from AtVenu tab)
+1. Staff opens Streamlit → Step 4 → "Convert from AtVenu" tab
+2. Uploads a raw AtVenu inventory/forecast xlsx and enters band name
+3. Streamlit fetches SKU prices live from AtVenu GraphQL API (`merchVariants`)
+4. Streamlit fetches venue/capacity/attendance from AtVenu GraphQL API (shows)
+5. Genre, Instagram, Spotify enriched from local CSVs; weather from Open-Meteo (optional)
+6. Converter builds 21-column DataFrame, user previews + downloads
+7. User clicks "Run prediction on converted file" → same API call as above
+8. Code: `Python_scripts/converter_utils.py`
 
 ### Retrain flow (self-service, no SSH needed)
 1. Staff optionally adds new artist metadata in Step 1
@@ -144,6 +155,78 @@ bash scripts/deploy.sh <NEW_IP>      # Syncs code + downloads model from DO Spac
 - `requirements-server.txt` — full ML stack (scikit-learn, xgboost, lightgbm, etc.) for the DO droplet
 
 This split exists because Streamlit Cloud runs Python 3.14 which can't build `pyarrow==21.0.0` from source.
+
+## AtVenu GraphQL API — SKU pricing
+
+Product prices can be pulled live from the AtVenu GraphQL API instead of relying on the static `band_sku_price_data.csv`.
+
+- **Endpoint**: `https://api.atvenu.com` (POST)
+- **Auth header**: `x-api-key: live_yvYLBo32dRE9z_yCdhwU`
+
+### GraphQL query
+
+```graphql
+query($first: Int!, $after: String) {
+  organization {
+    accounts(first: $first, after: $after) {
+      pageInfo { endCursor hasNextPage }
+      nodes {
+        name
+        merchItems(first: 100) {
+          nodes {
+            name
+            productType { name }
+            merchVariants { sku size price }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+### curl example (get SKUs + prices for all bands)
+
+```bash
+curl -s -X POST https://api.atvenu.com \
+  -H "Content-Type: application/json" \
+  -H "x-api-key: live_yvYLBo32dRE9z_yCdhwU" \
+  -d '{
+    "query": "{ organization { accounts(first: 5) { nodes { name merchItems(first: 10) { nodes { name productType { name } merchVariants { sku size price } } } } } } }"
+  }'
+```
+
+### Response format
+
+Prices come back in scientific notation — `"0.45e2"` = $45.00. Parse with `float()`.
+
+```json
+{
+  "sku": "DEFTONES-T1071-S",
+  "size": "S",
+  "price": "0.45e2"
+}
+```
+
+### Schema path
+
+`organization → accounts → merchItems → merchVariants { sku, size, price }`
+
+Each `account` is a band (e.g. "Deftones (MH)"). Each `merchItem` is a product (e.g. "T.R.U Story Tee"). Each `merchVariant` is a size/SKU combo with its price.
+
+### Comparison with static CSV (`band_sku_price_data.csv`)
+
+| Metric | CSV | API |
+|--------|-----|-----|
+| Total SKUs (6 test bands) | 493 | 1,215 |
+| Price agreement | — | 20/24 exact matches |
+| Coverage | Subset | Superset — every CSV SKU exists in the API |
+
+The API has significantly more SKUs (newer items). The only caveat: some retired items show `price: 0` in the API (e.g. Weird Al) where the CSV still has the old price. Filter with `price > 0` when using the API, or fall back to CSV for zero-priced items.
+
+### Pagination
+
+Results are paginated via `accounts(first: N, after: cursor)`. Check `pageInfo.hasNextPage` and pass `endCursor` as `after` to get the next page.
 
 ## Cost
 

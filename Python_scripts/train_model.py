@@ -154,6 +154,8 @@ def train_and_save(paths_config_path: str, artifact_dir: str):
 
     df["spotifyMissing"] = df["spotifyMonthlyListeners"].isna().astype(int)
     df["spotifyMonthlyListeners"] = df["spotifyMonthlyListeners"].fillna(0)
+    df["Instagram"] = df["Instagram"].fillna(0)
+    df["Genre"] = df["Genre"].fillna("Other")
 
     df["product size"] = df["product size"].fillna("OneSize")
     df["venue capacity"] = df["venue capacity"].fillna(df["attendance"])

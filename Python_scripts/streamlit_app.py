@@ -147,9 +147,15 @@ if add_artist_choice == "Yes":
                 )
 
             with col3:
-                genre = st.text_input(
+                _GENRE_OPTIONS = [
+                    "", "Alternative", "Comedy", "Country", "Electronic",
+                    "Festival", "Folk", "Hip-Hop", "Metal", "Pop",
+                    "Pop Punk", "Punk", "R&B", "Rap Rock", "Reggae", "Rock",
+                ]
+                genre = st.selectbox(
                     f"Genre (Entry {i + 1})",
-                    placeholder="Country Rock",
+                    options=_GENRE_OPTIONS,
+                    index=0,
                     key=f"genre_{i}",
                 )
 

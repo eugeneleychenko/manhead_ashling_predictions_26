@@ -80,6 +80,8 @@ def main(config_path: str):
             print(f"[retrain] Consolidation failed (exit {result.returncode})")
             if result.stderr:
                 print(f"[retrain] stderr: {result.stderr[-2000:]}")
+            print("[retrain] ABORTING — cannot train on stale data")
+            sys.exit(1)
     else:
         print(f"[retrain] Consolidation script not found at {consolidation_script}, skipping Step 2")
 

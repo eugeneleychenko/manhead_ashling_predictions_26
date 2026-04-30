@@ -333,7 +333,7 @@ def write_sales_report(show: dict, variant_lookup: dict, band_slug: str,
                     pct_u = f"{v['sold']/item_sold*100:.0f}%" if item_sold else "0%"
                     pct_r = f"{v['gross']/item_gross*100:.0f}%" if item_gross else "0%"
                     avg_p = f"${v['avg_price']:.2f}" if v["avg_price"] > 0 else "$0.00"
-                    gr = f"${v['gross']:,.2f}" if v["gross"] > 0 else "$0.00"
+                    gr = f'"${v["gross"]:,.2f}"' if v["gross"] > 0 else "$0.00"
                     sex = "U" if cat == "APPAREL" else ""
                     f.write(f"{v['sku']},{v['name']},{v['type']},{sex},{v['size']},"
                             f"{v['sold']},{pct_u},{v['comps']},{avg_p},{gr},{pct_r}\n")

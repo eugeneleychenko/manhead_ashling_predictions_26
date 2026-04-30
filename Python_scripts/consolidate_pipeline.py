@@ -500,7 +500,11 @@ def main():
         )
 
         for file in all_files_sales:
-            df = pd.read_csv(file, header=1, encoding="latin1")
+            try:
+                df = pd.read_csv(file, header=1, encoding="latin1", on_bad_lines="warn")
+            except Exception as e:
+                print(f"[WARN] Skipping unreadable sales file {os.path.basename(file)}: {e}")
+                continue
             df = df.dropna(how="all")
 
             if "City" in df.columns:
@@ -571,7 +575,11 @@ def main():
         )
 
         for file in all_files_tour:
-            raw = pd.read_csv(file, skiprows=4, header=0, dtype=str, encoding="latin1")
+            try:
+                raw = pd.read_csv(file, skiprows=4, header=0, dtype=str, encoding="latin1", on_bad_lines="warn")
+            except Exception as e:
+                print(f"[WARN] Skipping unreadable tour file {os.path.basename(file)}: {e}")
+                continue
 
             raw = raw.dropna(how="all")
             raw = raw.dropna(axis=1, how="all")

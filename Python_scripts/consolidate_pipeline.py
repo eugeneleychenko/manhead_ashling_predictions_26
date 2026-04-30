@@ -501,7 +501,7 @@ def main():
 
         for file in all_files_sales:
             try:
-                df = pd.read_csv(file, header=1, encoding="latin1", on_bad_lines="warn")
+                df = pd.read_csv(file, header=1, encoding="latin1", on_bad_lines="skip")
             except Exception as e:
                 print(f"[WARN] Skipping unreadable sales file {os.path.basename(file)}: {e}")
                 continue

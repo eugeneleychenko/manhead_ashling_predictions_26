@@ -720,7 +720,7 @@ def main():
 
         weather_cache_name = paths["weather_cache_name"]
         _safe_makedirs_for(weather_cache_name)
-        cache_session = requests_cache.CachedSession(weather_cache_name, expire_after=3600)
+        cache_session = requests_cache.CachedSession(weather_cache_name, expire_after=-1)  # never expire — historical weather doesn't change
         retry_session = retry(cache_session, retries=5, backoff_factor=0.2)
         openmeteo = openmeteo_requests.Client(session=retry_session)
 

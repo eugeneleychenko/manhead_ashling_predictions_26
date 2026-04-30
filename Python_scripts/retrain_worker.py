@@ -86,98 +86,109 @@ def main(config_path: str):
         print(f"[retrain] Consolidation script not found at {consolidation_script}, skipping Step 2")
 
     # ── Step 3: Train model (into staging) ──
-    print("[retrain] Step 3: Training model...")
+    # Stop gunicorn to free memory (model + 2 workers ≈ 6GB)
+    import subprocess as _sp2
+    print("[retrain] Stopping Flask service to free memory for training...")
+    _sp2.run(["systemctl", "stop", "manhead-flask"], capture_output=True)
 
-    # Temporarily override artifact paths to write to staging
-    staging_paths = dict(paths)
-    staging_paths["flask_artifacts_dir"] = staging_dir
-    staging_paths["model_joblib"] = os.path.join(staging_dir, "model_retrained.joblib")
-    staging_paths["scaler_joblib"] = os.path.join(staging_dir, "robust_scaler_retrained.joblib")
-    staging_paths["encoder_joblib"] = os.path.join(staging_dir, "label_encoder_retrained.joblib")
-    staging_paths["last_train_metrics_json"] = os.path.join(staging_dir, "last_train_metrics.json")
+    try:
+        print("[retrain] Step 3: Training model...")
 
-    # Write a temporary staging config
-    staging_config = os.path.join(staging_dir, "paths_config_staging.txt")
-    with open(staging_config, "w") as f:
-        for k, v in staging_paths.items():
-            f.write(f"{k} = {v}\n")
+        # Temporarily override artifact paths to write to staging
+        staging_paths = dict(paths)
+        staging_paths["flask_artifacts_dir"] = staging_dir
+        staging_paths["model_joblib"] = os.path.join(staging_dir, "model_retrained.joblib")
+        staging_paths["scaler_joblib"] = os.path.join(staging_dir, "robust_scaler_retrained.joblib")
+        staging_paths["encoder_joblib"] = os.path.join(staging_dir, "label_encoder_retrained.joblib")
+        staging_paths["last_train_metrics_json"] = os.path.join(staging_dir, "last_train_metrics.json")
 
-    sys.path.insert(0, os.path.join(repo_root, "Python_scripts"))
-    from train_model import train_and_save
-    train_and_save(staging_config, staging_dir)
+        # Write a temporary staging config
+        staging_config = os.path.join(staging_dir, "paths_config_staging.txt")
+        with open(staging_config, "w") as f:
+            for k, v in staging_paths.items():
+                f.write(f"{k} = {v}\n")
 
-    # ── Validate new metrics ──
-    print("[retrain] Validating new model...")
-    new_metrics_path = os.path.join(staging_dir, "last_train_metrics.json")
-    if not os.path.exists(new_metrics_path):
-        print("[retrain] FAIL: No metrics file produced by training")
-        sys.exit(1)
+        sys.path.insert(0, os.path.join(repo_root, "Python_scripts"))
+        from train_model import train_and_save
+        train_and_save(staging_config, staging_dir)
 
-    with open(new_metrics_path) as f:
-        new_metrics = json.load(f)
-
-    new_r2 = new_metrics.get("r2_test", 0)
-    print(f"[retrain] New metrics: R2={new_r2:.4f}, RMSE={new_metrics.get('rmse_test', 'N/A'):.4f}")
-
-    if old_metrics:
-        old_r2 = old_metrics.get("r2_test", 0)
-        r2_change = (old_r2 - new_r2) / max(abs(old_r2), 1e-9)
-        print(f"[retrain] R2 change: {old_r2:.4f} → {new_r2:.4f} (delta={r2_change*100:.2f}%)")
-
-        if r2_change > 0.10:  # R2 dropped by more than 10%
-            print(f"[retrain] BLOCKED: R2 degraded by {r2_change*100:.1f}% (threshold: 10%)")
-            print("[retrain] Old artifacts kept. New model NOT promoted.")
-            # Write failure info
-            fail_info = {
-                "status": "validation_failed",
-                "reason": f"R2 degraded by {r2_change*100:.1f}%",
-                "old_r2": old_r2,
-                "new_r2": new_r2,
-                "timestamp": dt.datetime.now().isoformat(timespec="seconds"),
-            }
-            with open(os.path.join(staging_dir, "validation_failure.json"), "w") as f:
-                json.dump(fail_info, f, indent=2)
+        # ── Validate new metrics ──
+        print("[retrain] Validating new model...")
+        new_metrics_path = os.path.join(staging_dir, "last_train_metrics.json")
+        if not os.path.exists(new_metrics_path):
+            print("[retrain] FAIL: No metrics file produced by training")
             sys.exit(1)
 
-    # ── Promote: move staging artifacts → Flask/ ──
-    print("[retrain] Promoting new artifacts...")
-    artifact_files = [
-        "model_retrained.joblib",
-        "robust_scaler_retrained.joblib",
-        "label_encoder_retrained.joblib",
-        "last_train_metrics.json",
-    ]
-    for fname in artifact_files:
-        src = os.path.join(staging_dir, fname)
-        dst = os.path.join(artifact_dir, fname)
-        if os.path.exists(src):
-            os.replace(src, dst)
-            print(f"  {fname} promoted")
+        with open(new_metrics_path) as f:
+            new_metrics = json.load(f)
 
-    # ── Signal Flask to hot-reload ──
-    signal_path = os.path.join(artifact_dir, ".retrain_complete")
-    with open(signal_path, "w") as f:
-        f.write(dt.datetime.now().isoformat())
-    print("[retrain] Signal file written — Flask will hot-reload")
+        new_r2 = new_metrics.get("r2_test", 0)
+        print(f"[retrain] New metrics: R2={new_r2:.4f}, RMSE={new_metrics.get('rmse_test', 'N/A'):.4f}")
 
-    # ── Archive uploaded CSVs ──
-    archive_dir = os.path.join(repo_root, "CSVs", "archive", dt.datetime.now().strftime("%Y%m%d_%H%M%S"))
-    os.makedirs(archive_dir, exist_ok=True)
+        if old_metrics:
+            old_r2 = old_metrics.get("r2_test", 0)
+            r2_change = (old_r2 - new_r2) / max(abs(old_r2), 1e-9)
+            print(f"[retrain] R2 change: {old_r2:.4f} → {new_r2:.4f} (delta={r2_change*100:.2f}%)")
 
-    for subdir_name in ("add_sales_reports_files_here", "add_tour_summary_files_here"):
-        src_dir = os.path.join(repo_root, "CSVs", subdir_name)
-        if os.path.isdir(src_dir):
-            dest = os.path.join(archive_dir, subdir_name)
-            shutil.copytree(src_dir, dest, dirs_exist_ok=True)
+            if r2_change > 0.10:  # R2 dropped by more than 10%
+                print(f"[retrain] BLOCKED: R2 degraded by {r2_change*100:.1f}% (threshold: 10%)")
+                print("[retrain] Old artifacts kept. New model NOT promoted.")
+                # Write failure info
+                fail_info = {
+                    "status": "validation_failed",
+                    "reason": f"R2 degraded by {r2_change*100:.1f}%",
+                    "old_r2": old_r2,
+                    "new_r2": new_r2,
+                    "timestamp": dt.datetime.now().isoformat(timespec="seconds"),
+                }
+                with open(os.path.join(staging_dir, "validation_failure.json"), "w") as f:
+                    json.dump(fail_info, f, indent=2)
+                sys.exit(1)
 
-    print(f"[retrain] Files archived to {archive_dir}")
-    print("[retrain] DONE — retrain successful")
+        # ── Promote: move staging artifacts → Flask/ ──
+        print("[retrain] Promoting new artifacts...")
+        artifact_files = [
+            "model_retrained.joblib",
+            "robust_scaler_retrained.joblib",
+            "label_encoder_retrained.joblib",
+            "last_train_metrics.json",
+        ]
+        for fname in artifact_files:
+            src = os.path.join(staging_dir, fname)
+            dst = os.path.join(artifact_dir, fname)
+            if os.path.exists(src):
+                os.replace(src, dst)
+                print(f"  {fname} promoted")
 
-    # Clean staging
-    for fname in artifact_files:
-        p = os.path.join(staging_dir, fname)
-        if os.path.exists(p):
-            os.remove(p)
+        # ── Signal Flask to hot-reload ──
+        signal_path = os.path.join(artifact_dir, ".retrain_complete")
+        with open(signal_path, "w") as f:
+            f.write(dt.datetime.now().isoformat())
+        print("[retrain] Signal file written — Flask will hot-reload")
+
+        # ── Archive uploaded CSVs ──
+        archive_dir = os.path.join(repo_root, "CSVs", "archive", dt.datetime.now().strftime("%Y%m%d_%H%M%S"))
+        os.makedirs(archive_dir, exist_ok=True)
+
+        for subdir_name in ("add_sales_reports_files_here", "add_tour_summary_files_here"):
+            src_dir = os.path.join(repo_root, "CSVs", subdir_name)
+            if os.path.isdir(src_dir):
+                dest = os.path.join(archive_dir, subdir_name)
+                shutil.copytree(src_dir, dest, dirs_exist_ok=True)
+
+        print(f"[retrain] Files archived to {archive_dir}")
+        print("[retrain] DONE — retrain successful")
+
+        # Clean staging
+        for fname in artifact_files:
+            p = os.path.join(staging_dir, fname)
+            if os.path.exists(p):
+                os.remove(p)
+
+    finally:
+        # Always restart Flask, even if training failed
+        print("[retrain] Restarting Flask service...")
+        _sp2.run(["systemctl", "start", "manhead-flask"], capture_output=True)
 
 
 if __name__ == "__main__":

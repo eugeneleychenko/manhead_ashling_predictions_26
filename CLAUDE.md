@@ -228,6 +228,81 @@ The API has significantly more SKUs (newer items). The only caveat: some retired
 
 Results are paginated via `accounts(first: N, after: cursor)`. Check `pageInfo.hasNextPage` and pass `endCursor` as `after` to get the next page.
 
+### Sales Reports & Tour Summary via GraphQL
+
+Beyond SKU pricing, the AtVenu GraphQL API exposes full settlement data per show, enabling automated generation of **per-show Sales Report CSVs** and **Tour Summary CSVs** — the same reports that atVenu exports manually.
+
+#### Key schema paths for sales data
+
+| Data | Path |
+|------|------|
+| Per-variant sold/comps | `show → settlements → mainCounts { merchItemUuid, merchVariantUuid, countIn, countOut, comps, priceOverride }` |
+| Show-level financials | `show → settlements → settlementOutput → total { grossSalesAmount, artistCutAmount, venueCutAmount, taxOnSalesAmount, paymentFeesAmount, vendFeeAmount, artistDueAmount }` |
+| Category breakdown | `settlementOutput → apparel / music / other → summary { grossSalesAmount, adjustedGrossSalesAmount }` |
+| Expenses | `settlement → expenses { description, costAmount, taxAmount, expenseType }` |
+| Venue / location | `show → location { name, city, stateProvince, postalCode, country }` |
+| Currency / exchange | `show → currencyFormat { code }`, `settlement → exchangeRate` |
+
+#### Automated report script: `zAtVenuCSV/pull_atvenu_reports.py`
+
+**Location**: `../zAtVenuCSV/pull_atvenu_reports.py` (sibling of `Manhead_Handoff/`, not inside it)
+
+**Dependencies**: `requests` (already in both requirements files)
+
+**CLI**:
+
+| Argument | Required | Description |
+|----------|----------|-------------|
+| `--band` | Yes | Band name, substring match, case-insensitive (e.g. `"Death Stranding"`, `"Deftones"`) |
+| `--tour` | No | Tour name substring. If omitted, lists all tours for the band and exits. |
+| `--outdir` | No | Output directory for CSVs. Default: `./step_6` |
+
+**Auth**: Uses `ATVENU_API_TOKEN` env var if set, otherwise falls back to the hardcoded key `live_yvYLBo32dRE9z_yCdhwU`.
+
+```bash
+# List available tours for a band
+cd zAtVenuCSV
+python pull_atvenu_reports.py --band "Death Stranding"
+
+# Generate per-show sales reports + tour summary
+python pull_atvenu_reports.py --band "Death Stranding" --tour "US/CAN Q1 2026" --outdir ./step_6
+
+# Another band example
+python pull_atvenu_reports.py --band "Air Supply" --tour "50th Anniversary" --outdir ./step_6
+```
+
+**What it produces** (in `--outdir`):
+
+1. **Per-show Sales Report CSVs** — one CSV per settled show, named `{band}_Sales-Report_{tour}_{date}_{city}.csv`:
+   - Sections: APPAREL, OTHER, MUSIC
+   - Per-SKU rows: SKU, Name, Type, Sex, Size, Sold, Unit % of Total, Comp, Avg. Price, Gross Rev, % of Total
+   - SUBTOTAL row per product, TOTAL per category, GRAND TOTAL
+   - Format matches the atVenu manual CSV export
+
+2. **Tour Summary CSV** — one CSV for the entire tour, named `{band}_Tour-Summary_{tour}-for-{start}-to-{end}.csv`:
+   - Header rows: "Tour Summary", "Artist: {name}", tour date range
+   - One row per settled show: Date, City, State, Zip, Venue, Venue Actual %, Capacity, Attend, Currency, Exch. Rate, Per Head, Gross, Tax, Payment Fees, Venue Fee, Venue Adjust., Vend Fee, Ext Exp, Bootleg Exp, Selling Exp, Net Receipts
+   - TOTAL row and Avg/Show row at bottom
+   - Canadian shows converted via `settlement.exchangeRate`
+
+**How it works internally**:
+
+1. **`find_account()`** — paginates `organization.accounts` (50 per page) to find the band by substring match
+2. **`list_tours()` / `find_tour()`** — fetches tours via `node(uuid)` on the account, matches by substring
+3. **`fetch_merch_catalog()`** — loads all `merchItems → merchVariants` for the account, builds a `variant_uuid → {sku, name, type, size, price}` lookup
+4. **`fetch_tour_shows()`** — fetches all shows for the tour including `settlements.mainCounts` (per-variant count in/out/comps), `settlementOutput.total` (financials), `expenses`, `location`, and `currencyFormat`
+5. **`write_sales_report()`** — for each settled show, computes `sold = countIn - countOut - comps`, uses `priceOverride > calculatedPriceWithTax > base price` for effective price, groups by category (APPAREL/OTHER/MUSIC), writes CSV
+6. **`write_tour_summary()`** — aggregates settlement-level financials per show, classifies expenses by type, applies exchange rate for non-USD shows, writes summary CSV with TOTAL and Avg/Show rows
+
+**Notes**:
+- Sold qty is computed as `countIn - countOut - comps` from settlement `mainCounts`.
+- Price priority: `priceOverride` → `calculatedPriceWithTax` → base catalog price.
+- International shows use local currency (JPY, KRW, THB, etc.); the script applies the settlement `exchangeRate` to convert to tour report currency for the Tour Summary.
+- All monetary values from the API are in scientific notation (e.g. `"0.45e2"` = $45). Parsed with `float()`.
+- `--band` and `--tour` are substring matches (case-insensitive).
+- Only shows with `state: "DONE"` and `settlement.status: "DONE"` are included.
+- The API enforces a query complexity limit (~76,520). The script works around this by fetching merch catalog and show data in separate queries, and using `node(uuid)` lookups instead of deeply nested queries.
+
 ## Cost
 
 | Item | Cost |

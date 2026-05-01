@@ -268,6 +268,9 @@ def write_sales_report(show: dict, variant_lookup: dict, band_slug: str,
         return None
     if not settlement.get("settlementOutput"):
         return None
+    ccy = show.get("currencyFormat", {}).get("code", "USD")
+    if ccy != "USD":
+        return None  # skip non-USD shows
 
     show_date = show["showDate"]
     loc = show.get("location") or {}
@@ -391,6 +394,8 @@ def write_tour_summary(shows: list[dict], band_name: str, band_slug: str,
         totals = stl["settlementOutput"]["total"]
         loc = show.get("location") or {}
         ccy = show.get("currencyFormat", {}).get("code", "USD")
+        if ccy != "USD":
+            continue  # skip non-USD shows — column shifts + foreign prices
         exch = _flt(stl.get("exchangeRate")) or 1.0
         gross = _flt(totals.get("grossSalesAmount"))
         attn = show.get("attendance") or 0

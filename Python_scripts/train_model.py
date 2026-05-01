@@ -142,6 +142,32 @@ def train_and_save(paths_config_path: str, artifact_dir: str):
     if df["showDate"].isna().all():
         raise ValueError("showDate could not be parsed for any rows.")
 
+    # ── Filter to US-only shows ──
+    _US_STATES = {
+        "AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN",
+        "IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV",
+        "NH","NJ","NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN",
+        "TX","UT","VT","VA","WA","WV","WI","WY","DC",
+    }
+    _US_FULL = {
+        "ALABAMA","ALASKA","ARIZONA","ARKANSAS","CALIFORNIA","COLORADO",
+        "CONNECTICUT","DELAWARE","FLORIDA","GEORGIA","HAWAII","IDAHO",
+        "ILLINOIS","INDIANA","IOWA","KANSAS","KENTUCKY","LOUISIANA","MAINE",
+        "MARYLAND","MASSACHUSETTS","MICHIGAN","MINNESOTA","MISSISSIPPI",
+        "MISSOURI","MONTANA","NEBRASKA","NEVADA","NEW HAMPSHIRE","NEW JERSEY",
+        "NEW MEXICO","NEW YORK","NORTH CAROLINA","NORTH DAKOTA","OHIO",
+        "OKLAHOMA","OREGON","PENNSYLVANIA","RHODE ISLAND","SOUTH CAROLINA",
+        "SOUTH DAKOTA","TENNESSEE","TEXAS","UTAH","VERMONT","VIRGINIA",
+        "WASHINGTON","WEST VIRGINIA","WISCONSIN","WYOMING",
+        "DISTRICT OF COLUMBIA",
+    }
+    before_us = len(df)
+    state_col = df["venue state"].astype(str).str.strip().str.upper()
+    is_us_state = state_col.isin(_US_STATES) | state_col.isin(_US_FULL)
+    is_us_zip = df["venue postalCode"].astype(str).str.strip().str.match(r"^\d{5}$", na=False)
+    df = df[is_us_state | is_us_zip].reset_index(drop=True)
+    print(f"Filtered to US-only: {before_us} → {len(df)} ({before_us - len(df)} non-US removed)")
+
     df["attendance"] = _to_num(df["attendance"]).fillna(0)
     df["product price"] = _to_num(df["product price"]).fillna(0)
     df["quantitySold"] = _to_num(df["quantitySold"]).fillna(0)

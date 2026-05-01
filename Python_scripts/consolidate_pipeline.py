@@ -515,7 +515,13 @@ def main():
             first_col = df.columns[0]
 
             df["Sold_num"] = pd.to_numeric(df["Sold"], errors="coerce").fillna(0)
+            price_raw = df["Avg. Price"].astype(str).str.replace("$", "", regex=False).str.replace(",", "")
+            df["Price_num"] = pd.to_numeric(price_raw, errors="coerce").fillna(0)
+
+            # Drop rows with no SKU and no sales
             df = df[~(df[first_col].isna() & (df["Sold_num"] == 0))]
+            # Drop unsold size variants (qty=0 AND price=$0.00)
+            df = df[~((df["Sold_num"] == 0) & (df["Price_num"] == 0))]
 
             df[first_col] = df[first_col].fillna("NO_SKU")
             df[first_col] = df[first_col].astype(str).str.strip()
@@ -526,7 +532,7 @@ def main():
             ]
             df = df[~df[first_col].str.upper().isin(bad_labels)]
 
-            df = df.drop(columns=["Sold_num"])
+            df = df.drop(columns=["Sold_num", "Price_num"])
 
             filename = os.path.basename(file)
             df["source_file"] = filename
@@ -886,7 +892,10 @@ def main():
 
             if "artistName" in spotify_df.columns and "spotifyMonthlyListeners" in spotify_df.columns:
                 def norm_artist(s):
-                    return str(s).lower().replace("_", " ").strip()
+                    s = str(s).lower().replace("_", " ").strip()
+                    s = re.sub(r"\s*\((?:mh|manhead)\)\s*$", "", s)
+                    s = re.sub(r"\s+(?:mh|manhead)\s*$", "", s)
+                    return s.strip()
 
                 df_final["artistName"] = df_final["artistName"].astype(str).str.strip()
                 spotify_df["artistName"] = spotify_df["artistName"].astype(str).str.strip()
@@ -932,7 +941,10 @@ def main():
                 df_final["artistName"] = df_final["artistName"].astype(str).str.strip()
 
                 def norm_artist(s):
-                    return str(s).lower().replace("_", " ").strip()
+                    s = str(s).lower().replace("_", " ").strip()
+                    s = re.sub(r"\s*\((?:mh|manhead)\)\s*$", "", s)
+                    s = re.sub(r"\s+(?:mh|manhead)\s*$", "", s)
+                    return s.strip()
 
                 meta_df["_artist_k"] = meta_df["artistName"].apply(norm_artist)
                 df_final["_artist_k"] = df_final["artistName"].apply(norm_artist)

@@ -335,14 +335,20 @@ def write_sales_report(show: dict, variant_lookup: dict, band_slug: str,
                     avg_p = f"${v['avg_price']:.2f}" if v["avg_price"] > 0 else "$0.00"
                     gr = f'"${v["gross"]:,.2f}"' if v["gross"] > 0 else "$0.00"
                     sex = "U" if cat == "APPAREL" else ""
-                    f.write(f"{v['sku']},{v['name']},{v['type']},{sex},{v['size']},"
+                    qname = f'"{v["name"]}"' if "," in v["name"] else v["name"]
+                    qtype = f'"{v["type"]}"' if "," in v["type"] else v["type"]
+                    f.write(f"{v['sku']},{qname},{qtype},{sex},{v['size']},"
                             f"{v['sold']},{pct_u},{v['comps']},{avg_p},{gr},{pct_r}\n")
 
                 sex = "U" if cat == "APPAREL" else ""
                 sub_pct = f"{item_sold/cat_total_sold*100:.0f}%" if cat_total_sold else "0%"
                 sub_rpct = f"{item_gross/cat_total_gross*100:.0f}%" if cat_total_gross else "0%"
                 avg_i = f"${item_gross/item_sold:.2f}" if item_sold else "$0.00"
-                f.write(f'SUBTOTAL,{variants[0]["name"]},{variants[0]["type"]},{sex},"",'
+                vname = variants[0]["name"]
+                vtype = variants[0]["type"]
+                qname = f'"{vname}"' if "," in vname else vname
+                qtype = f'"{vtype}"' if "," in vtype else vtype
+                f.write(f'SUBTOTAL,{qname},{qtype},{sex},"",'
                         f'{item_sold},{sub_pct},{sum(v["comps"] for v in variants)},'
                         f'{avg_i},"${item_gross:,.2f}",{sub_rpct}\n\n')
 

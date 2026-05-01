@@ -146,6 +146,11 @@ def train_and_save(paths_config_path: str, artifact_dir: str):
     df["product price"] = _to_num(df["product price"]).fillna(0)
     df["quantitySold"] = _to_num(df["quantitySold"]).fillna(0)
 
+    # Drop zero-sold rows — they add noise without predictive signal
+    before_filter = len(df)
+    df = df[df["quantitySold"] > 0].reset_index(drop=True)
+    print(f"Filtered zero-sold rows: {before_filter} → {len(df)} ({before_filter - len(df)} removed)")
+
     df["temperature_daily_mean"] = _to_num(df["temperature_daily_mean"])
     df["venue capacity"] = _to_num(df["venue capacity"])
     df["spotifyMonthlyListeners"] = _to_num(df["spotifyMonthlyListeners"])

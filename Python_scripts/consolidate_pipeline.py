@@ -1094,6 +1094,14 @@ def main():
         mask_valid_venue = (venue_name_clean != "") & (venue_city_clean != "")
         df_final = df_final[mask_valid_venue].copy()
 
+        # ── US-only filter: keep rows with valid US state or 5-digit zip ──
+        _state_col = df_final["venue state"].astype(str).str.strip().str.upper()
+        _is_us = _state_col.isin(US_STATE_ABBR)
+        _is_zip = df_final["venue postalCode"].astype(str).str.strip().str.match(r"^\d{5}$", na=False)
+        before_us = len(df_final)
+        df_final = df_final[_is_us | _is_zip].reset_index(drop=True)
+        print(f"[US-ONLY] {before_us} → {len(df_final)} ({before_us - len(df_final)} non-US removed)")
+
         _safe_makedirs_for(final_out)
         df_final.to_csv(final_out, index=False)
         print(f"[OK] Wrote consolidated snapshot to: {final_out} | rows={len(df_final)}")

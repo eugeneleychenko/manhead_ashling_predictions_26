@@ -895,6 +895,8 @@ def main():
                     s = str(s).lower().replace("_", " ").strip()
                     s = re.sub(r"\s*\((?:mh|manhead)\)\s*$", "", s)
                     s = re.sub(r"\s+(?:mh|manhead)\s*$", "", s)
+                    s = re.sub(r"[!?&]+", "", s)
+                    s = re.sub(r"\s+", " ", s)
                     return s.strip()
 
                 df_final["artistName"] = df_final["artistName"].astype(str).str.strip()
@@ -944,6 +946,8 @@ def main():
                     s = str(s).lower().replace("_", " ").strip()
                     s = re.sub(r"\s*\((?:mh|manhead)\)\s*$", "", s)
                     s = re.sub(r"\s+(?:mh|manhead)\s*$", "", s)
+                    s = re.sub(r"[!?&]+", "", s)
+                    s = re.sub(r"\s+", " ", s)
                     return s.strip()
 
                 meta_df["_artist_k"] = meta_df["artistName"].apply(norm_artist)

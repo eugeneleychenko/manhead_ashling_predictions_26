@@ -168,6 +168,13 @@ def train_and_save(paths_config_path: str, artifact_dir: str):
     df = df[is_us_state | is_us_zip].reset_index(drop=True)
     print(f"Filtered to US-only: {before_us} → {len(df)} ({before_us - len(df)} non-US removed)")
 
+    # Cap implausible prices (currency errors, column shifts)
+    _price = _to_num(df["product price"])
+    bad_price = _price > 500
+    if bad_price.any():
+        print(f"Capped {bad_price.sum()} rows with price > $500 (likely bad data)")
+        df = df[~bad_price].reset_index(drop=True)
+
     df["attendance"] = _to_num(df["attendance"]).fillna(0)
     df["product price"] = _to_num(df["product price"]).fillna(0)
     df["quantitySold"] = _to_num(df["quantitySold"]).fillna(0)

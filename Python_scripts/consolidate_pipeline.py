@@ -792,6 +792,41 @@ def main():
                 how="left",
             )
 
+        # ── Fallback: fill missing weather from cached weather_data.csv ──
+        weather_csv_path = os.path.join(os.path.dirname(coords_path), "..", "CSVs", "features", "weather_data.csv")
+        if not os.path.exists(weather_csv_path):
+            weather_csv_path = paths.get("weather_csv", "")
+        if os.path.exists(weather_csv_path):
+            try:
+                w_cache = pd.read_csv(weather_csv_path)
+                w_cache = w_cache.rename(columns={"Zip": "_wZip", "showDate": "_wDate"})
+                w_cache["_wZip"] = w_cache["_wZip"].astype(str).str.strip()
+                w_cache["_wDate"] = w_cache["_wDate"].astype(str).str.strip()
+                w_lookup = w_cache.set_index(["_wZip", "_wDate"])
+                w_lookup = w_lookup[~w_lookup.index.duplicated(keep="first")]
+
+                zip_col = df_with_weather["Zip"].astype(str).str.strip()
+                date_col = df_with_weather["showDate"].astype(str).str.strip()
+
+                filled = 0
+                for col_api, col_cache in [("temperature_2m_mean", "temperature_2m_mean"),
+                                           ("rain_sum", "rain_sum"),
+                                           ("snowfall_sum", "snowfall_sum")]:
+                    if col_api not in df_with_weather.columns:
+                        df_with_weather[col_api] = np.nan
+                    null_mask = df_with_weather[col_api].isna()
+                    for idx in df_with_weather[null_mask].index:
+                        key = (zip_col.at[idx], date_col.at[idx])
+                        if key in w_lookup.index:
+                            df_with_weather.at[idx, col_api] = w_lookup.at[key, col_cache]
+                            if col_api == "temperature_2m_mean":
+                                filled += 1
+                print(f"[WEATHER] Filled {filled} rows from cached weather_data.csv")
+            except Exception as e:
+                print(f"[WEATHER] Failed to load weather cache: {e}")
+        else:
+            print("[WEATHER] No weather_data.csv found for fallback")
+
         keep_rename_map = {
             "artist_Name": "artistName",
             "Venue": "venue name",

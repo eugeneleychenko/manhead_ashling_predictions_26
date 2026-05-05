@@ -634,8 +634,12 @@ def _watch_retrain_signal():
         try:
             if os.path.exists(RETRAIN_SIGNAL):
                 app.logger.info("Retrain signal detected — reloading artifacts")
+                os.remove(RETRAIN_SIGNAL)  # delete before reload to prevent OOM loop on restart
+                import gc
+                global model, scaler, encoder
+                model = scaler = encoder = None  # free old artifacts before loading new
+                gc.collect()
                 _reload_artifacts()
-                os.remove(RETRAIN_SIGNAL)
                 state = _read_retrain_state()
                 state["status"] = "completed"
                 state["finished_at"] = dt.datetime.now().isoformat(timespec="seconds")

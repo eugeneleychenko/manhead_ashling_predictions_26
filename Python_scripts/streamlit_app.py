@@ -327,245 +327,246 @@ if st.session_state["artist_entries"]:
     )
 
 st.markdown("---")
-st.header("Step 2: Format and Consolidate Data")
+with st.expander("Advanced: Steps 2 & 3 (Consolidation & Training)", expanded=False):
+  st.header("Step 2: Format and Consolidate Data")
 
-st.write(
-    "This runs the consolidation script, writes a consolidated snapshot, "
-    "and appends it into the continuously-updated master dataset (full-row dedupe)."
-)
+  st.write(
+      "This runs the consolidation script, writes a consolidated snapshot, "
+      "and appends it into the continuously-updated master dataset (full-row dedupe)."
+  )
 
-if st.button("Run consolidation pipeline"):
-    script_path = PATHS["consolidation_script_path"]
-    final_csv = PATHS["final_out"]
-    stats_path = PATHS["consolidation_stats_json"]
-    master_path = PATHS.get("master_training_dataset", "")
+  if st.button("Run consolidation pipeline"):
+      script_path = PATHS["consolidation_script_path"]
+      final_csv = PATHS["final_out"]
+      stats_path = PATHS["consolidation_stats_json"]
+      master_path = PATHS.get("master_training_dataset", "")
 
-    log_event(
-        step="step2_consolidate",
-        status="start",
-        details={
-            "script_path": script_path,
-            "final_out": final_csv,
-            "stats_json": stats_path,
-            "master_training_dataset": master_path,
-        },
-    )
+      log_event(
+          step="step2_consolidate",
+          status="start",
+          details={
+              "script_path": script_path,
+              "final_out": final_csv,
+              "stats_json": stats_path,
+              "master_training_dataset": master_path,
+          },
+      )
 
-    with st.spinner("Running consolidation script..."):
-        try:
-            result = subprocess.run(
-                [sys.executable, script_path],
-                capture_output=True,
-                text=True,
-                check=True,
-            )
-        except subprocess.CalledProcessError as e:
-            log_event(
-                step="step2_consolidate",
-                status="error",
-                details={
-                    "script_path": script_path,
-                    "final_out": final_csv,
-                    "stats_json": stats_path,
-                    "master_training_dataset": master_path,
-                    "returncode": int(e.returncode) if e.returncode is not None else None,
-                    "stdout": (e.stdout or "")[:4000],
-                    "stderr": (e.stderr or "")[:4000],
-                },
-            )
+      with st.spinner("Running consolidation script..."):
+          try:
+              result = subprocess.run(
+                  [sys.executable, script_path],
+                  capture_output=True,
+                  text=True,
+                  check=True,
+              )
+          except subprocess.CalledProcessError as e:
+              log_event(
+                  step="step2_consolidate",
+                  status="error",
+                  details={
+                      "script_path": script_path,
+                      "final_out": final_csv,
+                      "stats_json": stats_path,
+                      "master_training_dataset": master_path,
+                      "returncode": int(e.returncode) if e.returncode is not None else None,
+                      "stdout": (e.stdout or "")[:4000],
+                      "stderr": (e.stderr or "")[:4000],
+                  },
+              )
 
-            st.error("Consolidation script failed.")
-            if e.stdout:
-                st.code(e.stdout)
-            if e.stderr:
-                st.code(e.stderr)
-        else:
-            st.success("Consolidation completed successfully.")
+              st.error("Consolidation script failed.")
+              if e.stdout:
+                  st.code(e.stdout)
+              if e.stderr:
+                  st.code(e.stderr)
+          else:
+              st.success("Consolidation completed successfully.")
 
-            stats = None
-            if os.path.exists(stats_path):
-                with open(stats_path, "r", encoding="utf-8") as f:
-                    stats = json.load(f)
+              stats = None
+              if os.path.exists(stats_path):
+                  with open(stats_path, "r", encoding="utf-8") as f:
+                      stats = json.load(f)
 
-                st.subheader("Master dataset append results")
-                c1, c2, c3, c4 = st.columns(4)
-                c1.metric("Master rows before", stats.get("master_rows_before", "—"))
-                c2.metric("Snapshot rows", stats.get("new_rows_in_snapshot", "—"))
-                c3.metric("Rows added", stats.get("rows_added", "—"))
-                c4.metric("Master rows after", stats.get("master_rows_after", "—"))
+                  st.subheader("Master dataset append results")
+                  c1, c2, c3, c4 = st.columns(4)
+                  c1.metric("Master rows before", stats.get("master_rows_before", "—"))
+                  c2.metric("Snapshot rows", stats.get("new_rows_in_snapshot", "—"))
+                  c3.metric("Rows added", stats.get("rows_added", "—"))
+                  c4.metric("Master rows after", stats.get("master_rows_after", "—"))
 
-                st.caption(f"Master path: {stats.get('master_path', '—')}")
-            else:
-                st.warning(f"Stats file not found: {stats_path}")
+                  st.caption(f"Master path: {stats.get('master_path', '—')}")
+              else:
+                  st.warning(f"Stats file not found: {stats_path}")
 
-            df_final = None
-            if os.path.exists(final_csv):
-                df_final = pd.read_csv(final_csv)
+              df_final = None
+              if os.path.exists(final_csv):
+                  df_final = pd.read_csv(final_csv)
 
-                st.subheader("Preview of consolidated snapshot (merged_with_weather.csv)")
-                st.dataframe(df_final.head(200), use_container_width=True)
+                  st.subheader("Preview of consolidated snapshot (merged_with_weather.csv)")
+                  st.dataframe(df_final.head(200), use_container_width=True)
 
-                csv_str = df_final.to_csv(index=False)
-                save_streamlit_download_copy("merged_with_weather.csv", csv_str.encode("utf-8"))
+                  csv_str = df_final.to_csv(index=False)
+                  save_streamlit_download_copy("merged_with_weather.csv", csv_str.encode("utf-8"))
 
-                st.download_button(
-                    label="Download consolidated snapshot CSV",
-                    data=csv_str,
-                    file_name="merged_with_weather.csv",
-                    mime="text/csv",
-                )
-            else:
-                st.error(f"Expected output file not found: {final_csv}")
+                  st.download_button(
+                      label="Download consolidated snapshot CSV",
+                      data=csv_str,
+                      file_name="merged_with_weather.csv",
+                      mime="text/csv",
+                  )
+              else:
+                  st.error(f"Expected output file not found: {final_csv}")
 
-            details = {
-                "script_path": script_path,
-                "final_out": final_csv,
-                "stats_json": stats_path,
-                "master_training_dataset": master_path,
-                "stdout": (result.stdout or "")[:2000],
-                "stderr": (result.stderr or "")[:2000],
-            }
+              details = {
+                  "script_path": script_path,
+                  "final_out": final_csv,
+                  "stats_json": stats_path,
+                  "master_training_dataset": master_path,
+                  "stdout": (result.stdout or "")[:2000],
+                  "stderr": (result.stderr or "")[:2000],
+              }
 
-            if stats is not None:
-                details.update({
-                    "master_rows_before": stats.get("master_rows_before"),
-                    "new_rows_in_snapshot": stats.get("new_rows_in_snapshot"),
-                    "rows_added": stats.get("rows_added"),
-                    "master_rows_after": stats.get("master_rows_after"),
-                    "master_path": stats.get("master_path"),
-                })
+              if stats is not None:
+                  details.update({
+                      "master_rows_before": stats.get("master_rows_before"),
+                      "new_rows_in_snapshot": stats.get("new_rows_in_snapshot"),
+                      "rows_added": stats.get("rows_added"),
+                      "master_rows_after": stats.get("master_rows_after"),
+                      "master_path": stats.get("master_path"),
+                  })
 
-            if os.path.exists(final_csv):
-                details["final_out_hash"] = sha256_file(final_csv)
-                if df_final is not None:
-                    details["final_out_rows"] = int(df_final.shape[0])
-                    details["final_out_cols"] = list(df_final.columns)
+              if os.path.exists(final_csv):
+                  details["final_out_hash"] = sha256_file(final_csv)
+                  if df_final is not None:
+                      details["final_out_rows"] = int(df_final.shape[0])
+                      details["final_out_cols"] = list(df_final.columns)
 
-            if os.path.exists(stats_path):
-                details["stats_json_hash"] = sha256_file(stats_path)
+              if os.path.exists(stats_path):
+                  details["stats_json_hash"] = sha256_file(stats_path)
 
-            if master_path and os.path.exists(master_path):
-                details["master_hash"] = sha256_file(master_path)
+              if master_path and os.path.exists(master_path):
+                  details["master_hash"] = sha256_file(master_path)
 
-            log_event(step="step2_consolidate", status="success", details=details)
+              log_event(step="step2_consolidate", status="success", details=details)
 
-st.markdown("---")
-st.header("Step 3: Train / Retrain Model")
+  st.markdown("---")
+  st.header("Step 3: Train / Retrain Model")
 
-st.write(
-    "This trains the model using the latest MASTER dataset (continuously updated) "
-    "and overwrites the model artifacts used by the Flask prediction API."
-)
+  st.write(
+      "This trains the model using the latest MASTER dataset (continuously updated) "
+      "and overwrites the model artifacts used by the Flask prediction API."
+  )
 
-TRAIN_SCRIPT = PATHS["train_model_script_path"]
+  TRAIN_SCRIPT = PATHS["train_model_script_path"]
 
-if st.button("Train model"):
-    master_path = PATHS.get("master_training_dataset", "")
-    artifact_dir = PATHS.get("flask_artifacts_dir", "")
-    model_path = PATHS.get("model_joblib", "")
-    scaler_path = PATHS.get("scaler_joblib", "")
-    encoder_path = PATHS.get("encoder_joblib", "")
-    metrics_path = PATHS.get("last_train_metrics_json", "")
+  if st.button("Train model"):
+      master_path = PATHS.get("master_training_dataset", "")
+      artifact_dir = PATHS.get("flask_artifacts_dir", "")
+      model_path = PATHS.get("model_joblib", "")
+      scaler_path = PATHS.get("scaler_joblib", "")
+      encoder_path = PATHS.get("encoder_joblib", "")
+      metrics_path = PATHS.get("last_train_metrics_json", "")
 
-    log_event(
-        step="step3_train_streamlit",
-        status="start",
-        details={
-            "train_script": TRAIN_SCRIPT,
-            "master_training_dataset": master_path,
-            "artifact_dir": artifact_dir,
-            "model_joblib": model_path,
-            "scaler_joblib": scaler_path,
-            "encoder_joblib": encoder_path,
-            "metrics_json": metrics_path,
-        },
-    )
+      log_event(
+          step="step3_train_streamlit",
+          status="start",
+          details={
+              "train_script": TRAIN_SCRIPT,
+              "master_training_dataset": master_path,
+              "artifact_dir": artifact_dir,
+              "model_joblib": model_path,
+              "scaler_joblib": scaler_path,
+              "encoder_joblib": encoder_path,
+              "metrics_json": metrics_path,
+          },
+      )
 
-    with st.spinner("Training model from master dataset and updating joblib artifacts..."):
-        try:
-            result = subprocess.run(
-                [sys.executable, TRAIN_SCRIPT],
-                capture_output=True,
-                text=True,
-                check=True,
-            )
-        except subprocess.CalledProcessError as e:
-            log_event(
-                step="step3_train_streamlit",
-                status="error",
-                details={
-                    "train_script": TRAIN_SCRIPT,
-                    "returncode": int(e.returncode) if e.returncode is not None else None,
-                    "stdout": (e.stdout or "")[:4000],
-                    "stderr": (e.stderr or "")[:4000],
-                },
-            )
+      with st.spinner("Training model from master dataset and updating joblib artifacts..."):
+          try:
+              result = subprocess.run(
+                  [sys.executable, TRAIN_SCRIPT],
+                  capture_output=True,
+                  text=True,
+                  check=True,
+              )
+          except subprocess.CalledProcessError as e:
+              log_event(
+                  step="step3_train_streamlit",
+                  status="error",
+                  details={
+                      "train_script": TRAIN_SCRIPT,
+                      "returncode": int(e.returncode) if e.returncode is not None else None,
+                      "stdout": (e.stdout or "")[:4000],
+                      "stderr": (e.stderr or "")[:4000],
+                  },
+              )
 
-            st.error("Model training failed.")
-            if e.stdout:
-                with st.expander("Training logs (stdout)"):
-                    st.code(e.stdout)
-            if e.stderr:
-                with st.expander("Training logs (stderr)"):
-                    st.code(e.stderr)
-        else:
-            st.success("Model trained successfully. Joblib artifacts updated.")
+              st.error("Model training failed.")
+              if e.stdout:
+                  with st.expander("Training logs (stdout)"):
+                      st.code(e.stdout)
+              if e.stderr:
+                  with st.expander("Training logs (stderr)"):
+                      st.code(e.stderr)
+          else:
+              st.success("Model trained successfully. Joblib artifacts updated.")
 
-            if result.stdout:
-                with st.expander("Training logs (stdout)"):
-                    st.code(result.stdout)
+              if result.stdout:
+                  with st.expander("Training logs (stdout)"):
+                      st.code(result.stdout)
 
-            if result.stderr:
-                with st.expander("Training logs (stderr / warnings)"):
-                    st.code(result.stderr)
+              if result.stderr:
+                  with st.expander("Training logs (stderr / warnings)"):
+                      st.code(result.stderr)
 
-            st.info("If your Flask server is already running, restart it to ensure it loads the newly trained artifacts.")
+              st.info("If your Flask server is already running, restart it to ensure it loads the newly trained artifacts.")
 
-            metrics = None
-            if metrics_path and os.path.exists(metrics_path):
-                try:
-                    with open(metrics_path, "r", encoding="utf-8") as f:
-                        metrics = json.load(f)
-                except Exception:
-                    metrics = None
+              metrics = None
+              if metrics_path and os.path.exists(metrics_path):
+                  try:
+                      with open(metrics_path, "r", encoding="utf-8") as f:
+                          metrics = json.load(f)
+                  except Exception:
+                      metrics = None
 
-            details = {
-                "train_script": TRAIN_SCRIPT,
-                "stdout": (result.stdout or "")[:2000],
-                "stderr": (result.stderr or "")[:2000],
-                "master_training_dataset": master_path,
-                "artifact_dir": artifact_dir,
-                "model_joblib": model_path,
-                "scaler_joblib": scaler_path,
-                "encoder_joblib": encoder_path,
-                "metrics_json": metrics_path,
-            }
+              details = {
+                  "train_script": TRAIN_SCRIPT,
+                  "stdout": (result.stdout or "")[:2000],
+                  "stderr": (result.stderr or "")[:2000],
+                  "master_training_dataset": master_path,
+                  "artifact_dir": artifact_dir,
+                  "model_joblib": model_path,
+                  "scaler_joblib": scaler_path,
+                  "encoder_joblib": encoder_path,
+                  "metrics_json": metrics_path,
+              }
 
-            if master_path and os.path.exists(master_path):
-                details["master_hash"] = sha256_file(master_path)
-            if model_path and os.path.exists(model_path):
-                details["model_hash"] = sha256_file(model_path)
-            if scaler_path and os.path.exists(scaler_path):
-                details["scaler_hash"] = sha256_file(scaler_path)
-            if encoder_path and os.path.exists(encoder_path):
-                details["encoder_hash"] = sha256_file(encoder_path)
-            if metrics_path and os.path.exists(metrics_path):
-                details["metrics_hash"] = sha256_file(metrics_path)
+              if master_path and os.path.exists(master_path):
+                  details["master_hash"] = sha256_file(master_path)
+              if model_path and os.path.exists(model_path):
+                  details["model_hash"] = sha256_file(model_path)
+              if scaler_path and os.path.exists(scaler_path):
+                  details["scaler_hash"] = sha256_file(scaler_path)
+              if encoder_path and os.path.exists(encoder_path):
+                  details["encoder_hash"] = sha256_file(encoder_path)
+              if metrics_path and os.path.exists(metrics_path):
+                  details["metrics_hash"] = sha256_file(metrics_path)
 
-            if isinstance(metrics, dict):
-                details.update({
-                    "rmse_test": metrics.get("rmse_test"),
-                    "mae_test": metrics.get("mae_test"),
-                    "r2_test": metrics.get("r2_test"),
-                    "adj_r2_test": metrics.get("adj_r2_test"),
-                    "rows_total": metrics.get("rows_total"),
-                    "rows_train": metrics.get("rows_train"),
-                    "rows_test": metrics.get("rows_test"),
-                    "trained_at": metrics.get("trained_at"),
-                    "input_csv": metrics.get("input_csv"),
-                })
+              if isinstance(metrics, dict):
+                  details.update({
+                      "rmse_test": metrics.get("rmse_test"),
+                      "mae_test": metrics.get("mae_test"),
+                      "r2_test": metrics.get("r2_test"),
+                      "adj_r2_test": metrics.get("adj_r2_test"),
+                      "rows_total": metrics.get("rows_total"),
+                      "rows_train": metrics.get("rows_train"),
+                      "rows_test": metrics.get("rows_test"),
+                      "trained_at": metrics.get("trained_at"),
+                      "input_csv": metrics.get("input_csv"),
+                  })
 
-            log_event(step="step3_train_streamlit", status="success", details=details)
+              log_event(step="step3_train_streamlit", status="success", details=details)
 
 st.markdown("---")
 st.header("Step 4: Run Predictions")

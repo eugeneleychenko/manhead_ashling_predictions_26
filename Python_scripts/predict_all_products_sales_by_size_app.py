@@ -171,6 +171,15 @@ def build_model_inputs(df, route_tag="html"):
     df["Day of Week Num"] = df["showDate"].dt.weekday + 1
 
     present_num_features = [f for f in input_numerical_features if f in df.columns]
+    # Clean currency/comma formatting from numeric columns (e.g. "$40.00", "4,013")
+    for col in present_num_features:
+        df[col] = (
+            df[col].astype(str)
+            .str.replace("$", "", regex=False)
+            .str.replace(",", "")
+            .str.strip()
+        )
+        df[col] = pd.to_numeric(df[col], errors="coerce").fillna(0)
     df_num = df[present_num_features].copy()
 
     for feature in present_num_features:

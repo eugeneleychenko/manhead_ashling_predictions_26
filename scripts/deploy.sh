@@ -34,6 +34,10 @@ rsync -avz --progress \
     "$REPO_DIR/" "root@$DROPLET_IP:/opt/manhead/"
 
 echo ""
+echo "==> Fixing file ownership for manhead user..."
+ssh "root@$DROPLET_IP" "chown -R manhead:manhead /opt/manhead/CSVs/ /opt/manhead/Flask/ /opt/manhead/outputs/ 2>/dev/null || true"
+
+echo ""
 echo "==> Running setup script on droplet..."
 ssh "root@$DROPLET_IP" "bash /opt/manhead/scripts/setup-server.sh"
 
